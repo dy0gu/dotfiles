@@ -1,0 +1,12 @@
+# Run `bat --help` to get a list of all possible configuration options.
+
+# Specify desired highlighting theme. 
+# Run `bat --list-themes` for a list of all available themes.
+--theme="TwoDark"
+
+# Map a certain filename pattern to a language.
+--map-syntax "*.ino:C++"
+
+--italic-text=always
+
+--paging=never
