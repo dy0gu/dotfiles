@@ -46,8 +46,10 @@
 
 This setup is made to not keep any sort of credentials or personal data in the repository, meaning SSH keys, passwords, git auth etc. should be added manually after the initial setup.
 
-First, and most important, don't forget to change the initial password for the default user:
+- First, and most important, don't forget to change the initial password for the default user:
 
-```shell
-sudo passwd <username>
-```
+   ```shell
+   sudo passwd <username>
+   ```
+
+   You don't need to do this step if the user already had a password set before the initial `nixos-rebuild switch` command, as it will not be overwritten by the initial password configuration.
