@@ -14,13 +14,6 @@
     rustc
     cargo
 
-    # Utilities
-    fd
-    ripgrep
-    bat
-    exa
-    delta
-
     # Media
     mpv
     imv
