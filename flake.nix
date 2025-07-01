@@ -12,7 +12,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       base = [
-        /etc/nixos/hardware-configuration.nix
+        ./modules/devices/hardware-configuration.nix
         ./modules/core/system.nix
         ./modules/core/users.nix
         ./modules/core/apps.nix
