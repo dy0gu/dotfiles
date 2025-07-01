@@ -16,6 +16,7 @@
 
    ```shell
    sudo sed -i '/^}$/i\  nix.settings.experimental-features = [ "nix-command" "flakes" ];' /etc/nixos/configuration.nix
+
    sudo nixos-rebuild switch
    ```
 
@@ -25,13 +26,15 @@
    sudo nixos-generate-config --dir ./hosts/<host>
    ```
 
-- Replace all appearances of the existing username with a new one:
+- Replace the home config for the new user and replace all appearances of the existing username with a new one:
 
    ```shell
+   mv ./modules/home-manager/dy0gu.nix ./modules/home-manager/<username>.nix
+
    find . -path ./\.git -prune -o -type f -exec sed -i 's/dy0gu/<username>/g' {} +
    ```
 
-   More users can also be added in the [modules/core/users.nix](./modules/core/users.nix) file and the respective [modules/home-manager](./modules/home-manager) config.
+   If you want to add new users and not just replace the default one, then add them in [modules/core/users.nix](./modules/core/users.nix) file and create the respective [modules/home-manager](./modules/home-manager) config. This user config should then be loaded it in the `flake.nix` file for the desired `<host>`.
 
 - Build and switch to the same `<host>` from the previous hardware configuration step:
 

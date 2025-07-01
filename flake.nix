@@ -31,6 +31,12 @@
         modules = base ++ [
           ./hosts/laptop/hardware-configuration.nix
           ./hosts/laptop/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.dy0gu = import ./modules/home-manager/dy0gu.nix;
+          }
         ];
         specialArgs = { inherit inputs; };
       };
@@ -39,6 +45,12 @@
         modules = base ++ [
           ./hosts/virtual/hardware-configuration.nix
           ./hosts/virtual/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.dy0gu = import ./modules/home-manager/dy0gu.nix;
+          }
         ];
         specialArgs = { inherit inputs; };
       };
