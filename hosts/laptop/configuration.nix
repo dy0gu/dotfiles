@@ -9,7 +9,7 @@
 
   # Enable X11 and Hyprland
   services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
+  #services.displayManager.gdm.enable = true;
 
   # Enable Hyprland
   programs.hyprland = {
