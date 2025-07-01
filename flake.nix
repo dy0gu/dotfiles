@@ -12,7 +12,6 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       base = [
-        ./modules/devices/hardware-configuration.nix
         ./modules/core/system.nix
         ./modules/core/users.nix
         ./modules/core/apps.nix
@@ -22,6 +21,7 @@
     nixosConfigurations = {
       server = nixpkgs.lib.nixosSystem {
         modules = base ++ [
+          ./hosts/server/hardware-configuration.nix
           ./hosts/server/configuration.nix
         ];
         specialArgs = { inherit inputs; };
@@ -29,6 +29,7 @@
 
       laptop = nixpkgs.lib.nixosSystem {
         modules = base ++ [
+          ./hosts/laptop/hardware-configuration.nix
           ./hosts/laptop/configuration.nix
         ];
         specialArgs = { inherit inputs; };

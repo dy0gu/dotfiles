@@ -1,18 +1,15 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # Hostname
   networking.hostName = "nixos-laptop";
 
   # Enable networking with WiFi support
-  networking.networkmanager.enable = true;
   networking.wireless.enable = false; # Disable wpa_supplicant, using NetworkManager
+  networking.networkmanager.enable = true;
 
   # Enable X11 and Hyprland
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-  };
+  services.xserver.enable = true;
+  services.displayManager.gdm.enable = true;
 
   # Enable Hyprland
   programs.hyprland = {
@@ -20,7 +17,7 @@
   };
 
   # Enable sound
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -34,17 +31,35 @@
   services.blueman.enable = true;
 
   # Graphics
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
-  # Power management for laptops
-  services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
+  # Power management
+  services.tlp = {
+        enable = true;
+        settings = {
+          CPU_SCALING_GOVERNOR_ON_AC = "performance";
+          CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+          CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+          CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+          CPU_MIN_PERF_ON_AC = 0;
+          CPU_MAX_PERF_ON_AC = 100;
+          CPU_MIN_PERF_ON_BAT = 0;
+          CPU_MAX_PERF_ON_BAT = 20;
+
+          # Helps save long term battery health
+          START_CHARGE_THRESH_BAT1 = 20;
+          STOP_CHARGE_THRESH_BAT1 = 80;
+
+        };
+  };
 
   # Enable touchpad support
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Laptop-specific packages
   environment.systemPackages = with pkgs; [
@@ -73,7 +88,7 @@
   # Font configuration
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     liberation_ttf
     nerd-fonts.fira-code
