@@ -1,0 +1,18 @@
+# IDE
+.idea/
+.vscode/
+xcuserdata/
+
+# Miscellaneous
+.DS_Store
+
+# Build
+result
+result-*
+
+# Temp
+*.swp
+*~
+
+# Env
+hardware-configuration.nix
