@@ -371,12 +371,15 @@
   # Mako notification daemon
   services.mako = {
     enable = true;
-    backgroundColor = "#2e3440";
-    borderColor = "#88c0d0";
-    borderRadius = 5;
-    borderSize = 2;
-    textColor = "#eceff4";
-    font = "Fira Code";
-    defaultTimeout = 5000;
+    settings = {
+        position = "bottom-right";
+        backgroundColor = "#2e3440";
+        borderColor = "#88c0d0";
+        borderRadius = 5;
+        borderSize = 2;
+        textColor = "#eceff4";
+        font = "Fira Code";
+        defaultTimeout = 5000;
+    };
   };
 }
