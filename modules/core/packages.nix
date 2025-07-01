@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Enable programs
-  programs.zsh.enable = true; # configured in home-manager
-
   # Install packages
   environment.systemPackages = with pkgs; [
     # Main utilities

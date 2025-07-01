@@ -118,8 +118,9 @@
 
       # Environment variables
       env = [
-        "XCURSOR_SIZE,24"
+        "XCURSOR_SIZE,20"
         "QT_QPA_PLATFORMTHEME,qt5ct"
+        "XCURSOR_THEME,Adwaita"
       ];
 
       # Input configuration
@@ -173,6 +174,12 @@
           "fade, 1, 7, default"
           "workspaces, 1, 6, default"
         ];
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        force_default_wallpaper = true;
       };
 
       # Layout
@@ -253,6 +260,21 @@
     };
   };
 
+  # Hyprpaper configuration
+  programs.hyprpaper = {
+    enable = true;
+    settings = {
+      splash = false;
+      preload = [
+        "~/dotfiles/wallpapers/background.png"
+      ];
+      wallpaper = [
+        ", ~/dotfiles/wallpapers/background.png"
+      ];
+    };
+  };
+
+
   # Waybar configuration
   programs.waybar = {
     enable = true;
@@ -274,6 +296,7 @@
         "hyprland/window" = {
           max-length = 200;
           separate-outputs = true;
+          sort-by = "left-to-right";
         };
 
         clock = {
@@ -318,11 +341,11 @@
         };
 
         pulseaudio = {
-          format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
+          format = "{volume}% {icon}";
+          format-bluetooth = "{volume}% {icon}";
+          format-bluetooth-muted = "MUTED {icon}";
+          format-muted = "MUTED {icon}";
+          format-source = "";
           format-source-muted = "";
           format-icons = {
             headphone = "";
@@ -334,35 +357,6 @@
             default = ["" "" ""];
           };
           on-click = "pavucontrol";
-        };
-      };
-    };
-  };
-
-  # Alacritty terminal configuration
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window = {
-        opacity = 0.9;
-        padding = {
-          x = 10;
-          y = 10;
-        };
-      };
-
-      font = {
-        normal = {
-          family = "Fira Code";
-          style = "Regular";
-        };
-        size = 11;
-      };
-
-      colors = {
-        primary = {
-          background = "0x1e1e1e";
-          foreground = "0xd4d4d4";
         };
       };
     };
@@ -380,6 +374,43 @@
         textColor = "#eceff4";
         font = "Fira Code";
         defaultTimeout = 5000;
+    };
+  };
+
+  # Alacritty terminal configuration
+  programs.alacritty = {
+    enable = true;
+    shell = pkgs.zsh;
+    settings = {
+      window = {
+        opacity = 0.9;
+        padding = {
+          x = 10;
+          y = 10;
+        };
+      };
+
+      terminal = {
+        shell = {
+          program = pkgs.zsh;
+          args = [ "-l" ];
+        };
+      };
+
+      font = {
+        normal = {
+          family = "Fira Code";
+          style = "Regular";
+        };
+        size = 11;
+      };
+
+      colors = {
+        primary = {
+          background = "0x1e1e1e";
+          foreground = "0xd4d4d4";
+        };
+      };
     };
   };
 }
