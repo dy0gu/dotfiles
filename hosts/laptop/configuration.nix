@@ -20,7 +20,6 @@
   };
 
   # Enable sound
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -37,7 +36,6 @@
   # Graphics
   hardware.opengl = {
     enable = true;
-    driSupport = true;
     driSupport32Bit = true;
   };
 
@@ -84,7 +82,4 @@
   # Laptop-specific settings
   # Enable lid switch handling
   services.logind.lidSwitch = "suspend";
-
-  # Enable auto-cpufreq for better battery life
-  services.auto-cpufreq.enable = true;
 }

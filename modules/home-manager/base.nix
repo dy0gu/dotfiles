@@ -5,17 +5,14 @@
   home.homeDirectory = "/home/dy0gu";
 
   home.stateVersion = "24.05";
-  # Git configuration
+
   programs.git = {
     enable = true;
-    userName = "dy0gu";
-    userEmail = "diogo@simoes.cc";
     extraConfig = {
       init.defaultBranch = "main";
     };
   };
 
-  # Zsh configuration
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -37,7 +34,6 @@
     };
   };
 
-  # Basic programs
   home.packages = with pkgs; [
     # Development tools
     nodejs
