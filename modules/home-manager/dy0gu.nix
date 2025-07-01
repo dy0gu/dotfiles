@@ -49,6 +49,9 @@
     firefox
     mpv
     imv
+
+    # Terminal emulator
+    alacritty
   ];
 
   programs.git = {
@@ -109,6 +112,13 @@
         ",preferred,auto,auto"
       ];
 
+      # Autostart
+      exec-once = [
+        "waybar"
+        "mako"
+        "hyprpaper"
+      ];
+
       # Environment variables
       env = [
         "XCURSOR_SIZE,20"
@@ -135,8 +145,8 @@
         gaps_in = 5;
         gaps_out = 20;
         border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgba(c1042dff)";
+        "col.inactive_border" = "rgba(3e2a33ff)";
         layout = "dwindle";
         allow_tearing = false;
       };
