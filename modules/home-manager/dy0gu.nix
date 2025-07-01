@@ -109,13 +109,6 @@
         ",preferred,auto,auto"
       ];
 
-      # Autostart
-      exec-once = [
-        "waybar"
-        "mako"
-        "hyprpaper"
-      ];
-
       # Environment variables
       env = [
         "XCURSOR_SIZE,20"
@@ -261,7 +254,7 @@
   };
 
   # Hyprpaper configuration
-  programs.hyprpaper = {
+  services.hyprpaper = {
     enable = true;
     settings = {
       splash = false;
