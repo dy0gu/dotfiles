@@ -34,6 +34,14 @@
         ];
         specialArgs = { inherit inputs; };
       };
+
+      virtual = nixpkgs.lib.nixosSystem {
+        modules = base ++ [
+          ./hosts/virtual/hardware-configuration.nix
+          ./hosts/virtual/configuration.nix
+        ];
+        specialArgs = { inherit inputs; };
+      };
     };
   };
 }
