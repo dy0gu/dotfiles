@@ -14,7 +14,7 @@
       base = [
         ./modules/core/system.nix
         ./modules/core/users.nix
-        ./modules/core/apps.nix
+        ./modules/core/packages.nix
       ];
     in
     {
