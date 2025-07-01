@@ -78,6 +78,7 @@
       theme = "robbyrussell";
     };
   };
+  users.users.dy0gu.shell = pkgs.zsh;
 
   programs.firefox = {
     enable = true;
