@@ -380,7 +380,6 @@
   # Alacritty terminal configuration
   programs.alacritty = {
     enable = true;
-    shell = pkgs.zsh;
     settings = {
       window = {
         opacity = 0.9;
