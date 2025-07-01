@@ -2,7 +2,7 @@
 
 {
   # Enable programs
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
 
   # Install packages
   environment.systemPackages = with pkgs; [
