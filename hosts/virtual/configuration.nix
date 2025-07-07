@@ -3,6 +3,9 @@
 {
   imports = [ ../laptop/configuration.nix ];
 
+  # Hostname
+  networking.hostName = "nixos-virtual-machine";
+
   # Enable VirtualBox guest additions
   virtualisation.virtualbox.guest.enable = true;
 

@@ -52,7 +52,74 @@
 
     # Terminal emulator
     alacritty
+
+    # Gnome extensions and themes
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.show-desktop-button
+    gnomeExtensions.user-themes
+    whitesur-gtk-theme
+    whitesur-icon-theme
   ];
+
+# Gnome settings using dconf
+with lib.hm.gvariant; {
+  dconf.settings = {
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-uri = "file:///home/dy0gu/dotfiles/wallpapers/background.png";
+      picture-uri-dark = "file:///home/dy0gu/dotfiles/wallpapers/background-dark.png";
+    };
+
+    "org/gnome/desktop/peripherals/mouse" = {
+      # Disable mouse acceleration
+      acceleration-profile = "flat";
+    };
+
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,maximize,close";
+    };
+
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      gtk-theme = "WhiteSur-Dark-solid";
+      icon-theme = "WhiteSur-Dark";
+      cursor-theme = "WhiteSur-cursors";
+    };
+
+    "org/gnome/shell" = {
+      enabled-extensions = [
+        "dash-to-dock@micxgx.gmail.com"
+        "show-desktop-button@amivaleo"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
+      ];
+      favorite-apps = [
+        "firefox.desktop"
+        "org.gnome.Nautilus.desktop"
+        "org.gnome.Terminal.desktop"
+        "org.gnome.TextEditor.desktop"
+        "org.gnome.Extensions.desktop"
+        "org.gnome.Settings.desktop"
+        "org.gnome.tweaks.desktop"
+      ];
+    };
+
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "WhiteSur-Dark-solid";
+    };
+
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      background-opacity = 0.8;
+      click-action = "previews";
+      custom-theme-shrink = true;
+      dash-max-icon-size = 32;
+      dock-fixed = true;
+      dock-position = "LEFT";
+      extend-height = true;
+      height-fraction = 0.9;
+      intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
+    };
+  };
+};
 
   programs.git = {
     enable = true;
@@ -89,9 +156,7 @@
         name = "Default";
         isDefault = true;
         settings = {
-          "browser.startup.homepage" = "https://nixos.org";
           "browser.search.defaultenginename" = "DuckDuckGo";
-          # Battery optimization settings
           "media.hardware-video-decoding.enabled" = true;
           "layers.acceleration.force-enabled" = true;
         };
@@ -99,288 +164,7 @@
     };
   };
 
-  # Blueetooth management
-  services.blueman-applet.enable = true;
-
-  # Hyprland configuration
-  wayland.windowManager.hyprland = {
-    enable = true;
-
-    settings = {
-      # Monitor configuration
-      monitor = [
-        ",preferred,auto,auto"
-      ];
-
-      # Autostart
-      exec-once = [
-        "waybar"
-        "mako"
-        "hyprpaper"
-      ];
-
-      # Environment variables
-      env = [
-        "XCURSOR_SIZE,20"
-        "QT_QPA_PLATFORMTHEME,qt5ct"
-        "XCURSOR_THEME,Adwaita"
-      ];
-
-      # Input configuration
-      input = {
-        kb_layout = "us";
-        kb_variant = "";
-        kb_model = "";
-        kb_options = "";
-        kb_rules = "";
-        follow_mouse = 1;
-        touchpad = {
-          natural_scroll = false;
-        };
-        sensitivity = 0;
-      };
-
-      # General settings
-      general = {
-        gaps_in = 5;
-        gaps_out = 20;
-        border_size = 2;
-        "col.active_border" = "rgba(c1042dff)";
-        "col.inactive_border" = "rgba(3e2a33ff)";
-        layout = "dwindle";
-        allow_tearing = false;
-      };
-
-      # Decoration
-      decoration = {
-        rounding = 10;
-        blur = {
-          enabled = true;
-          size = 3;
-          passes = 1;
-        };
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
-      };
-
-      # Animations
-      animations = {
-        enabled = true;
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-        animation = [
-          "windows, 1, 7, myBezier"
-          "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "borderangle, 1, 8, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
-        ];
-      };
-
-      misc = {
-        disable_hyprland_logo = true;
-        disable_splash_rendering = true;
-        force_default_wallpaper = true;
-      };
-
-      # Layout
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
-
-      # Gestures
-      gestures = {
-        workspace_swipe = false;
-      };
-
-      # Key bindings
-      bind = [
-        # Basic bindings
-        "SUPER, Q, exec, alacritty"
-        "SUPER, C, killactive,"
-        "SUPER, M, exit,"
-        "SUPER, E, exec, thunar"
-        "SUPER, V, togglefloating,"
-        "SUPER, R, exec, wofi --show drun"
-        "SUPER, P, pseudo,"
-        "SUPER, J, togglesplit,"
-
-        # Move focus
-        "SUPER, left, movefocus, l"
-        "SUPER, right, movefocus, r"
-        "SUPER, up, movefocus, u"
-        "SUPER, down, movefocus, d"
-
-        # Switch workspaces
-        "SUPER, 1, workspace, 1"
-        "SUPER, 2, workspace, 2"
-        "SUPER, 3, workspace, 3"
-        "SUPER, 4, workspace, 4"
-        "SUPER, 5, workspace, 5"
-        "SUPER, 6, workspace, 6"
-        "SUPER, 7, workspace, 7"
-        "SUPER, 8, workspace, 8"
-        "SUPER, 9, workspace, 9"
-        "SUPER, 0, workspace, 10"
-
-        # Move active window to workspace
-        "SUPER SHIFT, 1, movetoworkspace, 1"
-        "SUPER SHIFT, 2, movetoworkspace, 2"
-        "SUPER SHIFT, 3, movetoworkspace, 3"
-        "SUPER SHIFT, 4, movetoworkspace, 4"
-        "SUPER SHIFT, 5, movetoworkspace, 5"
-        "SUPER SHIFT, 6, movetoworkspace, 6"
-        "SUPER SHIFT, 7, movetoworkspace, 7"
-        "SUPER SHIFT, 8, movetoworkspace, 8"
-        "SUPER SHIFT, 9, movetoworkspace, 9"
-        "SUPER SHIFT, 0, movetoworkspace, 10"
-
-        # Scroll through existing workspaces
-        "SUPER, mouse_down, workspace, e+1"
-        "SUPER, mouse_up, workspace, e-1"
-
-        # Screenshot
-        ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
-        "SHIFT, Print, exec, grim - | wl-copy"
-      ];
-
-      # Mouse bindings
-      bindm = [
-        "SUPER, mouse:272, movewindow"
-        "SUPER, mouse:273, resizewindow"
-      ];
-
-      # Window rules
-      windowrule = [
-        "float, ^(pavucontrol)$"
-        "float, ^(blueman-manager)$"
-        "float, ^(nm-connection-editor)$"
-        "float, ^(thunar)$"
-      ];
-    };
-  };
-
-  # Hyprpaper configuration
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      splash = false;
-      preload = [
-        "~/dotfiles/wallpapers/background.png"
-      ];
-      wallpaper = [
-        ", ~/dotfiles/wallpapers/background.png"
-      ];
-    };
-  };
-
-
-  # Waybar configuration
-  programs.waybar = {
-    enable = true;
-    settings = {
-      mainBar = {
-        layer = "top";
-        position = "top";
-        height = 30;
-
-        modules-left = [ "hyprland/workspaces" "hyprland/mode" ];
-        modules-center = [ "hyprland/window" ];
-        modules-right = [ "pulseaudio" "network" "cpu" "memory" "temperature" "battery" "clock" ];
-
-        "hyprland/workspaces" = {
-          disable-scroll = true;
-          all-outputs = true;
-        };
-
-        "hyprland/window" = {
-          max-length = 200;
-          separate-outputs = true;
-          sort-by = "left-to-right";
-        };
-
-        clock = {
-          format = "{:%Y-%m-%d %H:%M:%S}";
-          interval = 1;
-        };
-
-        cpu = {
-          format = "{usage}% ";
-          tooltip = false;
-        };
-
-        memory = {
-          format = "{}% ";
-        };
-
-        temperature = {
-          critical-threshold = 80;
-          format = "{temperatureC}°C {icon}";
-          format-icons = ["❄️" "🌡️" "🔥"];
-        };
-
-        battery = {
-          states = {
-            warning = 30;
-            critical = 15;
-          };
-          format = "{capacity}% {icon}";
-          format-charging = "{capacity}% ";
-          format-plugged = "{capacity}% ";
-          format-alt = "{time} {icon}";
-          format-icons = ["" "" "" "" ""];
-        };
-
-        network = {
-          format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ipaddr}/{cidr} ";
-          tooltip-format = "{ifname} via {gwaddr} ";
-          format-linked = "{ifname} (No IP) ";
-          format-disconnected = "Disconnected ⚠";
-          format-alt = "{ifname}: {ipaddr}/{cidr}";
-        };
-
-        pulseaudio = {
-          format = "{volume}% {icon}";
-          format-bluetooth = "{volume}% {icon}";
-          format-bluetooth-muted = "MUTED {icon}";
-          format-muted = "MUTED {icon}";
-          format-source = "";
-          format-source-muted = "";
-          format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
-            phone = "";
-            portable = "";
-            car = "";
-            default = ["" "" ""];
-          };
-          on-click = "pavucontrol";
-        };
-      };
-    };
-  };
-
-  # Mako notification daemon
-  services.mako = {
-    enable = true;
-    settings = {
-        position = "bottom-right";
-        backgroundColor = "#2e3440";
-        borderColor = "#88c0d0";
-        borderRadius = 5;
-        borderSize = 2;
-        textColor = "#eceff4";
-        font = "Fira Code";
-        defaultTimeout = 5000;
-    };
-  };
-
-  # Alacritty terminal configuration
+  # Terminal configuration
   programs.alacritty = {
     enable = true;
     settings = {
