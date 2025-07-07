@@ -61,62 +61,64 @@
     whitesur-icon-theme
   ];
 
-# Gnome settings using dconf
-  dconf.enable = true;
-  dconf.settings = with lib.hm.gvariant; {
-    "org/gnome/desktop/background" = {
-      color-shading-type = "solid";
-      picture-uri = "file:///home/dy0gu/dotfiles/wallpapers/background.png";
-      picture-uri-dark = "file:///home/dy0gu/dotfiles/wallpapers/background-dark.png";
-    };
+  # Gnome settings using dconf
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/background" = {
+        color-shading-type = "solid";
+        picture-uri = "file:///home/dy0gu/dotfiles/wallpapers/background.png";
+        picture-uri-dark = "file:///home/dy0gu/dotfiles/wallpapers/background-dark.png";
+      };
 
-    "org/gnome/desktop/peripherals/mouse" = {
-      # Disable mouse acceleration
-      acceleration-profile = "flat";
-    };
+      "org/gnome/desktop/peripherals/mouse" = {
+        # Disable mouse acceleration
+        acceleration-profile = "flat";
+      };
 
-    "org/gnome/desktop/wm/preferences" = {
-      button-layout = "appmenu:minimize,maximize,close";
-    };
+      "org/gnome/desktop/wm/preferences" = {
+        button-layout = "appmenu:minimize,maximize,close";
+      };
 
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      gtk-theme = "WhiteSur-Dark-solid";
-      icon-theme = "WhiteSur-Dark";
-      cursor-theme = "WhiteSur-cursors";
-    };
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        gtk-theme = "WhiteSur-Dark-solid";
+        icon-theme = "WhiteSur-Dark";
+        cursor-theme = "WhiteSur-cursors";
+      };
 
-    "org/gnome/shell" = {
-      enabled-extensions = [
-        "dash-to-dock@micxgx.gmail.com"
-        "show-desktop-button@amivaleo"
-        "user-theme@gnome-shell-extensions.gcampax.github.com"
-      ];
-      favorite-apps = [
-        "firefox.desktop"
-        "org.gnome.Nautilus.desktop"
-        "org.gnome.Terminal.desktop"
-        "org.gnome.TextEditor.desktop"
-        "org.gnome.Extensions.desktop"
-        "org.gnome.Settings.desktop"
-        "org.gnome.tweaks.desktop"
-      ];
-    };
+      "org/gnome/shell" = {
+        enabled-extensions = [
+          "dash-to-dock@micxgx.gmail.com"
+          "show-desktop-button@amivaleo"
+          "user-theme@gnome-shell-extensions.gcampax.github.com"
+        ];
+        favorite-apps = [
+          "firefox.desktop"
+          "org.gnome.Nautilus.desktop"
+          "org.gnome.Terminal.desktop"
+          "org.gnome.TextEditor.desktop"
+          "org.gnome.Extensions.desktop"
+          "org.gnome.Settings.desktop"
+          "org.gnome.tweaks.desktop"
+        ];
+      };
 
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "WhiteSur-Dark-solid";
-    };
+      "org/gnome/shell/extensions/user-theme" = {
+        name = "WhiteSur-Dark-solid";
+      };
 
-    "org/gnome/shell/extensions/dash-to-dock" = {
-      background-opacity = 0.8;
-      click-action = "previews";
-      custom-theme-shrink = true;
-      dash-max-icon-size = 32;
-      dock-fixed = true;
-      dock-position = "LEFT";
-      extend-height = true;
-      height-fraction = 0.9;
-      intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        background-opacity = 0.8;
+        click-action = "previews";
+        custom-theme-shrink = true;
+        dash-max-icon-size = 32;
+        dock-fixed = true;
+        dock-position = "LEFT";
+        extend-height = true;
+        height-fraction = 0.9;
+        intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
+      };
     };
   };
 
