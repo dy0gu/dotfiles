@@ -62,8 +62,8 @@
   ];
 
 # Gnome settings using dconf
-with lib.hm.gvariant; {
-  dconf.settings = {
+  dconf.enable = true;
+  dconf.settings = with lib.hm.gvariant; {
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-uri = "file:///home/dy0gu/dotfiles/wallpapers/background.png";
@@ -119,7 +119,6 @@ with lib.hm.gvariant; {
       intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
     };
   };
-};
 
   programs.git = {
     enable = true;
