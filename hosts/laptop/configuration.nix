@@ -12,8 +12,12 @@
     epiphany # web browser, using Firefox
     gedit # text editor, using Neovim
     gnome-contacts # contact management, not needed
+    gnome-music # music player, using audio only
+    gnome-disks # using disk analyzer instead
     gnome-tour # introductory tour, not needed
     gnome-console # terminal, using Ghostty
+    gnome-keyring # keyring management, using bitwarden
+    gnome-terminal # same as above
     yelp # help application, not needed
   ]);
 

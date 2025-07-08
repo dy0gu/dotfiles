@@ -19,8 +19,6 @@
 
     # GUI applications
     discord
-    slack
-    spotify
     code-cursor-fhs
 
     # System utilities
@@ -92,7 +90,6 @@
       font-family = "FiraCode Nerd Font";
       window-subtitle = false;
       window-inherit-working-directory = true;
-      gtk-titlebar = false;
       clipboard-trim-trailing-spaces = true;
       keybind = [
         "ctrl+h=goto_split:left"
@@ -198,6 +195,10 @@
   xdg = {
     enable = true;
     desktopEntries = {
+      htop = {
+        name = "htop";
+        noDisplay = true;
+      };
       neovim = {
         name = "Neovim wrapper";
         noDisplay = true;
