@@ -45,7 +45,6 @@
     enable = true;
     profiles = {
       dy0gu = {
-        name = "dy0gu";
         isDefault = true;
       };
     };
