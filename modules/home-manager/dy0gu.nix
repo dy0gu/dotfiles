@@ -93,6 +93,7 @@
       theme = "Afterglow";
       font-family = "FiraCode Nerd Font";
       window-subtitle = false;
+      title = "Terminal"
       window-inherit-working-directory = true;
       clipboard-trim-trailing-spaces = true;
       keybind = [
