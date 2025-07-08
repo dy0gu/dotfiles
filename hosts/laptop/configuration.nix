@@ -12,8 +12,8 @@
     epiphany # web browser, using Firefox
     geary # email reader, using Thunderbird
     gedit # text editor, using Neovim
-    gnome-terminal # terminal emulator, using Kitty
     gnome-contacts # contact management, not needed
+    gnome-tour # introductory tour, not needed
   ]);
 
   # Enable networking with WiFi support
@@ -50,10 +50,6 @@
 
   # Font configuration
   fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    liberation_ttf
     nerd-fonts.fira-code
   ];
 

@@ -7,8 +7,6 @@
     curl
     wget
     tree
-    unzip
-    zip
 
     # System tools
     btop
@@ -18,4 +16,7 @@
     traceroute
     dig
   ];
+
+  # Disable unused defaults
+  programs.nano.enable = false;
 }

@@ -22,6 +22,9 @@
 
     # System utilities
     fastfetch
+
+    # Gnome extensions
+    gnomeExtensions.app-hider
   ];
 
   programs.lazydocker.enable = true;
@@ -73,22 +76,23 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "sudo" "docker" "kubectl" ];
-      theme = "robbyrussell";
+      plugins = [ "git" "sudo" "docker" ];
     };
   };
 
-
-  programs.kitty = {
+  programs.neovim = {
     enable = true;
-    settings = {
-      font_family = "Fira Code";
-      font_size = 14.0;
-      cursor_shape = "Beam";
-      background_opacity = 0.8;
-      allow_remote_control = true;
-      shell = "zsh --login";
-    };
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      plenary-nvim
+      gruvbox-material
+      mini-nvim
+    ];
   };
 
   # Gnome settings using dconf
@@ -101,6 +105,11 @@
         picture-uri-dark = "file:///home/dy0gu/dotfiles/wallpapers/background.png";
       };
 
+      "org/gnome/login-screen" = {
+        banner-message-enable = false;
+        logo = "";
+      };
+
       "org/gnome/desktop/peripherals/mouse" = {
         # Disable mouse acceleration
         acceleration-profile = "flat";
@@ -110,8 +119,8 @@
         button-layout = "appmenu:minimize,maximize,close";
       };
 
-      "org/gnome/desktop/default-applications/terminal" = {
-        exec = "kitty";
+      "org/gnome/Console" = {
+        shell = "/run/current-system/sw/bin/zsh --login";
       };
 
       "org/gnome/desktop/interface" = {
@@ -119,6 +128,9 @@
       };
 
       "org/gnome/shell" = {
+        enabled-extensions = [
+          "app-hider@lynith.dev"
+        ];
         favorite-apps = [
           "firefox.desktop"
           "org.gnome.Nautilus.desktop"
