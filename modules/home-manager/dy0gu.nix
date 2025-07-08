@@ -52,9 +52,18 @@
         name = "Default";
         isDefault = true;
         settings = {
+          "browser.startup.homepage" = "https://duckduckgo.com";
           "browser.search.defaultenginename" = "DuckDuckGo";
+          "browser.search.order.1" = "DuckDuckGo";
+
+          "signon.rememberSignons" = false;
+          "browser.aboutConfig.showWarning" = false;
+          "browser.compactmode.show" = true;
+          "browser.cache.disk.enable" = false;
+
           "media.hardware-video-decoding.enabled" = true;
           "layers.acceleration.force-enabled" = true;
+          "widget.disable-workspace-management" = true;
         };
       };
     };
