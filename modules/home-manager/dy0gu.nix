@@ -94,8 +94,11 @@
     settings = {
       command = "zsh --login";
       theme = "Afterglow";
+      font-family = "FiraCode Nerd Font";
       window-subtitle = false;
       window-inherit-working-directory = true;
+      gtk-single-instance = true;
+      clipboard-trim-trailing-spaces = true;
     };
     themes = {};
   };
