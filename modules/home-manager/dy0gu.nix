@@ -34,18 +34,27 @@
 
   programs.lazydocker.enable = true;
 
+  programs.git = {
+    enable = true;
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
+  };
+
   programs.thunderbird.enable = true;
 
-  programs.kitty = {
+  programs.firefox = {
     enable = true;
-    settings = {
-      font_family = "Fira Code";
-      font_size = 14.0;
-      cursor_shape = "Beam";
-      background_opacity = 0.8;
-      allow_remote_control = true;
-      confirm_os_window_close = false;
-      shell = "zsh --login";
+    profiles = {
+      default = {
+        name = "Default";
+        isDefault = true;
+        settings = {
+          "browser.search.defaultenginename" = "DuckDuckGo";
+          "media.hardware-video-decoding.enabled" = true;
+          "layers.acceleration.force-enabled" = true;
+        };
+      };
     };
   };
 
@@ -67,6 +76,20 @@
       enable = true;
       plugins = [ "git" "sudo" "docker" "kubectl" ];
       theme = "robbyrussell";
+    };
+  };
+
+
+  programs.kitty = {
+    enable = true;
+    settings = {
+      font_family = "Fira Code";
+      font_size = 14.0;
+      cursor_shape = "Beam";
+      background_opacity = 0.8;
+      allow_remote_control = true;
+      confirm_os_window_close = false;
+      shell = "zsh --login";
     };
   };
 
@@ -132,37 +155,6 @@
         height-fraction = 0.9;
         intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
       };
-    };
-  };
-
-  programs.git = {
-    enable = true;
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
-  };
-
-  programs.firefox = {
-    enable = true;
-    profiles = {
-      default = {
-        name = "Default";
-        isDefault = true;
-        settings = {
-          "browser.search.defaultenginename" = "DuckDuckGo";
-          "media.hardware-video-decoding.enabled" = true;
-          "layers.acceleration.force-enabled" = true;
-        };
-      };
-    };
-  };
-
-  # Terminal configuration
-  programs.kitty = {
-    enable = true;
-    settings = {
-      background_opacity = 0.5;
-      confirm_os_window_close = false;
     };
   };
 }
