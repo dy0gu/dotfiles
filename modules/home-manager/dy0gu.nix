@@ -83,7 +83,6 @@
 
   programs.ghostty = {
     enable = true;
-    defaultShell = true;
     settings = {
       command = "zsh --login";
       theme = "Afterglow";
