@@ -41,7 +41,15 @@
     };
   };
 
-  programs.thunderbird.enable = true;
+  programs.thunderbird = {
+    enable = true;
+    profiles = {
+      dy0gu = {
+        name = "dy0gu";
+        isDefault = true;
+      };
+    };
+  };
 
   programs.firefox = {
     enable = true;
