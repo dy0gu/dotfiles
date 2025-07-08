@@ -36,15 +36,6 @@
     };
   };
 
-  programs.thunderbird = {
-    enable = true;
-    profiles = {
-      dy0gu = {
-        isDefault = true;
-      };
-    };
-  };
-
   programs.firefox = {
     enable = true;
     profiles = {
@@ -88,6 +79,16 @@
       plugins = [ "git" "sudo" "docker" ];
       theme = "af-magic";
     };
+  };
+
+  programs.ghostty = {
+    enable = true;
+    defaultShell = true;
+    settings = {
+      command = "zsh --login";
+      theme = "Afterglow";
+    };
+    themes = {};
   };
 
   programs.neovim = {
@@ -170,14 +171,14 @@
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        name = "Open Console";
-        command = "kgx";
+        name = "Open Terminal";
+        command = "ghostty";
         binding = "<Super>backslash";
       };
     };
   };
 
-  # Hide specific apps from menus using xdg.desktopEntries
+  # Hide specific apps from GUI menus
   xdg = {
     enable = true;
     desktopEntries = {
@@ -187,6 +188,10 @@
       };
       neovim = {
         name = "Neovim wrapper";
+        noDisplay = true;
+      };
+      manual = {
+        name = "NixOS Manual";
         noDisplay = true;
       };
     };

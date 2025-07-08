@@ -10,12 +10,11 @@
   # Disable some GNOME default applications
   environment.gnome.excludePackages = (with pkgs; [
     epiphany # web browser, using Firefox
-    geary # email reader, using Thunderbird
     gedit # text editor, using Neovim
     gnome-contacts # contact management, not needed
     gnome-tour # introductory tour, not needed
+    gnome-console # terminal, using Ghostty
     yelp # help application, not needed
-    nixos-render-docs # NixOS documentation, using the web browser
   ]);
 
   # Enable networking
