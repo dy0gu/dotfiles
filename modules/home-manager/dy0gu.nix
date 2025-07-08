@@ -138,6 +138,19 @@
           "org.gnome.Settings.desktop"
         ];
       };
+
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        ];
+        close = ["<Alt>F4" "<Super>q"];
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        name = "Open Console";
+        command = "kgx";
+        binding = "<Super>t";
+      };
     };
   };
 }
