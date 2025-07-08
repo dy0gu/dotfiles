@@ -13,7 +13,7 @@
     tree
 
     # System tools
-    btop
+    htop
     strace
 
     # Network tools

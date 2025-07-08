@@ -30,7 +30,6 @@
     gnomeExtensions.clipboard-history
   ];
 
-
   programs.lazydocker.enable = true;
 
   programs.git = {
@@ -93,7 +92,7 @@
       font-family = "FiraCode Nerd Font";
       window-subtitle = false;
       window-inherit-working-directory = true;
-      gtk-single-instance = true;
+«      gtk-titlebar=false
       clipboard-trim-trailing-spaces = true;
       keybind = [
         "ctrl+h=goto_split:left"
@@ -199,16 +198,8 @@
   xdg = {
     enable = true;
     desktopEntries = {
-      btop = {
-        name = "btop++";
-        noDisplay = true;
-      };
       neovim = {
         name = "Neovim wrapper";
-        noDisplay = true;
-      };
-      manual = {
-        name = "NixOS Manual";
         noDisplay = true;
       };
     };
