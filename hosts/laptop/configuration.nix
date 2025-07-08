@@ -14,7 +14,7 @@
     gedit # text editor, using Neovim
     gnome-contacts # contact management, not needed
     gnome-tour # introductory tour, not needed
-    gnome-help # help application, not needed
+    yelp # help application, not needed
     nixos-render-docs # NixOS documentation, using the web browser
   ]);
 
