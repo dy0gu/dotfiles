@@ -21,7 +21,7 @@
     gnome-music # music player, using audio only
     gnome-tour # introductory tour, not needed
     gnome-console # terminal, using Ghostty
-    gnome-keyring # keyring management, using Bitwarden
+    seahorse # keyring management, using Bitwarden
     gnome-terminal # same as above
     yelp # help application, not needed
   ]);
