@@ -172,8 +172,14 @@
   xdg = {
     enable = true;
     desktopEntries = {
-      btop.noDisplay = true;
-      neovim.noDisplay = true;
+      btop = {
+        name = "btop++";
+        noDisplay = true;
+      };
+      neovim = {
+        name = "Neovim wrapper";
+        noDisplay = true;
+      };
     };
   };
 }
