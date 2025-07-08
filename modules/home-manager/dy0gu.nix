@@ -147,16 +147,31 @@
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
         close = ["<Alt>F4" "<Super>q"];
         switch-to-workspace-left = ["<Super>Left"];
         switch-to-workspace-right = ["<Super>Right"];
+        show-desktop = ["<Super>d"];
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         name = "Open Console";
         command = "kgx";
         binding = "<Super>t";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        name = "Open Files";
+        command = "nautilus --new-window";
+        binding = "<Super>e";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+        name = "Open Files (Super+F)";
+        command = "nautilus --new-window";
+        binding = "<Super>f";
       };
     };
   };
