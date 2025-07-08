@@ -39,13 +39,18 @@
   sound.enable = false;
   hardware.pulseaudio.enable = false;
 
-  # Server-specific packages
-  environment.systemPackages = with pkgs; [
-    tmux
-    screen
-    rsync
-    fail2ban
-  ];
+  # Docker configuration
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings = {
+      storage-driver = "overlay2";
+      log-driver = "json-file";
+      log-opts = {
+        "max-size" = "10m";
+        "max-file" = "3";
+      };
+    };
+  };
 
   # Fail2ban for SSH protection
   services.fail2ban = {

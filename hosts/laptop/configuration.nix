@@ -39,19 +39,6 @@
     enable32Bit = true;
   };
 
-  # Laptop-specific packages
-  programs.kitty.enable = true;
-
-  # Set Kitty as default terminal in GNOME
-  environment.variables = {
-    TERMINAL = "kitty";
-  };
-
-  programs.zsh.enable = true;
-
-  # Set Zsh as default shell for all users
-  users.defaultUserShell = pkgs.zsh;
-
   # Font configuration
   fonts.packages = with pkgs; [
     noto-fonts
@@ -60,6 +47,19 @@
     liberation_ttf
     nerd-fonts.fira-code
   ];
+
+  # Docker configuration
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings = {
+      storage-driver = "overlay2";
+      log-driver = "json-file";
+      log-opts = {
+        "max-size" = "10m";
+        "max-file" = "3";
+      };
+    };
+  };
 
   # Specializations for NVIDIA
   specialisation.nvidia.configuration = {

@@ -14,44 +14,15 @@
     rustc
     cargo
 
-    # Media
-    mpv
-    imv
-
-    # Archives
-    p7zip
-    unrar
-
     # GUI applications
     discord
     slack
     spotify
-
-    # Development tools
-    vscode
+    code-cursor-fhs
 
     # System tools
-    htop
-    neofetch
-    acpi
-    brightnessctl
-
-    # Power management
-    powertop
-
-    # Network tools
-    networkmanagerapplet
-
-    # Communication
-    thunderbird
-
-    # Lighter alternatives for laptop
-    firefox
-    mpv
-    imv
-
-    # Terminal emulator
-    alacritty
+    btop
+    fastfetch
 
     # Gnome extensions and themes
     gnomeExtensions.dash-to-dock
@@ -60,6 +31,44 @@
     whitesur-gtk-theme
     whitesur-icon-theme
   ];
+
+  programs.lazydocker.enable = true;
+
+  programs.thunderbird.enable = true;
+
+  programs.kitty = {
+    enable = true;
+    settings = {
+      font_family = "Fira Code";
+      font_size = 14.0;
+      cursor_shape = "Beam";
+      background_opacity = 0.8;
+      allow_remote_control = true;
+      confirm_os_window_close = false;
+      shell = "zsh --login";
+    };
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -la";
+      la = "ls -la";
+      l = "ls -l";
+      rebuild = "sudo nixos-rebuild switch --flake .";
+      update = "nix flake update";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "sudo" "docker" "kubectl" ];
+      theme = "robbyrussell";
+    };
+  };
 
   # Gnome settings using dconf
   dconf = {
@@ -78,6 +87,10 @@
 
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu:minimize,maximize,close";
+      };
+
+      "org/gnome/desktop/default-applications/terminal" = {
+        exec = "kitty";
       };
 
       "org/gnome/desktop/interface" = {
@@ -126,27 +139,6 @@
     enable = true;
     extraConfig = {
       init.defaultBranch = "main";
-    };
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      ll = "ls -la";
-      la = "ls -la";
-      l = "ls -l";
-      rebuild = "sudo nixos-rebuild switch --flake .";
-      update = "nix flake update";
-    };
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "sudo" "docker" "kubectl" ];
-      theme = "robbyrussell";
     };
   };
 
