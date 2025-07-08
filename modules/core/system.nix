@@ -26,18 +26,16 @@
     LC_TIME = "pt_PT.UTF-8";
   };
 
-  # Configure keymap in X11
+  # Configure keymap and keyboard layout
   services.xserver.xkb = {
     layout = "pt";
     variant = "nodeadkeys";
   };
-
-  # Configure keymap in console
   console.keyMap = "pt-latin1";
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
