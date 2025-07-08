@@ -20,7 +20,4 @@
     traceroute
     dig
   ];
-
-  # Disable unused defaults
-  programs.nano.enable = false;
 }
