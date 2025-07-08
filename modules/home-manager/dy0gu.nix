@@ -87,10 +87,6 @@
 
   programs.ghostty = {
     enable = true;
-    keybind = [
-      "ctrl+h=goto_split:left"
-      "ctrl+l=goto_split:right"
-    ];
     settings = {
       command = "zsh --login";
       theme = "Afterglow";
@@ -99,6 +95,10 @@
       window-inherit-working-directory = true;
       gtk-single-instance = true;
       clipboard-trim-trailing-spaces = true;
+      keybind = [
+        "ctrl+h=goto_split:left"
+        "ctrl+l=goto_split:right"
+      ];
     };
     themes = {};
   };
