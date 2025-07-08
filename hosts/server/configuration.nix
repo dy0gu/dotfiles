@@ -4,6 +4,10 @@
   # Hostname
   networking.hostName = "nixos-server";
 
+  # Disable desktop services
+  sound.enable = false;
+  hardware.pulseaudio.enable = false;
+
   # Enable networking
   networking.networkmanager.enable = false;
   systemd.network.enable = true;
@@ -13,6 +17,12 @@
       DHCP = "yes";
       IPForward = true;
     };
+  };
+
+  # Firewall
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 2222 ];
   };
 
   # SSH configuration
@@ -29,15 +39,16 @@
     openFirewall = true;
   };
 
-  # Firewall
-  networking.firewall = {
+  # Fail2ban for SSH protection
+  services.fail2ban = {
     enable = true;
-    allowedTCPPorts = [ 2222 ];
+    jails = {
+      ssh = ''
+        enabled = true
+        port = 2222
+      '';
+    };
   };
-
-  # Disable desktop services
-  sound.enable = false;
-  hardware.pulseaudio.enable = false;
 
   # Docker configuration
   virtualisation.docker = {
@@ -49,17 +60,6 @@
         "max-size" = "10m";
         "max-file" = "3";
       };
-    };
-  };
-
-  # Fail2ban for SSH protection
-  services.fail2ban = {
-    enable = true;
-    jails = {
-      ssh = ''
-        enabled = true
-        port = 2222
-      '';
     };
   };
 }

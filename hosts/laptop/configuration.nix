@@ -7,11 +7,20 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # Disable some GNOME default applications
+  environment.gnome.excludePackages = (with pkgs; [
+    epiphany # web browser, using Firefox
+    geary # email reader, using Thunderbird
+    gedit # text editor, using Neovim
+    gnome-terminal # terminal emulator, using Kitty
+    gnome-contacts # contact management, not needed
+  ]);
+
   # Enable networking with WiFi support
   networking.wireless.enable = false; # Disable wpa_supplicant, using NetworkManager
   networking.networkmanager.enable = true;
 
-  # Disable NetworkManager's internal DNS resolution
+  # Disable internal NetworkManager DNS resolution
   networking.networkmanager.dns = "none";
 
   # These options are unnecessary when managing DNS ourselves

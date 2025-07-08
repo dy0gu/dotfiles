@@ -23,13 +23,6 @@
     # System tools
     btop
     fastfetch
-
-    # Gnome extensions and themes
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.show-desktop-button
-    gnomeExtensions.user-themes
-    whitesur-gtk-theme
-    whitesur-icon-theme
   ];
 
   programs.lazydocker.enable = true;
@@ -95,7 +88,6 @@
       cursor_shape = "Beam";
       background_opacity = 0.8;
       allow_remote_control = true;
-      confirm_os_window_close = false;
       shell = "zsh --login";
     };
   };
@@ -107,7 +99,7 @@
       "org/gnome/desktop/background" = {
         color-shading-type = "solid";
         picture-uri = "file:///home/dy0gu/dotfiles/wallpapers/background.png";
-        picture-uri-dark = "file:///home/dy0gu/dotfiles/wallpapers/background-dark.png";
+        picture-uri-dark = "file:///home/dy0gu/dotfiles/wallpapers/background.png";
       };
 
       "org/gnome/desktop/peripherals/mouse" = {
@@ -125,42 +117,15 @@
 
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
-        gtk-theme = "WhiteSur-Dark-solid";
-        icon-theme = "WhiteSur-Dark";
-        cursor-theme = "WhiteSur-cursors";
       };
 
       "org/gnome/shell" = {
-        enabled-extensions = [
-          "dash-to-dock@micxgx.gmail.com"
-          "show-desktop-button@amivaleo"
-          "user-theme@gnome-shell-extensions.gcampax.github.com"
-        ];
         favorite-apps = [
           "firefox.desktop"
           "org.gnome.Nautilus.desktop"
-          "org.gnome.Terminal.desktop"
           "org.gnome.TextEditor.desktop"
-          "org.gnome.Extensions.desktop"
           "org.gnome.Settings.desktop"
-          "org.gnome.tweaks.desktop"
         ];
-      };
-
-      "org/gnome/shell/extensions/user-theme" = {
-        name = "WhiteSur-Dark-solid";
-      };
-
-      "org/gnome/shell/extensions/dash-to-dock" = {
-        background-opacity = 0.8;
-        click-action = "previews";
-        custom-theme-shrink = true;
-        dash-max-icon-size = 32;
-        dock-fixed = true;
-        dock-position = "LEFT";
-        extend-height = true;
-        height-fraction = 0.9;
-        intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
       };
     };
   };
