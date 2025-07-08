@@ -25,7 +25,11 @@
 
     # System utilities
     fastfetch
+
+    # Gnome extensions
+    gnomeExtensions.clipboard-history
   ];
+
 
   programs.lazydocker.enable = true;
 
@@ -83,9 +87,15 @@
 
   programs.ghostty = {
     enable = true;
+    keybind = [
+      "ctrl+h=goto_split:left"
+      "ctrl+l=goto_split:right"
+    ];
     settings = {
       command = "zsh --login";
       theme = "Afterglow";
+      window-subtitle = false;
+      window-inherit-working-directory = true;
     };
     themes = {};
   };
@@ -147,6 +157,7 @@
 
       "org/gnome/shell" = {
         enabled-extensions = [
+          "clipboard-indicator@tudmotu.com"
         ];
         favorite-apps = [
           "firefox.desktop"
