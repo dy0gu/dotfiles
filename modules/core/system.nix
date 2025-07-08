@@ -36,6 +36,15 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Add nix store disk space optimisation and garbage collection for older generations
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    automatic = true;
+    persistent = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
