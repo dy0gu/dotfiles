@@ -1,9 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
+  # Extend an existing configuration for testing purposes
   imports = [ ../laptop/configuration.nix ];
 
-  # Hostname
+  # Overwrite the repurposed config hostname
   networking.hostName = lib.mkForce "nixos-virtual-machine";
 
   # Enable VirtualBox guest additions
