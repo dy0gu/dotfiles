@@ -121,7 +121,7 @@
       };
 
       "org/gnome/desktop/a11y" = {
-        always-show-universal-access-status=false
+        always-show-universal-access-status = false;
       };
 
       "org/gnome/Console" = {
