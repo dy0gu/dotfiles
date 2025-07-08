@@ -14,6 +14,7 @@
 
     # System tools
     btop
+    strace
 
     # Network tools
     nmap
