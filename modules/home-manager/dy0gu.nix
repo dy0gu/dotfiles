@@ -142,6 +142,10 @@
         color-scheme = "prefer-dark";
       };
 
+      "org/gnome/desktop/default-applications" = {
+        terminal = "exec ghostty";
+      };
+
       "org/gnome/shell" = {
         enabled-extensions = [
         ];
