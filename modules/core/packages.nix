@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+  # Disable default system packages
+  environment.systemPackages = with pkgs; [];
+  environment.defaultPackages = with pkgs; [];
+  documentation.enable = false;
+
+
   # Install packages
   environment.systemPackages = with pkgs; [
     # Main utilities
