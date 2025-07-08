@@ -120,6 +120,10 @@
         button-layout = "appmenu:minimize,maximize,close";
       };
 
+      "org/gnome/desktop/a11y" = {
+        always-show-universal-access-status=false
+      };
+
       "org/gnome/Console" = {
         shell = "/run/current-system/sw/bin/zsh --login";
       };
