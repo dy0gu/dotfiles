@@ -67,7 +67,7 @@
       ll = "ls -la";
       la = "ls -la";
       l = "ls -l";
-      rebuild = "sudo nixos-rebuild switch --flake .";
+      rebuild = "sudo nixos-rebuild switch --flake";
       update = "nix flake update";
     };
 
