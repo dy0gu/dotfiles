@@ -14,10 +14,11 @@
     gedit # text editor, using Neovim
     gnome-contacts # contact management, not needed
     gnome-tour # introductory tour, not needed
+    gnome-help # help application, not needed
+    nixos-render-docs # NixOS documentation, using the web browser
   ]);
 
-  # Enable networking with WiFi support
-  networking.wireless.enable = false; # Disable wpa_supplicant, using NetworkManager
+  # Enable networking
   networking.networkmanager.enable = true;
 
   # Disable internal NetworkManager DNS resolution
@@ -35,8 +36,6 @@
     "8.8.8.8"
     "8.8.4.4"
   ];
-
-  networking.networkmanager.wifi.powersave = true;
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;

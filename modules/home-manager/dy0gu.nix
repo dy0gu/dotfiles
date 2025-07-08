@@ -13,6 +13,9 @@
     python3
     rustc
     cargo
+    go
+    lua
+    ruby
 
     # GUI applications
     discord
@@ -22,9 +25,6 @@
 
     # System utilities
     fastfetch
-
-    # Gnome extensions
-    gnomeExtensions.app-hider
   ];
 
   programs.lazydocker.enable = true;
@@ -77,7 +77,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" "docker" ];
-      theme = "af-magic";
+      theme = "geoffgarside";
     };
   };
 
@@ -145,6 +145,8 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         ];
         close = ["<Alt>F4" "<Super>q"];
+        switch-to-workspace-left = ["<Super>Left"];
+        switch-to-workspace-right = ["<Super>Right"];
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -152,6 +154,15 @@
         command = "kgx";
         binding = "<Super>t";
       };
+    };
+  };
+
+  # Hide specific apps from menus using xdg.desktopEntries
+  xdg = {
+    enable = true;
+    desktopEntries = {
+      btop.noDisplay = true;
+      neovim.noDisplay = true;
     };
   };
 }
