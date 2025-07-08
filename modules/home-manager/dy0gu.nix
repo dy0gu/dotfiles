@@ -26,8 +26,12 @@
 
     # Gnome extensions
     gnomeExtensions.clipboard-history
+    gnomeExtensions.color-picker
+    gnomeExtensions.caffeine
+    gnomeExtensions.vitals
   ];
 
+  # CLI docker management tool
   programs.lazydocker.enable = true;
 
   programs.git = {
@@ -129,6 +133,8 @@
         logo = "";
       };
 
+
+
       "org/gnome/desktop/peripherals/mouse" = {
         # Disable mouse acceleration
         acceleration-profile = "flat";
@@ -136,6 +142,10 @@
 
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu:minimize,maximize,close";
+      };
+
+      "org/gnome/desktop/interface" = {
+        enable-hot-corners = false;
       };
 
       "org/gnome/desktop/a11y" = {
@@ -155,8 +165,12 @@
       };
 
       "org/gnome/shell" = {
+        disable-user-extensions = false;
         enabled-extensions = [
           "clipboard-indicator@tudmotu.com"
+          "color-picker@tudmotu.com"
+          "caffeine@tudmotu.com"
+          "vitals@tudmotu.com"
         ];
         favorite-apps = [
           "firefox.desktop"

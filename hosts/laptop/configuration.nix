@@ -8,22 +8,39 @@
   services.desktopManager.gnome.enable = true;
 
   # Add GNOME games
-  services.gnome.games.enable = true;
+  services.gnome.games.enable = false;
 
   # Disable some GNOME default applications
   environment.gnome.excludePackages = (with pkgs; [
     epiphany # web browser, using Firefox
     gedit # text editor, using Neovim
     geary # email client, using web interface
+    evince # document viewer, using papers
     gnome-contacts # contact management, not needed
     gnome-disk-utility # disk management, using gnome-disks
     gnome-music # music player, using audio only
     gnome-tour # introductory tour, not needed
     gnome-console # terminal, using Ghostty
-    gnome-keyring # keyring management, using bitwarden
+    gnome-keyring # keyring management, using Bitwarden
     gnome-terminal # same as above
     yelp # help application, not needed
   ]);
+
+  # Additional GNOME apps with GUI
+  environment.systemPackages = with pkgs; [
+    gnome-decoder # QR code scanner and creator
+    papers # Better document viewer
+    binary # Binary conversion tools (not in calculator)
+    bustle # System D-Bus activity viewer
+    curtail # Image compression tool
+    gaphor # UML, SysML, RAAML and C4 diagram editor
+    libreoffice # Office suite
+    impression # Bootable drive creator
+    share-preview # Local previewer for open graph cards
+    fragments # BitTorrent client
+    davinci-resolve # Video editor, troubleshooting: https://wiki.nixos.org/wiki/DaVinci_Resolve
+    gimp3-with-plugins # Image editor
+  ];
 
   # Enable networking
   networking.networkmanager.enable = true;

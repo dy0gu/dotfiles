@@ -11,6 +11,10 @@
     curl
     wget
     tree
+    jq
+    ffmpeg
+    unzip
+    zip
 
     # System tools
     htop
