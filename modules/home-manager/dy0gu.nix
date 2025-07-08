@@ -20,8 +20,7 @@
     spotify
     code-cursor-fhs
 
-    # System tools
-    btop
+    # System utilities
     fastfetch
   ];
 
