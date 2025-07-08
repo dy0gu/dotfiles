@@ -7,13 +7,17 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # Add GNOME games
+  services.gnome.games.enable = true;
+
   # Disable some GNOME default applications
   environment.gnome.excludePackages = (with pkgs; [
     epiphany # web browser, using Firefox
     gedit # text editor, using Neovim
+    geary # email client, using web interface
     gnome-contacts # contact management, not needed
+    gnome-disk-utility # disk management, using gnome-disks
     gnome-music # music player, using audio only
-    gnome-disks # using disk analyzer instead
     gnome-tour # introductory tour, not needed
     gnome-console # terminal, using Ghostty
     gnome-keyring # keyring management, using bitwarden
