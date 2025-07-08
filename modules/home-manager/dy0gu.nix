@@ -77,7 +77,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" "docker" ];
-      theme = "geoffgarside";
+      theme = "af-magic";
     };
   };
 
