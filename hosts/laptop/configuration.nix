@@ -29,16 +29,6 @@
 
   networking.networkmanager.wifi.powersave = true;
 
-  # Enable sound
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -49,47 +39,15 @@
     enable32Bit = true;
   };
 
-  # Power management
-  services.tlp = {
-        enable = true;
-        settings = {
-          CPU_SCALING_GOVERNOR_ON_AC = "performance";
-          CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-          CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-          CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-
-          CPU_MIN_PERF_ON_AC = 0;
-          CPU_MAX_PERF_ON_AC = 100;
-          CPU_MIN_PERF_ON_BAT = 0;
-          CPU_MAX_PERF_ON_BAT = 20;
-
-          # Helps save long term battery health
-          START_CHARGE_THRESH_BAT1 = 20;
-          STOP_CHARGE_THRESH_BAT1 = 80;
-
-        };
-  };
-
-  # Enable touchpad support
-  services.libinput.enable = true;
-
   # Laptop-specific packages
-  environment.systemPackages = with pkgs; [
-    firefox
-    kitty
-    pavucontrol
-    bluez
-    bluez-tools
-    networkmanagerapplet
-    acpi
-    powertop
-  ];
+  programs.kitty.enable = true;
 
   # Set Kitty as default terminal in GNOME
   environment.variables = {
     TERMINAL = "kitty";
   };
+
+  programs.zsh.enable = true;
 
   # Set Zsh as default shell for all users
   users.defaultUserShell = pkgs.zsh;
@@ -102,10 +60,6 @@
     liberation_ttf
     nerd-fonts.fira-code
   ];
-
-  # Laptop-specific settings
-  # Enable lid switch handling
-  services.logind.lidSwitch = "suspend";
 
   # Specializations for NVIDIA
   specialisation.nvidia.configuration = {

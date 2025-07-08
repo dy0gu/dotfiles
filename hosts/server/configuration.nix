@@ -36,7 +36,6 @@
   };
 
   # Disable desktop services
-  services.xserver.enable = false;
   sound.enable = false;
   hardware.pulseaudio.enable = false;
 

@@ -166,38 +166,11 @@
   };
 
   # Terminal configuration
-  programs.alacritty = {
+  programs.kitty = {
     enable = true;
     settings = {
-      window = {
-        opacity = 0.9;
-        padding = {
-          x = 10;
-          y = 10;
-        };
-      };
-
-      terminal = {
-        shell = {
-          program = pkgs.zsh;
-          args = [ "-l" ];
-        };
-      };
-
-      font = {
-        normal = {
-          family = "Fira Code";
-          style = "Regular";
-        };
-        size = 11;
-      };
-
-      colors = {
-        primary = {
-          background = "0x1e1e1e";
-          foreground = "0xd4d4d4";
-        };
-      };
+      background_opacity = 0.5;
+      confirm_os_window_close = false;
     };
   };
 }
