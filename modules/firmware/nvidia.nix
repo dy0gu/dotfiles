@@ -9,12 +9,8 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # Load nvidia drivers in adition to the others previously configured
-  services.xserver.videoDrivers = lib.mkIf (config.services.xserver.enable) (lib.mkMerge [
-    (config.services.xserver.videoDrivers or [])
-    [ "nvidia" ]
-  ]);
-
+  # Load nvidia drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker)
   hardware.nvidia-container-toolkit.enable = true;
