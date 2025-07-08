@@ -92,7 +92,7 @@
       font-family = "FiraCode Nerd Font";
       window-subtitle = false;
       window-inherit-working-directory = true;
-      gtk-titlebar=false
+      gtk-titlebar = false;
       clipboard-trim-trailing-spaces = true;
       keybind = [
         "ctrl+h=goto_split:left"
