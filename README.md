@@ -4,7 +4,7 @@
 
 ## Installation 🛠️
 
-This section assumes you already have a NixOS setup, any existing configuration (including minimal from the installer) will work, since we are going to overwrite it anyways.
+This section assumes you already have a NixOS itself installed. Any existing configuration (including the minimal one from the official installer) will work, since we are going to overwrite it anyways.
 
 - Start a temporary Nix shell with git installed, this step is only needed if you **don't** already have git on your current configuration:
 
