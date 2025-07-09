@@ -103,7 +103,7 @@
     settings = {
       command = "zsh --login";
       theme = "Afterglow";
-      title = "Terminal"
+      title = "Terminal";
       font-family = "FiraCode Nerd Font";
       window-subtitle = false;
       window-inherit-working-directory = true;
