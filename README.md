@@ -57,10 +57,10 @@ Some steps may be skipped when installing on more advanced existing configuratio
 
    If you want to add new users and not just replace the default one, then add them in [modules/core/users.nix](./modules/core/users.nix) file and create the respective [modules/home-manager](./modules/home-manager) config. This user config should then be loaded it in the `flake.nix` file for the desired `<host>`.
 
-- Build and switch to the same `<host>` from the previous hardware configuration step:
+- Build and switch to the same `<host>` from the previous hardware configuration step, with `<cores>` as a number lower than your maximum CPU cores, to prevent running out of RAM from paralelism:
 
    ```shell
-   sudo nixos-rebuild switch --flake .#<host>
+   sudo nixos-rebuild switch --cores <cores> --flake .#<host>
    ```
 
 - When building you may get a `git tree is dirty` warning, which happens because after running `nixos-generate-config` and `git add` on the generated file you still haven't pushed it to the remote. If you plan on keeping the configuration you should create your own fork of this repository and push the changes to it, so the hardware for your hosts is updated there. If planning on using multiple hosts of the same configuration, like 2 laptops, with different hardware, you can rename/add folders in `hosts` and imports in `flake.nix` to create a `laptopt-1` and `laptop-2` which can both import similar configurations with different hardware.
