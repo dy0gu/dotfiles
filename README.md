@@ -4,9 +4,13 @@
 
 ## Installation 🛠️
 
-This section assumes you already have a NixOS itself installed. Any existing configuration (including the minimal one from the official installer) will work, since we are going to overwrite it anyways.
+This section assumes you already have a NixOS itself installed. 
 
-- Start a temporary Nix shell with git installed, this step is only needed if you **don't** already have git on your current configuration:
+These instructions target the minimal configuration provided by the official NixOS installer as a base, but they should work with any existing setup since it will be overwritten.
+
+Some steps may be skipped when installing on more advanced existing configurations, as noted throughout.
+
+- Start a temporary Nix shell with `git` installed *or* skip this step if you already have `git` installed in your current configuration:
 
    ```shell
    nix-shell -p git
@@ -19,7 +23,7 @@ This section assumes you already have a NixOS itself installed. Any existing con
    cd ~/.dotfiles
    ```
 
-- Enable flakes:
+- Enable flakes *or* skip this step if you already have flakes enabled in your current configuration:
 
    ```shell
    sudo sed -i '/^}$/i\  nix.settings.experimental-features = [ "nix-command" "flakes" ];' /etc/nixos/configuration.nix
