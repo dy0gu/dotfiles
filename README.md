@@ -4,6 +4,14 @@
 
 ## Installation 🛠️
 
+This section assumes you already have a NixOS setup, any existing configuration (including minimal from the installer) will work, since we are going to overwrite it anyways.
+
+- Start a temporary Nix shell with git installed, this step is only needed if you **don't** already have git on your current configuration:
+
+   ```shell
+   nix-shell -p git
+   ```
+
 - Clone the repository to your home directory and open a terminal inside it:
 
    ```shell
