@@ -189,9 +189,9 @@
         disable-user-extensions = false;
         enabled-extensions = [
           "clipboard-indicator@tudmotu.com"
-          "color-picker@tudmotu.com"
-          "caffeine@tudmotu.com"
-          "vitals@tudmotu.com"
+          "color-picker@tuberry"
+          "Vitals@CoreCoding.com"
+          "caffeine@patapon.info"
         ];
         favorite-apps = [
           "firefox.desktop"
