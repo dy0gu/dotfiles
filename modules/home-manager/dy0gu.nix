@@ -23,15 +23,19 @@
     papers # Better document viewer
     binary # Binary conversion tools (not in calculator)
     bustle # System D-Bus activity viewer
+    celluloid # Video player, supports most formats
+    handbrake # GUI over ffmpeg for minor video editing, compression and conversion
+    switcheroo # Image resizer and format converter
     curtail # Image compression tool
     gaphor # UML, SysML, RAAML and C4 diagram editor
+    onlyoffice-desktopeditors # Office suite, alternative to LibreOffice
     libreoffice # Office suite
     impression # Bootable drive creator
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
-    davinci-resolve # Video editor, troubleshooting: https://wiki.nixos.org/wiki/DaVinci_Resolve
-    gimp3-with-plugins # Image editor
+    mailspring # Email client
     discord
+    blender
 
     # System utilities
     fastfetch
@@ -103,9 +107,10 @@
     settings = {
       command = "zsh --login";
       theme = "Afterglow";
-      title = "Terminal";
+      title = "  ";
       font-family = "FiraCode Nerd Font";
-      window-subtitle = false;
+      window-subtitle = "working-directory";
+      gtk-single-instance = true;
       window-inherit-working-directory = true;
       clipboard-trim-trailing-spaces = true;
       keybind = [
@@ -154,8 +159,6 @@
         logo = "";
       };
 
-
-
       "org/gnome/desktop/peripherals/mouse" = {
         # Disable mouse acceleration
         acceleration-profile = "flat";
@@ -163,6 +166,10 @@
 
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu:minimize,maximize,close";
+      };
+
+      "org/gnome/system/location" = {
+        enabled = true;
       };
 
       "org/gnome/desktop/interface" = {
@@ -201,15 +208,109 @@
         ];
       };
 
+      "org/gnome/desktop/input-sources" = {
+        xkb-options = [
+          "compose:menu"
+        ];
+      };
+
+      "org/gnome/desktop/wm/keybindings" = {
+        move-to-monitor-down = [];
+        move-to-monitor-left = [];
+        move-to-monitor-right = [];
+        move-to-monitor-up = [];
+        move-to-workspace-1 = [];
+        move-to-workspace-2 = [];
+        move-to-workspace-down = [];
+        move-to-workspace-last = [];
+        move-to-workspace-left = [];
+        move-to-workspace-right = [];
+        move-to-workspace-up = [];
+        switch-to-workspace-left = ["<Super>Left"];
+        switch-to-workspace-right = ["<Super>Right"];
+        panel-run-dialog = [ "<Super>r" ];
+        always-on-top = [ "<Super>p" ];
+        show-desktop = ["<Super>d"];
+        toggle-fullscreen = [ "<Super>f" ];
+        close = ["<Super>q"];
+
+      };
+
+      "org/gnome/shell/keybindings" = {
+        switch-to-application-1 = [];
+        switch-to-application-2 = [];
+        switch-to-application-3 = [];
+        switch-to-application-4 = [];
+        switch-to-application-5 = [];
+        switch-to-application-6 = [];
+        switch-to-application-7 = [];
+        switch-to-application-8 = [];
+        switch-to-application-9 = [];
+        screenshot = [ "Print" ];
+      };
+
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
-        close = ["<Alt>F4" "<Super>q"];
-        switch-to-workspace-left = ["<Super>Left"];
-        switch-to-workspace-right = ["<Super>Right"];
-        show-desktop = ["<Super>d"];
+        logout = [ "<Control><Alt>Delete" ];
+        screensaver = [ "<Super>l" ];
+        # "battery-status"
+        # "calculator"
+        # "control-center"
+        # "decrease-text-size"
+        # "eject"
+        # "email"
+        # "help"
+        # "hibernate"
+        # "home"
+        # "increase-text-size"
+        # "keyboard-brightness-down"
+        # "keyboard-brightness-toggle"
+        # "keyboard-brightness-up"
+        # "logout"
+        # "magnifier"
+        # "magnifier-zoom-in"
+        # "magnifier-zoom-out"
+        # "media"
+        # "mic-mute"
+        # "next"
+        # "on-screen-keyboard"
+        # "pause"
+        # "play"
+        # "playback-forward"
+        # "playback-random"
+        # "playback-repeat"
+        # "playback-rewind"
+        # "power"
+        # "previous"
+        # "rfkill"
+        # "rfkill-bluetooth"
+        # "rotate-video-lock"
+        # "screen-brightness-cycle"
+        # "screen-brightness-down"
+        # "screen-brightness-up"
+        # "screenreader"
+        # "screensaver"
+        # "search"
+        # "stop"
+        # "suspend"
+        # "toggle-contrast"
+        # "touchpad-off"
+        # "touchpad-on"
+        # "touchpad-toggle"
+        # "volume-down"
+        # "volume-down-precise"
+        # "volume-down-quiet"
+        # "volume-mute"
+        # "volume-mute-quiet"
+        # "volume-step"
+        # "volume-up"
+        # "volume-up-precise"
+        # "volume-up-quiet"
+        # "www"
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -223,19 +324,44 @@
         command = "ghostty";
         binding = "<Super>backslash";
       };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+        name = "Open Special Characters";
+        command = "gnome-characters";
+        binding = "<Super>.";
     };
   };
 
   # Hide specific apps from GUI menus
   xdg = {
     enable = true;
+    # Names used to reference .desktop files here must be an exact match to the nixpackgs derivation that provides them
     desktopEntries = {
-      htop = {
-        name = "htop";
+      gimp = {
+        name = "GIMP";
+      };
+      libreoffice-calc = {
         noDisplay = true;
       };
-      neovim = {
-        name = "Neovim wrapper";
+      libreoffice-draw = {
+        noDisplay = true;
+      };
+      libreoffice-impress = {
+        noDisplay = true;
+      };
+      libreoffice-writer = {
+        noDisplay = true;
+      };
+      libreoffice-base = {
+        noDisplay = true;
+      };
+      libreoffice-math = {
+        noDisplay = true;
+      };
+      htop = {
+        noDisplay = true;
+      };
+      neovim-unwrapped = {
         noDisplay = true;
       };
     };

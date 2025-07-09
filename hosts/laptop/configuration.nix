@@ -43,18 +43,19 @@
 
   # Disable some GNOME default applications
   environment.gnome.excludePackages = (with pkgs; [
-    epiphany # web browser, using Firefox
-    gedit # text editor, using Zed (GUI) and Neovim (CLI)
-    geary # email client, using web interface
-    evince # document viewer, using papers
+    epiphany # web browser, we use Firefox
+    gedit # text editor, we use Zed (GUI) and Neovim (CLI)
+    geary # email client, we use mailspring
+    evince # document viewer, we use papers
     gnome-contacts # contact management, not needed
-    gnome-disk-utility # disk management, using gnome-disks
-    gnome-music # music player, using audio only
+    gnome-disk-utility # disk management, we use gnome-disks
+    gnome-music # music player, we use Decibels (GNOME Audio Player)
     gnome-tour # introductory tour, not needed
-    gnome-console # terminal, using Ghostty
-    seahorse # keyring management, using Bitwarden
+    gnome-console # terminal, we use Ghostty
+    seahorse # keyring management, we use Bitwarden
     gnome-terminal # same as above
     yelp # help application, not needed
+    totem # video player, we use Celluloid
   ]);
 
   # GNOME games

@@ -12,7 +12,6 @@
     wget
     tree
     jq
-    ffmpeg
     unzip
     zip
 
