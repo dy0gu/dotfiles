@@ -29,7 +29,7 @@
     curtail # Image compression tool
     gaphor # UML, SysML, RAAML and C4 diagram editor
     onlyoffice-desktopeditors # Office suite, alternative to LibreOffice
-    libreoffice # Office suite
+    libreoffice-fresh # Office suite
     impression # Bootable drive creator
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
@@ -341,28 +341,36 @@
       gimp = {
         name = "GIMP";
       };
-      libreoffice-calc = {
+      swriter = {
+        name = "LibreOffice Writer";
         noDisplay = true;
       };
-      libreoffice-draw = {
+      swriter = {
+        name = "LibreOffice Writer";
         noDisplay = true;
       };
-      libreoffice-impress = {
+      swriter = {
+        name = "LibreOffice Writer";
         noDisplay = true;
       };
-      libreoffice-writer = {
+      swriter = {
+        name = "LibreOffice Writer";
         noDisplay = true;
       };
-      libreoffice-base = {
+      sbase = {
+        name = "LibreOffice Base";
         noDisplay = true;
       };
-      libreoffice-math = {
+      smath = {
+        name = "LibreOffice Math";
         noDisplay = true;
       };
       htop = {
+        name = "htop";
         noDisplay = true;
       };
-      neovim-unwrapped = {
+      nvim = {
+        name = "Neovim wrapper";
         noDisplay = true;
       };
     };
