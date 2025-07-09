@@ -329,6 +329,7 @@
         name = "Open Special Characters";
         command = "gnome-characters";
         binding = "<Super>.";
+      };
     };
   };
 
