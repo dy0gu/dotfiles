@@ -122,7 +122,7 @@
       "material-icon-theme"
       "nix"
     ]
-  }
+  };
 
   programs.neovim = {
     enable = true;
