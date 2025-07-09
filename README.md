@@ -4,9 +4,9 @@
 
 ## Installation 🛠️
 
-This section assumes you already have a NixOS itself installed. 
+This section assumes you already have a NixOS itself installed and understand basic Linux commands.
 
-These instructions target the minimal configuration provided by the official NixOS installer as a base, but they should work with any existing setup since it will be overwritten.
+The instructions target the minimal configuration provided by the official NixOS installer as a base, but they should work with any existing setup, since it will be overwritten.
 
 Some steps may be skipped when installing on more advanced existing configurations, as noted throughout.
 
@@ -44,6 +44,7 @@ Some steps may be skipped when installing on more advanced existing configuratio
 
    ```shell
    sudo nixos-generate-config --dir ./hosts/<host>
+   git add . # flakes require all modified files to be tracked by git or they will be ignored
    ```
 
 - Replace the home config for the new user and replace all appearances of the existing username with a new one:
@@ -61,6 +62,8 @@ Some steps may be skipped when installing on more advanced existing configuratio
    ```shell
    sudo nixos-rebuild switch --flake .#<host>
    ```
+
+- When building you may get a `git tree is dirty` warning, which happens because after running `nixos-generate-config` and `git add` on the generated file you still haven't pushed it to the remote. If you plan on keeping the configuration you should create your own fork of this repository and push the changes to it, so the hardware for your hosts is updated there. If planning on using multiple hosts of the same configuration, like 2 laptops, with different hardware, you can rename/add folders in `hosts` and imports in `flake.nix` to create a `laptopt-1` and `laptop-2` which can both import similar configurations with different hardware.
 
 ## Usage 🚀
 
