@@ -15,7 +15,7 @@ Some steps may be skipped when installing on more advanced existing configuratio
 
 - Enable the `flakes` experimental feature *or* skip this step if already enabled.
 
-   - Add this line to your configuration, which can be edited using `sudo nano /etc/nixos/configuration.nix` on a minimal install:
+   - Add this line to your existing configuration, which can be edited using `sudo nano /etc/nixos/configuration.nix` on a minimal install:
      
       ```nix
       nix.settings.experimental-features = [ "nix-command" "flakes" ];
