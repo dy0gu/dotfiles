@@ -10,20 +10,10 @@ These instructions target the minimal configuration provided by the official Nix
 
 Some steps may be skipped when installing on more advanced existing configurations, as noted throughout.
 
-- Start a temporary Nix shell with `git` installed *or* skip this step if you already have `git` installed in your current configuration:
+> [!NOTE]
+> Once `flakes` leave experimental state this first step is no longer needed and will be deleted, whenever that may be.
 
-   ```shell
-   nix-shell -p git
-   ```
-
-- Clone the repository to your home directory and open a terminal inside it:
-
-   ```shell
-   git clone <url> ~/.dotfiles
-   cd ~/.dotfiles
-   ```
-
-- Enable the `flakes` experimental feature *or* skip this step if you already have `flakes` enabled in your current configuration:
+- Enable the `flakes` experimental feature *or* skip this step if already enabled.
 
    - Add this line to your configuration, which can be edited using `sudo nano /etc/nixos/configuration.nix` on a minimal install:
      
@@ -36,9 +26,19 @@ Some steps may be skipped when installing on more advanced existing configuratio
      ```shell
      sudo nixos-rebuild switch
      ```
-        
-> [!NOTE]
-> Once `flakes` leave experimental state the step above is no longer needed and will be deleted, whenever that may be.
+
+- Start a temporary Nix shell with `git` available *or* skip this step if it is already installed.
+
+   ```shell
+   nix-shell -p git
+   ```
+
+- Clone the repository to your home directory and open a terminal inside it:
+
+   ```shell
+   git clone <url> ~/.dotfiles
+   cd ~/.dotfiles
+   ```
    
 - See [hosts](./hosts) for the list of `<host>` possibilities and then setup the current system hardware for it:
 
