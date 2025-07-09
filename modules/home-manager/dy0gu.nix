@@ -341,28 +341,28 @@
       gimp = {
         name = "GIMP";
       };
-      swriter = {
-        name = "LibreOffice Writer";
-        noDisplay = true;
-      };
-      swriter = {
-        name = "LibreOffice Writer";
-        noDisplay = true;
-      };
-      swriter = {
-        name = "LibreOffice Writer";
-        noDisplay = true;
-      };
-      swriter = {
-        name = "LibreOffice Writer";
-        noDisplay = true;
-      };
       sbase = {
         name = "LibreOffice Base";
         noDisplay = true;
       };
+      scalc= {
+        name = "LibreOffice Calc";
+        noDisplay = true;
+      };
+      sdraw = {
+        name = "LibreOffice Draw";
+        noDisplay = true;
+      };
+      simpress = {
+        name = "LibreOffice Impress";
+        noDisplay = true;
+      };
       smath = {
         name = "LibreOffice Math";
+        noDisplay = true;
+      };
+      swriter = {
+        name = "LibreOffice Writer";
         noDisplay = true;
       };
       htop = {
