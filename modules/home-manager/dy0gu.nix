@@ -24,18 +24,14 @@
     binary # Binary conversion tools (not in calculator)
     bustle # System D-Bus activity viewer
     celluloid # Video player, supports most formats
-    handbrake # GUI over ffmpeg for minor video editing, compression and conversion
+    footage # Video trimmer and converter
     switcheroo # Image resizer and format converter
     curtail # Image compression tool
     gaphor # UML, SysML, RAAML and C4 diagram editor
-    onlyoffice-desktopeditors # Office suite, alternative to LibreOffice
-    libreoffice-fresh # Office suite
     impression # Bootable drive creator
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
-    mailspring # Email client
     discord
-    blender
 
     # System utilities
     fastfetch
@@ -107,18 +103,15 @@
     settings = {
       command = "zsh --login";
       theme = "Afterglow";
-      title = " ";
       font-family = "FiraCode Nerd Font";
-      window-subtitle = "working-directory";
+      window-subtitle = false;
       gtk-single-instance = true;
-      window-inherit-working-directory = true;
       clipboard-trim-trailing-spaces = true;
       keybind = [
         "ctrl+h=goto_split:left"
         "ctrl+l=goto_split:right"
       ];
     };
-    themes = {};
   };
 
   programs.zed-editor = {
@@ -222,6 +215,8 @@
         move-to-workspace-left = [];
         move-to-workspace-right = [];
         move-to-workspace-up = [];
+        view-split-on-right = [];
+        view-split-on-left = [];
         switch-to-workspace-left = ["<Super>Left"];
         switch-to-workspace-right = ["<Super>Right"];
         panel-run-dialog = [ "<Super>r" ];
@@ -253,20 +248,13 @@
         ];
         logout = [ "<Control><Alt>Delete" ];
         screensaver = [ "<Super>l" ];
-        # "battery-status"
         # "calculator"
         # "control-center"
         # "decrease-text-size"
-        # "eject"
-        # "email"
-        # "help"
-        # "hibernate"
-        # "home"
         # "increase-text-size"
         # "keyboard-brightness-down"
         # "keyboard-brightness-toggle"
         # "keyboard-brightness-up"
-        # "logout"
         # "magnifier"
         # "magnifier-zoom-in"
         # "magnifier-zoom-out"
@@ -282,14 +270,11 @@
         # "playback-rewind"
         # "power"
         # "previous"
-        # "rfkill"
-        # "rfkill-bluetooth"
         # "rotate-video-lock"
         # "screen-brightness-cycle"
         # "screen-brightness-down"
         # "screen-brightness-up"
         # "screenreader"
-        # "screensaver"
         # "search"
         # "stop"
         # "suspend"
@@ -306,7 +291,6 @@
         # "volume-up"
         # "volume-up-precise"
         # "volume-up-quiet"
-        # "www"
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -334,13 +318,8 @@
     enable = true;
     # Names used to reference .desktop files here must be an exact match to the nixpackgs derivation that provides them
     desktopEntries = {
-      libreoffice-fresh = {
-        name = "LibreOffice TEST1";
-        noDisplay = true;
-      };
-      libreoffice = {
-        name = "LibreOffice TEST2";
-        noDisplay = true;
+      simple-scan = {
+        name = "Scanner";
       };
       htop = {
         name = "htop";
