@@ -16,10 +16,22 @@
     go
     lua
     ruby
+    perl
 
     # GUI applications
+    gnome-decoder # QR code scanner and creator
+    papers # Better document viewer
+    binary # Binary conversion tools (not in calculator)
+    bustle # System D-Bus activity viewer
+    curtail # Image compression tool
+    gaphor # UML, SysML, RAAML and C4 diagram editor
+    libreoffice # Office suite
+    impression # Bootable drive creator
+    share-preview # Local previewer for open graph cards
+    fragments # BitTorrent client
+    davinci-resolve # Video editor, troubleshooting: https://wiki.nixos.org/wiki/DaVinci_Resolve
+    gimp3-with-plugins # Image editor
     discord
-    code-cursor-fhs
 
     # System utilities
     fastfetch
@@ -91,9 +103,9 @@
     settings = {
       command = "zsh --login";
       theme = "Afterglow";
+      title = "Terminal"
       font-family = "FiraCode Nerd Font";
       window-subtitle = false;
-      title = "Terminal"
       window-inherit-working-directory = true;
       clipboard-trim-trailing-spaces = true;
       keybind = [
@@ -103,6 +115,14 @@
     };
     themes = {};
   };
+
+  programs.zed-editor = {
+    enable = true;
+    extensions = [
+      "material-icon-theme"
+      "nix"
+    ]
+  }
 
   programs.neovim = {
     enable = true;

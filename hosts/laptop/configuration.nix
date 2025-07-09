@@ -3,45 +3,6 @@
 {
   networking.hostName = "nixos-laptop";
 
-  # Enable GNOME
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
-  # Add GNOME games
-  services.gnome.games.enable = false;
-
-  # Disable some GNOME default applications
-  environment.gnome.excludePackages = (with pkgs; [
-    epiphany # web browser, using Firefox
-    gedit # text editor, using Neovim
-    geary # email client, using web interface
-    evince # document viewer, using papers
-    gnome-contacts # contact management, not needed
-    gnome-disk-utility # disk management, using gnome-disks
-    gnome-music # music player, using audio only
-    gnome-tour # introductory tour, not needed
-    gnome-console # terminal, using Ghostty
-    seahorse # keyring management, using Bitwarden
-    gnome-terminal # same as above
-    yelp # help application, not needed
-  ]);
-
-  # Additional GNOME apps with GUI
-  environment.systemPackages = with pkgs; [
-    gnome-decoder # QR code scanner and creator
-    papers # Better document viewer
-    binary # Binary conversion tools (not in calculator)
-    bustle # System D-Bus activity viewer
-    curtail # Image compression tool
-    gaphor # UML, SysML, RAAML and C4 diagram editor
-    libreoffice # Office suite
-    impression # Bootable drive creator
-    share-preview # Local previewer for open graph cards
-    fragments # BitTorrent client
-    davinci-resolve # Video editor, troubleshooting: https://wiki.nixos.org/wiki/DaVinci_Resolve
-    gimp3-with-plugins # Image editor
-  ];
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -71,10 +32,52 @@
     enable32Bit = true;
   };
 
-  # Font configuration
+  # Font configurations
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
+
+  # Enable GNOME
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  # Disable some GNOME default applications
+  environment.gnome.excludePackages = (with pkgs; [
+    epiphany # web browser, using Firefox
+    gedit # text editor, using Zed (GUI) and Neovim (CLI)
+    geary # email client, using web interface
+    evince # document viewer, using papers
+    gnome-contacts # contact management, not needed
+    gnome-disk-utility # disk management, using gnome-disks
+    gnome-music # music player, using audio only
+    gnome-tour # introductory tour, not needed
+    gnome-console # terminal, using Ghostty
+    seahorse # keyring management, using Bitwarden
+    gnome-terminal # same as above
+    yelp # help application, not needed
+  ]);
+
+  # GNOME games
+  services.gnome.games.enable = false;
+
+  # Standard gaming applications and tools
+  programs.steam = {
+      enable = true;
+
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = false;
+
+      gamescopeSession.enable = true;
+
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
+  };
+
+  programs.gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
+  };
+
 
   # Docker configuration
   virtualisation.docker = {
