@@ -7,9 +7,8 @@
 - Clone the repository to your home directory and open a terminal inside it:
 
    ```shell
-   cd ~
-   git clone <url>
-   cd <name>
+   git clone <url> ~/.dotfiles
+   cd ~/.dotfiles
    ```
 
 - Enable flakes:

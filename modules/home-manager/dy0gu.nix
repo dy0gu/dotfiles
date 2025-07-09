@@ -145,8 +145,8 @@
     settings = {
       "org/gnome/desktop/background" = {
         color-shading-type = "solid";
-        picture-uri = "file:///home/dy0gu/dotfiles/wallpapers/background.png";
-        picture-uri-dark = "file:///home/dy0gu/dotfiles/wallpapers/background.png";
+        picture-uri = "file:///home/dy0gu/.dotfiles/wallpapers/background.png";
+        picture-uri-dark = "file:///home/dy0gu/.dotfiles/wallpapers/background.png";
       };
 
       "org/gnome/login-screen" = {
