@@ -121,7 +121,7 @@
     extensions = [
       "material-icon-theme"
       "nix"
-    ]
+    ];
   };
 
   programs.neovim = {
