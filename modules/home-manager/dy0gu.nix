@@ -107,7 +107,7 @@
     settings = {
       command = "zsh --login";
       theme = "Afterglow";
-      title = "  ";
+      title = " ";
       font-family = "FiraCode Nerd Font";
       window-subtitle = "working-directory";
       gtk-single-instance = true;
@@ -156,7 +156,7 @@
 
       "org/gnome/login-screen" = {
         banner-message-enable = false;
-        logo = "";
+        logo = " ";
       };
 
       "org/gnome/desktop/peripherals/mouse" = {
@@ -178,10 +178,6 @@
 
       "org/gnome/desktop/a11y" = {
         always-show-universal-access-status = false;
-      };
-
-      "org/gnome/Console" = {
-        shell = "/run/current-system/sw/bin/zsh --login";
       };
 
       "org/gnome/desktop/interface" = {
@@ -253,7 +249,7 @@
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-          "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
         logout = [ "<Control><Alt>Delete" ];
         screensaver = [ "<Super>l" ];
@@ -338,9 +334,6 @@
     enable = true;
     # Names used to reference .desktop files here must be an exact match to the nixpackgs derivation that provides them
     desktopEntries = {
-      gimp = {
-        name = "GIMP";
-      };
       sbase = {
         name = "LibreOffice Base";
         noDisplay = true;
