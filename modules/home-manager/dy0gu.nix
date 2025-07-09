@@ -334,28 +334,12 @@
     enable = true;
     # Names used to reference .desktop files here must be an exact match to the nixpackgs derivation that provides them
     desktopEntries = {
-      sbase = {
-        name = "LibreOffice Base";
+      libreoffice-fresh = {
+        name = "LibreOffice TEST1";
         noDisplay = true;
       };
-      scalc= {
-        name = "LibreOffice Calc";
-        noDisplay = true;
-      };
-      sdraw = {
-        name = "LibreOffice Draw";
-        noDisplay = true;
-      };
-      simpress = {
-        name = "LibreOffice Impress";
-        noDisplay = true;
-      };
-      smath = {
-        name = "LibreOffice Math";
-        noDisplay = true;
-      };
-      swriter = {
-        name = "LibreOffice Writer";
+      libreoffice = {
+        name = "LibreOffice TEST2";
         noDisplay = true;
       };
       htop = {
