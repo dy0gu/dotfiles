@@ -23,14 +23,23 @@ Some steps may be skipped when installing on more advanced existing configuratio
    cd ~/.dotfiles
    ```
 
-- Enable flakes *or* skip this step if you already have flakes enabled in your current configuration:
+- Enable the `flakes` experimental feature *or* skip this step if you already have `flakes` enabled in your current configuration:
 
-   ```shell
-   sudo sed -i '/^}$/i\  nix.settings.experimental-features = [ "nix-command" "flakes" ];' /etc/nixos/configuration.nix
+   - Add this line to your configuration, which should be at `/etc/nixos/configuration.nix` on a minimal install:
+     
+      ```nix
+      nix.settings.experimental-features = [ "nix-command" "flakes" ];
+      ```
 
-   sudo nixos-rebuild switch
-   ```
-
+   - Rebuild with flakes now enabled:
+    
+     ```shell
+     sudo nixos-rebuild switch
+     ```
+        
+> [!NOTE]
+> Once `flakes` leave experimental state the step above is no longer needed and will be deleted, whenever that may be.
+   
 - See [hosts](./hosts) for the list of `<host>` possibilities and then setup the current system hardware for it:
 
    ```shell
