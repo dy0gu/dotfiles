@@ -104,14 +104,17 @@
       command = "zsh --login";
       theme = "Afterglow";
       font-family = "FiraCode Nerd Font";
+      title = " "
       window-subtitle = false;
       gtk-adwaita = true;
       gtk-titlebar-hide-when-maximized = true;
-      gtk-single-instance = true;
+      gtk-single-instance = false;
       adw-toolbar-style = "raised-border";
       auto-update = "off";
       clipboard-trim-trailing-spaces = true;
       keybind = [
+        "shift+alt+tab=new_tab"
+        "shift+tab=next_tab"
         "alt+left=goto_split:left"
         "alt+right=goto_split:right"
         "alt+up=goto_split:up"
@@ -164,7 +167,7 @@
 
       "org/gnome/login-screen" = {
         banner-message-enable = false;
-        logo = " ";
+        logo = "none";
       };
 
       "org/gnome/desktop/peripherals/mouse" = {
@@ -428,17 +431,6 @@
     enable = true;
     # Keys used to reference .desktop files here must be an exact match to the nixpackg that provides them
     desktopEntries = {
-      # Change the name of some applications (mostly shortening long ones)
-      simple-scan = {
-        name = "Scanner";
-        icon = "org.gnome.SimpleScan";
-        exec = "simple-scan";
-      };
-      baobab = {
-        name = "Disks";
-        icon = "org.gnome.baobab";
-        exec = "baobab";
-      };
       # Hide applications that don't belong in the GUI menu
       htop = {
         name = "htop";
