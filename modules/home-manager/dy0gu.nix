@@ -109,7 +109,7 @@
       gtk-titlebar-hide-when-maximized = true;
       gtk-single-instance = true;
       adw-toolbar-style = "raised-border";
-      auto-update = false;
+      auto-update = "off";
       clipboard-trim-trailing-spaces = true;
       keybind = [
         "ctrl+h=goto_split:left"
@@ -314,10 +314,13 @@
         switch-to-application-6 = [];
         switch-to-application-7 = [];
         switch-to-application-8 = [];
-        switch-to-application-9 = [];
-        screenshot = ["<Shift>Print"];
-        screenshot-window = ["<Alt>Print"];
+        switch-to-application-9 = [];~
+        toggle-application-view = ["<Super>a"];
+        toggle-quick-settings = ["<Super>s"];
         show-screenshot-ui = [ "Print" ];
+        screenshot-window = ["<Shift>Print"];
+        screenshot = [];
+        show-screen-recording-ui = [];
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
