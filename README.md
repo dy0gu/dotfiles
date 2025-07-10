@@ -15,14 +15,14 @@ Some steps may be skipped when installing on more advanced existing configuratio
 
 - Enable the `flakes` experimental feature *or* skip this step if already enabled.
 
-   - Add this line to your existing configuration, which can be edited using `sudo nano /etc/nixos/configuration.nix` on a minimal install:
-     
+  - Add this line to your existing configuration, which can be edited using `sudo nano /etc/nixos/configuration.nix` on a minimal install:
+
       ```nix
       nix.settings.experimental-features = [ "nix-command" "flakes" ];
       ```
 
-   - Rebuild with flakes now enabled:
-    
+  - Rebuild with flakes now enabled:
+
      ```shell
      sudo nixos-rebuild switch
      ```
@@ -39,7 +39,7 @@ Some steps may be skipped when installing on more advanced existing configuratio
    git clone <url> ~/.dotfiles
    cd ~/.dotfiles
    ```
-   
+
 - See [hosts](./hosts) for the list of `<host>` possibilities and then setup the current system hardware for it:
 
    ```shell
@@ -63,7 +63,11 @@ Some steps may be skipped when installing on more advanced existing configuratio
    sudo nixos-rebuild switch --cores <cores> --flake .#<host>
    ```
 
-- When building you may get a `git tree is dirty` warning, which happens because after running `nixos-generate-config` and `git add` on the generated file you still haven't pushed it to the remote. If you plan on keeping the configuration you should create your own fork of this repository and push the changes to it, so the hardware for your hosts is updated there. If planning on using multiple hosts of the same configuration, like 2 laptops, with different hardware, you can rename/add folders in `hosts` and imports in `flake.nix` to create a `laptopt-1` and `laptop-2` which can both import similar configurations with different hardware.
+- When building you may get a `git tree is dirty` warning, which happens because after running `nixos-generate-config` and `git add` on the generated file you still haven't pushed it to the remote. If you plan on keeping the configuration you should:
+
+  - Create your own fork of this repository and push the changes to it, so the hardware for your hosts is updated there.
+
+  - If planning on using multiple hosts of the same configuration, like 2 laptops, with different hardware, you can rename/add folders in `hosts` and imports in `flake.nix` to create a `laptop-1` and `laptop-2` which can both import similar configurations with different hardware.
 
 ## Usage 🚀
 
@@ -76,3 +80,11 @@ This setup is made to not keep any sort of credentials or personal data in the r
    ```
 
    You don't need to do this step if the user already had a password set before the initial `nixos-rebuild switch` command, as it will not be overwritten by the initial password configuration.
+
+## Tips 💡
+
+- The presence of the `gh` and `glab` CLIs allow for easy authentication with GitHub and GitLab, respectively. You can use them if you prefer an `https` login over setting up SSH keys again.
+
+  - You first have to set `git config --global user.name` and `git config --global user.email` manually, as these are not set by default to keep the repository clean of personal data.
+
+  - Then simply run `gh auth login` or `glab auth login` and follow the prompts to authenticate and setup your local git protocols.

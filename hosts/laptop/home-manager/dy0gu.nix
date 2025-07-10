@@ -76,9 +76,6 @@
       font-family = "FiraCode Nerd Font";
       title = " ";
       window-subtitle = false;
-      gtk-adwaita = true;
-      gtk-titlebar-hide-when-maximized = false;
-      gtk-single-instance = false;
       adw-toolbar-style = "flat";
       auto-update = "off";
       clipboard-trim-trailing-spaces = true;
