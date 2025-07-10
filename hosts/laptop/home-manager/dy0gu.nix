@@ -147,7 +147,7 @@
 
       "/org/gnome/desktop/sound" = {
         allow-volume-above-100-percent = true;
-        event-sounds = false
+        event-sounds = false;
         input-feedback-sounds = false;
       };
 
