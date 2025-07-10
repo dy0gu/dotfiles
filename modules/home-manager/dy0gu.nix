@@ -316,7 +316,7 @@
         switch-to-application-8 = [];
         switch-to-application-9 = [];
         screenshot = ["<Shift>Print"];
-        screenshot-window = ["<Alt>Print"]
+        screenshot-window = ["<Alt>Print"];
         show-screenshot-ui = [ "Print" ];
       };
 
