@@ -4,6 +4,7 @@
   # Disable default system packages
   environment.defaultPackages = with pkgs; [];
   documentation.enable = false;
+  programs.nano.enable = false;
 
   # Install packages
   environment.systemPackages = with pkgs; [

@@ -138,6 +138,7 @@
   };
 
   # Gnome settings using dconf
+  # Run "nix-shell -p dconf-editor" and then "dconf-editor" to get a GUI that shows all the keys that can be edited here
   dconf = {
     enable = true;
     settings = {
@@ -182,9 +183,10 @@
       };
 
       "org/gnome/shell" = {
+        allow-extension-installation = true;
         disable-user-extensions = false;
         enabled-extensions = [
-          "clipboard-indicator@tudmotu.com"
+          "clipboard-indicator@alexsaveu.dev"
           "color-picker@tuberry"
           "Vitals@CoreCoding.com"
           "caffeine@patapon.info"
@@ -195,6 +197,34 @@
           "org.gnome.TextEditor.desktop"
           "org.gnome.Settings.desktop"
         ];
+      };
+
+      "org/gnome/shell/extensions/caffeine" = {
+        duration-timer = 2;
+        duration-timer-list = [900 1800 3600];
+        enable-fullscreen = true;
+        enable-mpris = true;
+        indicator-position-max = 1;
+        show-indicator = "only-active";
+        show-notifications = false;
+        show-toggle = true;
+        toggle-shortcut = ["<Control><Super>c"];
+        user-enabled = false;
+      };
+
+      "org/gnome/shell/extensions/clipboard-history" = {
+        cache-size = 80;
+        disable-down-arrow = true;
+        display-mode = 3;
+        enable-keybindings = true;
+        history-size = 150;
+        ignore-password-mimes = false;
+        notify-on-copy = false;
+        private-mode = false;
+        toggle-menu = ["<Super>v"];
+        toggle-private-mode = [];
+        topbar-preview-size = 40;
+        window-width-percentage = 20;
       };
 
       "org/gnome/desktop/input-sources" = {
@@ -208,23 +238,26 @@
         move-to-monitor-left = [];
         move-to-monitor-right = [];
         move-to-monitor-up = [];
-        move-to-workspace-1 = [];
-        move-to-workspace-2 = [];
         move-to-workspace-down = [];
         move-to-workspace-last = [];
         move-to-workspace-left = [];
         move-to-workspace-right = [];
         move-to-workspace-up = [];
-        view-split-on-right = [];
-        view-split-on-left = [];
-        switch-to-workspace-left = ["<Super>Left"];
-        switch-to-workspace-right = ["<Super>Right"];
+        switch-to-workspace-left = [];
+        switch-to-workspace-right = [];
+        move-to-workspace-1 = ["<Super>1"];
+        move-to-workspace-2 = ["<Super>2"];
+        move-to-workspace-3 = ["<Super>3"];
+        move-to-workspace-4 = ["<Super>4"];
+        maximize = [ "<Super>Up" ];
+        unmaximize = [ "<Super>Down" ];
+        view-split-on-right = ["<Super>Right"];
+        view-split-on-left = ["<Super>Left"];
         panel-run-dialog = [ "<Super>r" ];
         always-on-top = [ "<Super>p" ];
         show-desktop = ["<Super>d"];
         toggle-fullscreen = [ "<Super>f" ];
         close = ["<Super>q"];
-
       };
 
       "org/gnome/shell/keybindings" = {
@@ -237,7 +270,9 @@
         switch-to-application-7 = [];
         switch-to-application-8 = [];
         switch-to-application-9 = [];
-        screenshot = [ "Print" ];
+        screenshot = ["<Shift>Print"];
+        screenshot-window = ["<Alt>Print"]
+        show-screenshot-ui = [ "Print" ];
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -246,42 +281,55 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
-        logout = [ "<Control><Alt>Delete" ];
         screensaver = [ "<Super>l" ];
-        # "calculator"
-        # "control-center"
+        touchpad-toggle = [ "<Super>t" ];
+        on-screen-keyboard = ["<Super><Alt>k"];
+        calculator = [];
+        battery-status = [];
+        eject = [];
+        email = [];
+        help = [];
+        screenreader = [];
+        search = [];
+        logout = [];
+        suspend = [];
+        hibernate = [];
+        power = [];
+        home = [];
+        media = [];
+        control-center = [];
+        rotate-video-lock = [];
+        touchpad-off = [];
+        touchpad-on = [];
+        toggle-contrast = [];
+        magnifier = [];
+        screen-brightness-cycle = [];
+        keyboard-brightness-toggle = [];
+
         # "decrease-text-size"
         # "increase-text-size"
+
         # "keyboard-brightness-down"
-        # "keyboard-brightness-toggle"
         # "keyboard-brightness-up"
-        # "magnifier"
+
         # "magnifier-zoom-in"
         # "magnifier-zoom-out"
-        # "media"
+
         # "mic-mute"
+
         # "next"
-        # "on-screen-keyboard"
         # "pause"
         # "play"
+        # "stop"
+        # "previous"
         # "playback-forward"
         # "playback-random"
         # "playback-repeat"
         # "playback-rewind"
-        # "power"
-        # "previous"
-        # "rotate-video-lock"
-        # "screen-brightness-cycle"
+
         # "screen-brightness-down"
         # "screen-brightness-up"
-        # "screenreader"
-        # "search"
-        # "stop"
-        # "suspend"
-        # "toggle-contrast"
-        # "touchpad-off"
-        # "touchpad-on"
-        # "touchpad-toggle"
+
         # "volume-down"
         # "volume-down-precise"
         # "volume-down-quiet"
@@ -316,11 +364,21 @@
   # Hide specific apps from GUI menus
   xdg = {
     enable = true;
-    # Names used to reference .desktop files here must be an exact match to the nixpackgs derivation that provides them
+    # Keys used to reference .desktop files here must be an exact match to the nixpackg that provides them
     desktopEntries = {
+      # Change the name of some applications (mostly shortening long ones)
       simple-scan = {
         name = "Scanner";
+        icon = "org.gnome.SimpleScan";
+        exec = "simple-scan";
       };
+      baobab = {
+        name = "Baobab";
+        icon = "org.gnome.baobab";
+        exec = "baobab";
+
+      };
+      # Hide applications that don't belong in the GUI menu
       htop = {
         name = "htop";
         noDisplay = true;
