@@ -37,7 +37,7 @@
     fastfetch
 
     # Gnome extensions
-    gnomeExtensions.clipboard-history
+    gnomeExtensions.clipboard-indicator
     gnomeExtensions.color-picker
     gnomeExtensions.caffeine
     gnomeExtensions.vitals
@@ -155,7 +155,7 @@
   };
 
   # Gnome settings using dconf
-  # Run "nix-shell -p dconf-editor" and then "dconf-editor" to get a GUI that shows all the keys that can be edited here
+  # Run "nix-shell -p dconf-editor" and then "dconf-editor" inside it to get a GUI that shows all the keys that can be edited here
   dconf = {
     enable = true;
     settings = {
@@ -203,7 +203,7 @@
         allow-extension-installation = true;
         disable-user-extensions = false;
         enabled-extensions = [
-          "clipboard-indicator@alexsaveau.dev"
+          "clipboard-indicator@tudmotu.com"
           "color-picker@tuberry"
           "Vitals@CoreCoding.com"
           "caffeine@patapon.info"
@@ -217,19 +217,7 @@
       };
 
       # Gnome extension settings
-      "org/gnome/shell/extensions/clipboard-history" = {
-        cache-size = 80;
-        disable-down-arrow = true;
-        display-mode = 3;
-        enable-keybindings = true;
-        history-size = 150;
-        ignore-password-mimes = false;
-        notify-on-copy = false;
-        private-mode = false;
-        toggle-menu = ["<Super>v"];
-        toggle-private-mode = [];
-        topbar-preview-size = 40;
-        window-width-percentage = 20;
+      "org/gnome/shell/extensions/clipboard-indicator" = {
       };
 
       "org/gnome/shell/extensions/caffeine" = {
@@ -301,10 +289,10 @@
         move-to-workspace-left = [];
         move-to-workspace-right = [];
         move-to-workspace-up = [];
-        move-to-workspace-1 = [];
-        move-to-workspace-2 = [];
-        move-to-workspace-3 = [];
-        move-to-workspace-4 = [];
+        move-to-workspace-1 = ["<Super><Shift>1"];
+        move-to-workspace-2 = ["<Super><Shift>2"];
+        move-to-workspace-3 = ["<Super><Shift>3"];
+        move-to-workspace-4 = ["<Super><Shift>4"];
         switch-to-workspace-left = [];
         switch-to-workspace-right = [];
         switch-to-workspace-1 = ["<Super>1"];
