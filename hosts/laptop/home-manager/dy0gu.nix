@@ -8,6 +8,9 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
+    # System utilities
+    fastfetch
+
     # Development tools
     gh # GitHub CLI
     glab # GitLab CLI
@@ -20,8 +23,8 @@
     ruby
     perl
 
-    # System utilities
-    fastfetch
+    # LSPs
+    nixd
 
     # Gnome extensions
     gnomeExtensions.appindicator
@@ -32,12 +35,13 @@
 
     # Applications
     discord
+    zed-editor
   ];
 
   # More applications that have built-in home-manager enablement and configuration
-  programs.zed-editor = {
-    enable = true;
-  };
+  # programs.zed-editor = {
+  #   enable = true;
+  # };
 
   programs.lazydocker = {
     enable = true;

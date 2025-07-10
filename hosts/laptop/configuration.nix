@@ -35,16 +35,17 @@
     ];
   };
 
+  # Manually set GPU drivers
   services.xserver.videoDrivers = [ "modesetting" "fbdev" ];
+  # Enable touchpad support (currently disabled to see if GNOME does it automatically)
+  # services.libinput.enable = true;
 
   # Enable GNOME
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  # GNOME games
-  services.gnome.games.enable = false;
-
   # Disable some GNOME default applications
+  services.gnome.games.enable = false;
   environment.gnome.excludePackages = (with pkgs; [
     epiphany # web browser, we use Firefox
     gedit # text editor, we use Neovim (CLI), Zed (GUI) and the other default gnome editor
@@ -76,13 +77,9 @@
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
   ];
-
-  # Standard browser
   programs.firefox = {
     enable = true;
   };
-
-  # Standard gaming applications and tools
   programs.steam = {
       enable = true;
 
@@ -93,7 +90,6 @@
 
       extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
-
   programs.gamescope = {
       enable = true;
       capSysNice = true;
@@ -103,9 +99,6 @@
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
-
-  # Enable touchpad support (currently disabled to see if GNOME does it automatically)
-  # services.libinput.enable = true;
 
   # Docker configuration
   virtualisation.docker = {
