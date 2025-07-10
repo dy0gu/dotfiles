@@ -314,7 +314,7 @@
         switch-to-application-6 = [];
         switch-to-application-7 = [];
         switch-to-application-8 = [];
-        switch-to-application-9 = [];~
+        switch-to-application-9 = [];
         toggle-application-view = ["<Super>a"];
         toggle-quick-settings = ["<Super>s"];
         show-screenshot-ui = [ "Print" ];
