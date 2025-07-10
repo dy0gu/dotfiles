@@ -112,8 +112,18 @@
       auto-update = "off";
       clipboard-trim-trailing-spaces = true;
       keybind = [
-        "ctrl+h=goto_split:left"
-        "ctrl+l=goto_split:right"
+        "alt+left=goto_split:left"
+        "alt+right=goto_split:right"
+        "alt+up=goto_split:up"
+        "alt+down=goto_split:down"
+        "shift+alt+left=new_split:left"
+        "shift+alt+right=new_split:right"
+        "shift+alt+up=new_split:up"
+        "shift+alt+down=new_split:down"
+        "ctrl+w=close_surface"
+        "ctrl+shift+c=copy_to_clipboard"
+        "ctrl+shift+v=paste_from_clipboard"
+        "ctrl+l=clear_screen"
       ];
     };
   };
@@ -190,7 +200,7 @@
         allow-extension-installation = true;
         disable-user-extensions = false;
         enabled-extensions = [
-          "clipboard-indicator@alexsaveu.dev"
+          "clipboard-indicator@alexsaveau.dev"
           "color-picker@tuberry"
           "Vitals@CoreCoding.com"
           "caffeine@patapon.info"
