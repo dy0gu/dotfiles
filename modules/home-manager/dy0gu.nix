@@ -94,7 +94,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" "docker" ];
-      theme = "af-magic";
+      theme = "strug";
     };
   };
 
@@ -102,7 +102,7 @@
     enable = true;
     settings = {
       command = "zsh --login";
-      theme = "strug";
+      theme = "Afterglow";
       font-family = "FiraCode Nerd Font";
       window-subtitle = false;
       gtk-adwaita = true;
