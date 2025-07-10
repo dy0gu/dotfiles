@@ -9,6 +9,8 @@
 
   home.packages = with pkgs; [
     # Development tools
+    gh # GitHub CLI
+    glab # GitLab CLI
     nodejs
     python3
     rustc
