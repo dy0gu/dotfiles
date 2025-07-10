@@ -35,35 +35,47 @@
   ];
 
   # More applications that have built-in home-manager enablement and configuration
-  programs.firefox = {
+  programs.zed-editor = {
     enable = true;
-    profiles = {
-      default = {
-        name = "Default";
-        isDefault = true;
-        settings = {
-          "browser.startup.homepage" = "https://duckduckgo.com";
-          "browser.search.defaultenginename" = "DuckDuckGo";
-          "browser.search.order.1" = "DuckDuckGo";
+  };
 
-          "signon.rememberSignons" = false;
-          "browser.aboutConfig.showWarning" = false;
-          "browser.compactmode.show" = true;
-          "browser.cache.disk.enable" = false;
+  programs.lazydocker = {
+    enable = true;
+  };
 
-          "media.hardware-video-decoding.enabled" = true;
-          "layers.acceleration.force-enabled" = true;
-          "widget.disable-workspace-management" = true;
-        };
-      };
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -la";
+      la = "ls -la";
+      l = "ls -l";
+      rebuild = "sudo nixos-rebuild switch --flake";
+      update = "nix flake update";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "sudo" "docker" ];
+      theme = "strug";
     };
   };
 
-  programs.zed-editor = {
+  programs.neovim = {
     enable = true;
-    extensions = [
-      "material-icon-theme"
-      "nix"
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      plenary-nvim
+      gruvbox-material
+      mini-nvim
     ];
   };
 
@@ -96,47 +108,6 @@
         "ctrl+l=clear_screen"
       ];
     };
-  };
-
-  programs.lazydocker = {
-    enable = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      ll = "ls -la";
-      la = "ls -la";
-      l = "ls -l";
-      rebuild = "sudo nixos-rebuild switch --flake";
-      update = "nix flake update";
-    };
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "sudo" "docker" ];
-      #theme = "af-magic";
-      theme = "strug";
-    };
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      plenary-nvim
-      gruvbox-material
-      mini-nvim
-    ];
   };
 
   # Gnome settings using dconf

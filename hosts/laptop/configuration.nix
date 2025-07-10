@@ -41,14 +41,8 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  # Additional font configurations (GNOME handles a lot of them already when enabled)
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-  ];
-
-
-  # Enable touchpad support (currently disabled to see if GNOME does it automatically)
-  # services.libinput.enable = true;
+  # GNOME games
+  services.gnome.games.enable = false;
 
   # Disable some GNOME default applications
   environment.gnome.excludePackages = (with pkgs; [
@@ -83,8 +77,10 @@
     fragments # BitTorrent client
   ];
 
-  # GNOME games
-  services.gnome.games.enable = false;
+  # Standard browser
+  programs.firefox = {
+    enable = true;
+  };
 
   # Standard gaming applications and tools
   programs.steam = {
@@ -103,6 +99,13 @@
       capSysNice = true;
   };
 
+  # Additional font configurations (GNOME handles a lot of them already when enabled)
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
+
+  # Enable touchpad support (currently disabled to see if GNOME does it automatically)
+  # services.libinput.enable = true;
 
   # Docker configuration
   virtualisation.docker = {
