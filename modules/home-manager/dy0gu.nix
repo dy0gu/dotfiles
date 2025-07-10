@@ -104,7 +104,7 @@
       command = "zsh --login";
       theme = "Afterglow";
       font-family = "FiraCode Nerd Font";
-      title = " "
+      title = " ";
       window-subtitle = false;
       gtk-adwaita = true;
       gtk-titlebar-hide-when-maximized = true;
@@ -349,6 +349,9 @@
         screensaver = [ "<Super>l" ];
         touchpad-toggle = [ "<Super>t" ];
         on-screen-keyboard = ["<Super><Alt>k"];
+        magnifier = ["<Alt><Shift>m"];
+        magnifier-zoom-in = ["<Alt><Shift>q"];
+        magnifier-zoom-out = ["<Alt><Shift>e"];
         calculator = [];
         battery-status = [];
         eject = [];
@@ -367,18 +370,13 @@
         touchpad-off = [];
         touchpad-on = [];
         toggle-contrast = [];
-        magnifier = [];
         screen-brightness-cycle = [];
         keyboard-brightness-toggle = [];
-
-        # "decrease-text-size"
-        # "increase-text-size"
+        decrease-text-size = [];
+        increase-text-size = [];
 
         # "keyboard-brightness-down"
         # "keyboard-brightness-up"
-
-        # "magnifier-zoom-in"
-        # "magnifier-zoom-out"
 
         # "mic-mute"
 
