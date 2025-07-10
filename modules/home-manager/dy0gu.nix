@@ -104,7 +104,8 @@
     enable = true;
     settings = {
       command = "zsh --login";
-      theme = "Adwaita Dark";
+      theme = "dark:Adwaita Dark,light:Adwaita";
+      background = "#222222";
       font-family = "FiraCode Nerd Font";
       title = " ";
       window-subtitle = false;
