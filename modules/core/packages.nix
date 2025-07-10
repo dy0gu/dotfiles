@@ -4,12 +4,13 @@
   # Disable default system packages
   environment.defaultPackages = with pkgs; [];
   documentation.enable = false;
-  programs.nano.enable = false;
+
+  # Leave nano as backup in case a user doesn't install a text editor
+  programs.nano.enable = true;
 
   # Install packages
   environment.systemPackages = with pkgs; [
     # Main utilities
-    nvim
     curl
     wget
     tree
