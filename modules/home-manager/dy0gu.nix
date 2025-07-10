@@ -196,10 +196,10 @@
           "caffeine@patapon.info"
         ];
         favorite-apps = [
-          "firefox.desktop"
-          "org.gnome.Nautilus.desktop"
-          "org.gnome.TextEditor.desktop"
-          "org.gnome.Settings.desktop"
+          # "firefox.desktop"
+          # "org.gnome.Nautilus.desktop"
+          # "org.gnome.TextEditor.desktop"
+          # "org.gnome.Settings.desktop"
         ];
       };
 
