@@ -88,3 +88,5 @@ This setup is made to not keep any sort of credentials or personal data in the r
   - You first have to set `git config --global user.name` and `git config --global user.email` manually, as these are not set by default to keep the repository clean of personal data.
 
   - Then simply run `gh auth login` or `glab auth login` and follow the prompts to authenticate and setup your local git protocols.
+
+- The **Firefox** profile configuration is very basic as it expects most of the settings to come from cloud syncing, which is not configured in this repository (again, keeping it clean of personal data). You can set up cloud sync from inside the browser itself after the initial setup.
