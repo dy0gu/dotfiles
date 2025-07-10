@@ -37,6 +37,7 @@
     fastfetch
 
     # Gnome extensions
+    gnomeExtensions.appindicator
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.color-picker
     gnomeExtensions.caffeine
@@ -207,6 +208,7 @@
           "color-picker@tuberry"
           "Vitals@CoreCoding.com"
           "caffeine@patapon.info"
+          "appindicatorsupport@rgcjonas.gmail.com"
         ];
         favorite-apps = [
           # "firefox.desktop"
@@ -218,6 +220,26 @@
 
       # Gnome extension settings
       "org/gnome/shell/extensions/clipboard-indicator" = {
+        cache-size = 20;
+        history-size = 80;
+        preview-size = 30;
+        display-mode = 3;
+        clear-on-boot = false;
+        confirm-clear = false;
+        disable-down-arrow = true;
+        keep-selected-on-clear = true;
+        move-item-first = false;
+        notify-on-copy = false;
+        notify-on-cycle = false;
+        paste-button = false;
+        paste-on-select = false;
+        pinned-on-bottom = false;
+        strip-text = false;
+        toggle-menu = ["<Super>v"];
+        next-entry = [];
+        prev-entry = [];
+        private-mode-binding = [];
+        clear-history = [];
       };
 
       "org/gnome/shell/extensions/caffeine" = {
