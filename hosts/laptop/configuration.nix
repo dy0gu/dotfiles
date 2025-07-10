@@ -67,7 +67,7 @@
   ]);
 
   # Additional QOL GNOME applications and alternatives to the disabled defaults
-  environment.systemPackages.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     gnome-decoder # QR code scanner and creator
     papers # Better document viewer
     binary # Binary conversion tools (not in calculator)
