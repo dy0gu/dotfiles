@@ -235,8 +235,8 @@
       "org/gnome/shell/extensions/color-picker" = {
         color-picker-shortcut = ["<Super><Control>p"];
         custom-formats = [
-          <{ "enable" = <true>; "name" = <"HSV">; "format" = <"hsv({Hu}, {Sv}, {Va})">; }>,
-          <{ "enable" = <true>; "name" = <"CMYK">; "format" = <"cmyk({Cy}, {Ma}, {Ye}, {Bk})">; }>
+          "<{ 'enable' = <true>; 'name' = <'HSV'>; 'format' = <'hsv({Hu}, {Sv}, {Va})'>; }>",
+          "<{ 'enable' = <true>; 'name' = <'CMYK'>; 'format' = <'cmyk({Cy}, {Ma}, {Ye}, {Bk})'>; }>"
         ];
         default-format = 0;
         enable-format = false;
