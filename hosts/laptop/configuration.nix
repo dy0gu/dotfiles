@@ -41,7 +41,7 @@
     nerd-fonts.fira-code
   ];
 
-  services.xserver.videoDrivers = [ "modesetting", "fbdev" ];
+  services.xserver.videoDrivers = [ "modesetting" "fbdev" ];
 
   # Enable GNOME
   services.displayManager.gdm.enable = true;
