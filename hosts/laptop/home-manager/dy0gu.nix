@@ -34,7 +34,7 @@
     discord
   ];
 
-  # More applications that have built-in home-manager enablement
+  # More applications that have built-in home-manager enablement and configuration
   programs.firefox = {
     enable = true;
     profiles = {
@@ -67,7 +67,7 @@
     ];
   };
 
-      programs.ghostty = {
+  programs.ghostty = {
     enable = true;
     settings = {
       command = "zsh --login";
@@ -101,13 +101,8 @@
     };
   };
 
-  programs.lazydocker.enable = true;
-
-  programs.git = {
+  programs.lazydocker = {
     enable = true;
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
   };
 
   programs.zsh = {
@@ -131,8 +126,6 @@
       theme = "strug";
     };
   };
-
-
 
   programs.neovim = {
     enable = true;
