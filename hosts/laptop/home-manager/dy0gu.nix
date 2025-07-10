@@ -97,8 +97,9 @@
       auto-update = "off";
       clipboard-trim-trailing-spaces = true;
       keybind = [
-        "shift+alt+tab=new_tab"
-        "shift+tab=next_tab"
+        "ctrl+tab=new_tab"
+        "ctrl+left=previous_tab"
+        "ctrl+right=next_tab"
         "alt+left=goto_split:left"
         "alt+right=goto_split:right"
         "alt+up=goto_split:up"
