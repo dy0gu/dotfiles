@@ -102,10 +102,14 @@
     enable = true;
     settings = {
       command = "zsh --login";
-      theme = "Afterglow";
+      theme = "strug";
       font-family = "FiraCode Nerd Font";
       window-subtitle = false;
+      gtk-adwaita = true;
+      gtk-titlebar-hide-when-maximized = true;
       gtk-single-instance = true;
+      adw-toolbar-style = "raised-border";
+      auto-update = false;
       clipboard-trim-trailing-spaces = true;
       keybind = [
         "ctrl+h=goto_split:left"
@@ -199,19 +203,7 @@
         ];
       };
 
-      "org/gnome/shell/extensions/caffeine" = {
-        duration-timer = 2;
-        duration-timer-list = [900 1800 3600];
-        enable-fullscreen = true;
-        enable-mpris = true;
-        indicator-position-max = 1;
-        show-indicator = "only-active";
-        show-notifications = false;
-        show-toggle = true;
-        toggle-shortcut = ["<Control><Super>c"];
-        user-enabled = false;
-      };
-
+      # Gnome extension settings
       "org/gnome/shell/extensions/clipboard-history" = {
         cache-size = 80;
         disable-down-arrow = true;
@@ -225,6 +217,59 @@
         toggle-private-mode = [];
         topbar-preview-size = 40;
         window-width-percentage = 20;
+      };
+
+      "org/gnome/shell/extensions/caffeine" = {
+        duration-timer = 2;
+        duration-timer-list = [900 1800 3600];
+        enable-fullscreen = true;
+        enable-mpris = true;
+        indicator-position-max = 1;
+        show-indicator = "only-active";
+        show-notifications = false;
+        show-toggle = true;
+        toggle-shortcut = ["<Super><Control>c"];
+        user-enabled = false;
+      };
+
+      "org/gnome/shell/extensions/color-picker" = {
+        color-picker-shortcut = ["<Super><Control>p"];
+        custom-formats = [
+          <{ "enable" = <true>; "name" = <"HSV">; "format" = <"hsv({Hu}, {Sv}, {Va})">; }>
+          <{ "enable" = <true>; "name" = <"CMYK">; "format" = <"cmyk({Cy}, {Ma}, {Ye}, {Bk})">; }>
+        ];
+        default-format = 0;
+        enable-format = false;
+        enable-notify = true;
+        enable-shortcut = true;
+        enable-systray = false;
+        notify-style = 1;
+        persistent-mode = true;
+        preview-style = 0;
+      };
+
+      "org/gnome/shell/extensions/vitals" = {
+        alphabetize = true;
+        fixed-widths = true;
+        hide-icons = false;
+        hide-zeros = true;
+        hot-sensors = ["_memory_usage_" "_processor_usage_"];
+        icon-style = 1;
+        include-public-ip = false;
+        include-static-info = true;
+        menu-centered = false;
+        network-speed-format = 0;
+        position-in-panel = 2;
+        show-fan = true;
+        show-gpu = true;
+        show-memory = true;
+        show-network = true;
+        show-processor = true;
+        show-storage = false;
+        show-system = true;
+        show-temperature = true;
+        show-battery = false;
+        use-higher-precision = false;
       };
 
       "org/gnome/desktop/input-sources" = {
@@ -373,7 +418,7 @@
         exec = "simple-scan";
       };
       baobab = {
-        name = "Baobab";
+        name = "Disks";
         icon = "org.gnome.baobab";
         exec = "baobab";
 
