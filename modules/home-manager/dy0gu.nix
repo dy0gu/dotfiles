@@ -335,11 +335,34 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
         screensaver = [ "<Super>l" ];
-        touchpad-toggle = [ "<Super>t" ];
         on-screen-keyboard = ["<Super><Alt>k"];
         magnifier = ["<Alt><Shift>m"];
         magnifier-zoom-in = ["<Alt><Shift>q"];
         magnifier-zoom-out = ["<Alt><Shift>e"];
+        touchpad-toggle = [ "<Super>t" ];
+        # "keyboard-brightness-down"
+        # "keyboard-brightness-up"
+        # "mic-mute"
+        # "next"
+        # "pause"
+        # "play"
+        # "stop"
+        # "previous"
+        # "playback-forward"
+        # "playback-random"
+        # "playback-repeat"
+        # "playback-rewind"
+        # "screen-brightness-down"
+        # "screen-brightness-up"
+        # "volume-down"
+        # "volume-down-precise"
+        # "volume-down-quiet"
+        # "volume-mute"
+        # "volume-mute-quiet"
+        # "volume-step"
+        # "volume-up"
+        # "volume-up-precise"
+        # "volume-up-quiet"
         calculator = [];
         battery-status = [];
         eject = [];
@@ -362,34 +385,6 @@
         keyboard-brightness-toggle = [];
         decrease-text-size = [];
         increase-text-size = [];
-
-        # "keyboard-brightness-down"
-        # "keyboard-brightness-up"
-
-        # "mic-mute"
-
-        # "next"
-        # "pause"
-        # "play"
-        # "stop"
-        # "previous"
-        # "playback-forward"
-        # "playback-random"
-        # "playback-repeat"
-        # "playback-rewind"
-
-        # "screen-brightness-down"
-        # "screen-brightness-up"
-
-        # "volume-down"
-        # "volume-down-precise"
-        # "volume-down-quiet"
-        # "volume-mute"
-        # "volume-mute-quiet"
-        # "volume-step"
-        # "volume-up"
-        # "volume-up-precise"
-        # "volume-up-quiet"
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {

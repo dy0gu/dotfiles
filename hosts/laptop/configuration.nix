@@ -45,7 +45,7 @@
   environment.gnome.excludePackages = (with pkgs; [
     epiphany # web browser, we use Firefox
     gedit # text editor, we use Zed (GUI) and Neovim (CLI)
-    geary # email client, we use mailspring
+    #geary # email client, once Envelope is available start ignoring geary and using it instead
     evince # document viewer, we use papers
     gnome-contacts # contact management, not needed
     gnome-disk-utility # disk management, we use gnome-disks
