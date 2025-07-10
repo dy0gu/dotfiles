@@ -145,6 +145,12 @@
         enabled = true;
       };
 
+      "/org/gnome/desktop/sound" = {
+        allow-volume-above-100-percent = true;
+        event-sounds = false
+        input-feedback-sounds = false;
+      };
+
       "org/gnome/desktop/interface" = {
         enable-hot-corners = false;
       };
