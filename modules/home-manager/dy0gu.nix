@@ -298,12 +298,16 @@
         move-to-workspace-left = [];
         move-to-workspace-right = [];
         move-to-workspace-up = [];
+        move-to-workspace-1 = [];
+        move-to-workspace-2 = [];
+        move-to-workspace-3 = [];
+        move-to-workspace-4 = [];
         switch-to-workspace-left = [];
         switch-to-workspace-right = [];
-        move-to-workspace-1 = ["<Super>1"];
-        move-to-workspace-2 = ["<Super>2"];
-        move-to-workspace-3 = ["<Super>3"];
-        move-to-workspace-4 = ["<Super>4"];
+        switch-to-workspace-1 = ["<Super>1"];
+        switch-to-workspace-2 = ["<Super>2"];
+        switch-to-workspace-3 = ["<Super>3"];
+        switch-to-workspace-4 = ["<Super>4"];
         maximize = [ "<Super>Up" ];
         unmaximize = [ "<Super>Down" ];
         view-split-on-right = ["<Super>Right"];
@@ -434,7 +438,6 @@
         name = "Disks";
         icon = "org.gnome.baobab";
         exec = "baobab";
-
       };
       # Hide applications that don't belong in the GUI menu
       htop = {
