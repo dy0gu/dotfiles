@@ -20,21 +20,6 @@
     ruby
     perl
 
-    # GUI applications
-    gnome-decoder # QR code scanner and creator
-    papers # Better document viewer
-    binary # Binary conversion tools (not in calculator)
-    bustle # System D-Bus activity viewer
-    celluloid # Video player, supports most formats
-    footage # Video trimmer and converter
-    switcheroo # Image resizer and format converter
-    curtail # Image compression tool
-    gaphor # UML, SysML, RAAML and C4 diagram editor
-    impression # Bootable drive creator
-    share-preview # Local previewer for open graph cards
-    fragments # BitTorrent client
-    discord
-
     # System utilities
     fastfetch
 
@@ -44,18 +29,12 @@
     gnomeExtensions.color-picker
     gnomeExtensions.caffeine
     gnomeExtensions.vitals
+
+    # Applications
+    discord
   ];
 
-  # CLI docker management tool
-  programs.lazydocker.enable = true;
-
-  programs.git = {
-    enable = true;
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
-  };
-
+  # More applications that have built-in home-manager enablement
   programs.firefox = {
     enable = true;
     profiles = {
@@ -80,34 +59,20 @@
     };
   };
 
-  programs.zsh = {
+  programs.zed-editor = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      ll = "ls -la";
-      la = "ls -la";
-      l = "ls -l";
-      rebuild = "sudo nixos-rebuild switch --flake";
-      update = "nix flake update";
-    };
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "sudo" "docker" ];
-      #theme = "af-magic";
-      theme = "strug";
-    };
+    extensions = [
+      "material-icon-theme"
+      "nix"
+    ];
   };
 
-  programs.ghostty = {
+      programs.ghostty = {
     enable = true;
     settings = {
       command = "zsh --login";
       theme = "dark:Adwaita Dark,light:Adwaita";
-      background = "#222222";
+      background = "#222226";
       font-family = "FiraCode Nerd Font";
       title = " ";
       window-subtitle = false;
@@ -136,13 +101,38 @@
     };
   };
 
-  programs.zed-editor = {
+  programs.lazydocker.enable = true;
+
+  programs.git = {
     enable = true;
-    extensions = [
-      "material-icon-theme"
-      "nix"
-    ];
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -la";
+      la = "ls -la";
+      l = "ls -l";
+      rebuild = "sudo nixos-rebuild switch --flake";
+      update = "nix flake update";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "sudo" "docker" ];
+      #theme = "af-magic";
+      theme = "strug";
+    };
+  };
+
+
 
   programs.neovim = {
     enable = true;

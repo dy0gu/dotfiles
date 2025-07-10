@@ -35,7 +35,6 @@
     ];
   };
 
-
   # Font configurations
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
@@ -66,6 +65,22 @@
     totem # video player, we use Celluloid
     #geary # email client, once Envelope is available start ignoring geary and using it instead
   ]);
+
+  # Additional QOL GNOME applications and alternatives to the disabled defaults
+  environment.systemPackages.packages = with pkgs; [
+    gnome-decoder # QR code scanner and creator
+    papers # Better document viewer
+    binary # Binary conversion tools (not in calculator)
+    bustle # System D-Bus activity viewer
+    celluloid # Video player, supports most formats
+    footage # Video trimmer and converter
+    switcheroo # Image resizer and format converter
+    curtail # Image compression tool
+    gaphor # UML, SysML, RAAML and C4 diagram editor
+    impression # Bootable drive creator
+    share-preview # Local previewer for open graph cards
+    fragments # BitTorrent client
+  ];
 
   # GNOME games
   services.gnome.games.enable = false;
