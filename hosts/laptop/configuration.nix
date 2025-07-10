@@ -35,16 +35,17 @@
     ];
   };
 
-  # Font configurations
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-  ];
-
   services.xserver.videoDrivers = [ "modesetting" "fbdev" ];
 
   # Enable GNOME
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+
+  # Additional font configurations (GNOME handles a lot of them already when enabled)
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
+
 
   # Enable touchpad support (currently disabled to see if GNOME does it automatically)
   # services.libinput.enable = true;
@@ -66,7 +67,7 @@
     #geary # email client, once Envelope is available start ignoring geary and using it instead
   ]);
 
-  # Additional QOL GNOME applications and alternatives to the disabled defaults
+  # Alternatives to the disabled defaults above and additional QOL applications
   environment.systemPackages = with pkgs; [
     gnome-decoder # QR code scanner and creator
     papers # Better document viewer
