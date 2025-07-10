@@ -9,6 +9,7 @@
   # Install packages
   environment.systemPackages = with pkgs; [
     # Main utilities
+    nvim
     curl
     wget
     tree

@@ -10,7 +10,7 @@
   };
 
   # Load nvidia drivers
-  services.xserver.videoDrivers = [ "nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker)
   hardware.nvidia-container-toolkit.enable = true;

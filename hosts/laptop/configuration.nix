@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  networking.hostName = "nixos-laptop";
+  networking.hostName = "nixos-lt";
 
   # Enable networking
   networking.networkmanager.enable = true;

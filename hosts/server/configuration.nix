@@ -2,7 +2,7 @@
 
 {
   # Hostname
-  networking.hostName = "nixos-server";
+  networking.hostName = "nixos-sv";
 
   # Disable desktop services
   sound.enable = false;
