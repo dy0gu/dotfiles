@@ -30,22 +30,30 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      vpl-gpu-rt
+    ];
   };
+
 
   # Font configurations
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
 
+  services.xserver.videoDrivers = [ "modesetting", "fbdev" ];
+
   # Enable GNOME
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # Enable touchpad support (currently disabled to see if GNOME does it automatically)
+  # services.libinput.enable = true;
+
   # Disable some GNOME default applications
   environment.gnome.excludePackages = (with pkgs; [
     epiphany # web browser, we use Firefox
-    gedit # text editor, we use Zed (GUI) and Neovim (CLI)
-    #geary # email client, once Envelope is available start ignoring geary and using it instead
+    gedit # text editor, we use Neovim (CLI), Zed (GUI) and the other default gnome editor
     evince # document viewer, we use papers
     gnome-contacts # contact management, not needed
     gnome-disk-utility # disk management, we use gnome-disks
@@ -56,6 +64,7 @@
     gnome-terminal # same as above
     yelp # help application, not needed
     totem # video player, we use Celluloid
+    #geary # email client, once Envelope is available start ignoring geary and using it instead
   ]);
 
   # GNOME games

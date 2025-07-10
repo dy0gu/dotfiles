@@ -95,6 +95,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" "docker" ];
+      #theme = "af-magic";
       theme = "strug";
     };
   };
@@ -108,9 +109,9 @@
       title = " ";
       window-subtitle = false;
       gtk-adwaita = true;
-      gtk-titlebar-hide-when-maximized = true;
+      gtk-titlebar-hide-when-maximized = false;
       gtk-single-instance = false;
-      adw-toolbar-style = "raised-border";
+      adw-toolbar-style = "flat";
       auto-update = "off";
       clipboard-trim-trailing-spaces = true;
       keybind = [
@@ -168,7 +169,8 @@
 
       "org/gnome/login-screen" = {
         banner-message-enable = false;
-        logo = "none";
+        fallback-logo = " ";
+        logo = " ";
       };
 
       "org/gnome/desktop/peripherals/mouse" = {
@@ -189,7 +191,7 @@
       };
 
       "org/gnome/desktop/a11y" = {
-        always-show-universal-access-status = false;
+        always-show-universal-access-status = true;
       };
 
       "org/gnome/desktop/interface" = {
@@ -198,6 +200,15 @@
 
       "org/gnome/desktop/default-applications" = {
         terminal = "exec ghostty";
+      };
+
+      # Gnome applications settings
+      "org/gnome/Geary" = {
+        run-in-background = true;
+        optional-plugins = [
+          "email-templates"
+          "mail-merge"
+        ];
       };
 
       "org/gnome/shell" = {
@@ -282,7 +293,7 @@
         include-static-info = true;
         menu-centered = false;
         network-speed-format = 0;
-        position-in-panel = 2;
+        position-in-panel = 4;
         show-fan = true;
         show-gpu = true;
         show-memory = true;
@@ -293,6 +304,15 @@
         show-temperature = true;
         show-battery = false;
         use-higher-precision = false;
+      };
+
+      "org/gnome/shell/extensions/appindicator" = {
+        icon-brightness = 0;
+        icon-contrast = 0.3;
+        icon-opacity = 255;
+        icon-saturation = 1;
+        icon-size = 22;
+        tray-pos = "left";
       };
 
       "org/gnome/desktop/input-sources" = {
