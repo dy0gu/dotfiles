@@ -23,8 +23,9 @@
     ruby
     perl
 
-    # LSPs
+    # LSPs, linters and formatters
     nixd
+    nixfmt-rfc-style
 
     # Gnome extensions
     gnomeExtensions.appindicator
