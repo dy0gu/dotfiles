@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   programs.home-manager.enable = true;
 
@@ -36,7 +41,7 @@
 
     # Applications
     discord
-    zed-editor
+    zed-editor-fhs
   ];
 
   # More applications that have built-in home-manager enablement and configuration
@@ -64,7 +69,11 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "sudo" "docker" ];
+      plugins = [
+        "git"
+        "sudo"
+        "docker"
+      ];
       theme = "strug";
     };
   };
@@ -212,28 +221,32 @@
         paste-on-select = false;
         pinned-on-bottom = false;
         strip-text = false;
-        toggle-menu = ["<Super>v"];
-        next-entry = [];
-        prev-entry = [];
-        private-mode-binding = [];
-        clear-history = [];
+        toggle-menu = [ "<Super>v" ];
+        next-entry = [ ];
+        prev-entry = [ ];
+        private-mode-binding = [ ];
+        clear-history = [ ];
       };
 
       "org/gnome/shell/extensions/caffeine" = {
         duration-timer = 2;
-        duration-timer-list = [900 1800 3600];
+        duration-timer-list = [
+          900
+          1800
+          3600
+        ];
         enable-fullscreen = true;
         enable-mpris = true;
         indicator-position-max = 1;
         show-indicator = "only-active";
         show-notifications = false;
         show-toggle = true;
-        toggle-shortcut = ["<Super><Control>c"];
+        toggle-shortcut = [ "<Super><Control>c" ];
         user-enabled = false;
       };
 
       "org/gnome/shell/extensions/color-picker" = {
-        color-picker-shortcut = ["<Super><Control>p"];
+        color-picker-shortcut = [ "<Super><Control>p" ];
         custom-formats = [
           "<{ 'enable' = <true>; 'name' = <'HSV'>; 'format' = <'hsv({Hu}, {Sv}, {Va})'>; }>"
           "<{ 'enable' = <true>; 'name' = <'CMYK'>; 'format' = <'cmyk({Cy}, {Ma}, {Ye}, {Bk})'>; }>"
@@ -253,7 +266,10 @@
         fixed-widths = true;
         hide-icons = false;
         hide-zeros = true;
-        hot-sensors = ["_memory_usage_" "_processor_usage_"];
+        hot-sensors = [
+          "_memory_usage_"
+          "_processor_usage_"
+        ];
         icon-style = 1;
         include-public-ip = false;
         include-static-info = true;
@@ -288,52 +304,52 @@
       };
 
       "org/gnome/desktop/wm/keybindings" = {
-        move-to-monitor-down = [];
-        move-to-monitor-left = [];
-        move-to-monitor-right = [];
-        move-to-monitor-up = [];
-        move-to-workspace-down = [];
-        move-to-workspace-last = [];
-        move-to-workspace-left = [];
-        move-to-workspace-right = [];
-        move-to-workspace-up = [];
-        move-to-workspace-1 = ["<Super><Shift>1"];
-        move-to-workspace-2 = ["<Super><Shift>2"];
-        move-to-workspace-3 = ["<Super><Shift>3"];
-        move-to-workspace-4 = ["<Super><Shift>4"];
-        switch-to-workspace-left = [];
-        switch-to-workspace-right = [];
-        switch-to-workspace-1 = ["<Super>1"];
-        switch-to-workspace-2 = ["<Super>2"];
-        switch-to-workspace-3 = ["<Super>3"];
-        switch-to-workspace-4 = ["<Super>4"];
+        move-to-monitor-down = [ ];
+        move-to-monitor-left = [ ];
+        move-to-monitor-right = [ ];
+        move-to-monitor-up = [ ];
+        move-to-workspace-down = [ ];
+        move-to-workspace-last = [ ];
+        move-to-workspace-left = [ ];
+        move-to-workspace-right = [ ];
+        move-to-workspace-up = [ ];
+        move-to-workspace-1 = [ "<Super><Shift>1" ];
+        move-to-workspace-2 = [ "<Super><Shift>2" ];
+        move-to-workspace-3 = [ "<Super><Shift>3" ];
+        move-to-workspace-4 = [ "<Super><Shift>4" ];
+        switch-to-workspace-left = [ ];
+        switch-to-workspace-right = [ ];
+        switch-to-workspace-1 = [ "<Super>1" ];
+        switch-to-workspace-2 = [ "<Super>2" ];
+        switch-to-workspace-3 = [ "<Super>3" ];
+        switch-to-workspace-4 = [ "<Super>4" ];
         maximize = [ "<Super>Up" ];
         unmaximize = [ "<Super>Down" ];
-        view-split-on-right = ["<Super>Right"];
-        view-split-on-left = ["<Super>Left"];
+        view-split-on-right = [ "<Super>Right" ];
+        view-split-on-left = [ "<Super>Left" ];
         panel-run-dialog = [ "<Super>r" ];
         always-on-top = [ "<Super>p" ];
-        show-desktop = ["<Super>d"];
+        show-desktop = [ "<Super>d" ];
         toggle-fullscreen = [ "<Super>f" ];
-        close = ["<Super>q"];
+        close = [ "<Super>q" ];
       };
 
       "org/gnome/shell/keybindings" = {
-        switch-to-application-1 = [];
-        switch-to-application-2 = [];
-        switch-to-application-3 = [];
-        switch-to-application-4 = [];
-        switch-to-application-5 = [];
-        switch-to-application-6 = [];
-        switch-to-application-7 = [];
-        switch-to-application-8 = [];
-        switch-to-application-9 = [];
-        toggle-application-view = ["<Super>a"];
-        toggle-quick-settings = ["<Super>s"];
+        switch-to-application-1 = [ ];
+        switch-to-application-2 = [ ];
+        switch-to-application-3 = [ ];
+        switch-to-application-4 = [ ];
+        switch-to-application-5 = [ ];
+        switch-to-application-6 = [ ];
+        switch-to-application-7 = [ ];
+        switch-to-application-8 = [ ];
+        switch-to-application-9 = [ ];
+        toggle-application-view = [ "<Super>a" ];
+        toggle-quick-settings = [ "<Super>s" ];
         show-screenshot-ui = [ "Print" ];
-        screenshot-window = ["<Shift>Print"];
-        screenshot = [];
-        show-screen-recording-ui = [];
+        screenshot-window = [ "<Shift>Print" ];
+        screenshot = [ ];
+        show-screen-recording-ui = [ ];
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -343,10 +359,10 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
         screensaver = [ "<Super>l" ];
-        on-screen-keyboard = ["<Super><Alt>k"];
-        magnifier = ["<Alt><Shift>m"];
-        magnifier-zoom-in = ["<Alt><Shift>q"];
-        magnifier-zoom-out = ["<Alt><Shift>e"];
+        on-screen-keyboard = [ "<Super><Alt>k" ];
+        magnifier = [ "<Alt><Shift>m" ];
+        magnifier-zoom-in = [ "<Alt><Shift>q" ];
+        magnifier-zoom-out = [ "<Alt><Shift>e" ];
         touchpad-toggle = [ "<Super>t" ];
         # "keyboard-brightness-down"
         # "keyboard-brightness-up"
@@ -371,28 +387,28 @@
         # "volume-up"
         # "volume-up-precise"
         # "volume-up-quiet"
-        calculator = [];
-        battery-status = [];
-        eject = [];
-        email = [];
-        help = [];
-        screenreader = [];
-        search = [];
-        logout = [];
-        suspend = [];
-        hibernate = [];
-        power = [];
-        home = [];
-        media = [];
-        control-center = [];
-        rotate-video-lock = [];
-        touchpad-off = [];
-        touchpad-on = [];
-        toggle-contrast = [];
-        screen-brightness-cycle = [];
-        keyboard-brightness-toggle = [];
-        decrease-text-size = [];
-        increase-text-size = [];
+        calculator = [ ];
+        battery-status = [ ];
+        eject = [ ];
+        email = [ ];
+        help = [ ];
+        screenreader = [ ];
+        search = [ ];
+        logout = [ ];
+        suspend = [ ];
+        hibernate = [ ];
+        power = [ ];
+        home = [ ];
+        media = [ ];
+        control-center = [ ];
+        rotate-video-lock = [ ];
+        touchpad-off = [ ];
+        touchpad-on = [ ];
+        toggle-contrast = [ ];
+        screen-brightness-cycle = [ ];
+        keyboard-brightness-toggle = [ ];
+        decrease-text-size = [ ];
+        increase-text-size = [ ];
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
