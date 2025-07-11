@@ -222,9 +222,9 @@
     userKeymaps = [
       {
         bindings = {
-          ctrl-j = null
-        }
-      }
+          ctrl-j = null;
+        };
+      };
     ];
   };
 
