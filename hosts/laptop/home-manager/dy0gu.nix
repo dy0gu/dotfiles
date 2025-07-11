@@ -131,7 +131,7 @@
       "zedokai"
       "zig"
     ];
-    # LSPs, linters and formatters that don't come with the respective extensions and are needed for them to work
+    # LSPs, linters and formatters that don't come with the respective extensions but are needed for them to work
     extraPackages = with pkgs; [
       # Nix
       nixd
@@ -632,6 +632,10 @@
       # Hide applications that don't belong in the GUI menu
       htop = {
         name = "htop";
+        noDisplay = true;
+      };
+      nvtop = {
+        name = "nvtop";
         noDisplay = true;
       };
       nvim = {

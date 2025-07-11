@@ -47,12 +47,12 @@ Some steps may be skipped when installing on more advanced existing configuratio
    git add . # flakes require all modified files to be tracked by git or they will be ignored
    ```
 
-- Replace the home config for the new user and replace all appearances of the existing username with a new one:
+- Replace appearances of the existing username with the new (`<username>`) one, in every file:
 
    ```shell
-   mv ./modules/home-manager/dy0gu.nix ./modules/home-manager/<username>.nix
+   find . -type f -name '*dy0gu*' -exec bash -c 'for f; do mv "$f" "${f//dy0gu/}"; done' bash {} + # for appearances in file names
 
-   find . -path ./\.git -prune -o -type f -exec sed -i 's/dy0gu/<username>/g' {} +
+   find . -path ./\.git -prune -o -type f -exec sed -i 's/dy0gu/<username>/g' {} + # for appearances inside files
    ```
 
    If you want to add new users and not just replace the default one, then add them in [modules/core/users.nix](./modules/core/users.nix) file and create the respective [modules/home-manager](./modules/home-manager) config. This user config should then be loaded it in the `flake.nix` file for the desired `<host>`.
