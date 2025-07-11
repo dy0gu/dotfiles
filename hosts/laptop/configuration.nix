@@ -69,7 +69,7 @@
     gnome-decoder # QR code scanner and creator
     papers # Better document viewer
     bustle # System D-Bus activity viewer
-    bitwarden-desktop # Password manager
+    bitwarden # Password manager
     celluloid # Video player, supports most formats
     gaphor # UML, SysML, RAAML and C4 diagram editor
     impression # Bootable drive creator
