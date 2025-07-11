@@ -65,7 +65,7 @@
   # Alternatives to the disabled defaults above and additional QOL applications
   environment.systemPackages = with pkgs; [
     libreoffice-fresh # Office suite, [LOOKS OUTDATED], waiting on gtk 4 migration update
-    gimp # Image editor, [LOOKS OUTDATED], waiting on gtk 4 migration update
+    gimp3-with-plugins # Image editor, [LOOKS OUTDATED], waiting on gtk 4 migration update
     shotcut # Video editor, [LOOKS OUTDATED], waiting on gtk 4 migration update
     gnome-decoder # QR code scanner and creator
     papers # Better document viewer
