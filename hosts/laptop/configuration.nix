@@ -40,7 +40,7 @@
   # Enable touchpad support (currently disabled to see if GNOME does it automatically)
   # services.libinput.enable = true;
 
-  # Antivirus
+  # Antivirus process
   services.clamav.daemon.enable = true;
   services.clamav.scanner.enable = true;
   services.clamav.updater.enable = true;
@@ -80,6 +80,7 @@
     impression # Bootable drive creator
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
+    clamtk # Anti-virus GUI, using ClamAV as the backend
   ];
   programs.firefox = {
     enable = true;
