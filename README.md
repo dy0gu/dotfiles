@@ -63,7 +63,7 @@ Some steps may be skipped when installing on more advanced existing configuratio
    sudo nixos-rebuild switch --cores <cores> --flake .#<host>
    ```
 
-- When building you may get a `git tree is dirty` warning, which happens because after running `nixos-generate-config` and `git add` on the generated file you still haven't pushed it to the remote. If you plan on keeping the configuration you should:
+- You might see a `git tree is dirty warning` during the build process. This usually happens after running `nixos-generate-config` and staging the generated file with `git add`, but not pushing it to the remote repository, which leaves your local changes uncommitted from the remote’s perspective. If you plan on keeping the configuration you should:
 
   - Create your own fork of this repository and push the changes to it, so the hardware for your hosts is updated there.
 
