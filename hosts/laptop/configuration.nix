@@ -59,11 +59,12 @@
     gnome-terminal # same as above
     yelp # help application, not needed
     totem # video player, we use Celluloid
-    #geary # email client, once Envelope is available start ignoring geary and using it instead
+    #geary # email client, [LOOKS OUTDATED], once Envelope is available start ignoring geary and using it instead
   ]);
 
   # Alternatives to the disabled defaults above and additional QOL applications
   environment.systemPackages = with pkgs; [
+    libreoffice-fresh # Office suite, [LOOKS OUTDATED], waiting on gtk 4 migration update
     gnome-decoder # QR code scanner and creator
     papers # Better document viewer
     binary # Binary conversion tools (not in calculator)

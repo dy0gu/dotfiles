@@ -28,10 +28,6 @@
     ruby
     perl
 
-    # LSPs, linters and formatters
-    nixd
-    nixfmt-rfc-style
-
     # Gnome extensions
     gnomeExtensions.appindicator
     gnomeExtensions.clipboard-indicator
@@ -41,16 +37,21 @@
 
     # Applications
     discord
-    zed-editor-fhs
   ];
 
   # More applications that have built-in home-manager enablement and configuration
-  # programs.zed-editor = {
-  #   enable = true;
-  # };
 
-  programs.lazydocker = {
+  programs.zed-editor = {
     enable = true;
+    package = pkgs.zed-editor-fhs;
+    # LSPs, linters and formatters that don't come with the respective extensions
+    extraPackages = with pkgs; [
+      # Nix
+      nixd
+      nixfmt-rfc-style
+      # Python
+      black
+    ];
   };
 
   programs.zsh = {
@@ -78,20 +79,6 @@
     };
   };
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      plenary-nvim
-      gruvbox-material
-      mini-nvim
-    ];
-  };
 
   programs.ghostty = {
     enable = true;
@@ -123,6 +110,25 @@
         "ctrl+l=clear_screen"
       ];
     };
+  };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      plenary-nvim
+      gruvbox-material
+      mini-nvim
+    ];
+  };
+
+  programs.lazydocker = {
+    enable = true;
   };
 
   # Gnome settings using dconf
