@@ -50,7 +50,6 @@
     epiphany # web browser, we use Firefox
     gedit # text editor, we use Neovim (CLI), Zed (GUI) and the other default gnome editor
     evince # document viewer, we use papers
-    gnome-contacts # contact management, not needed
     gnome-disk-utility # disk management, we use gnome-disks
     gnome-music # music player, we use Decibels (GNOME Audio Player)
     gnome-tour # introductory tour, not needed

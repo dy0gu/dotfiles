@@ -40,17 +40,110 @@
   ];
 
   # More applications that have built-in home-manager enablement and configuration
-
   programs.zed-editor = {
     enable = true;
     package = pkgs.zed-editor-fhs;
-    # LSPs, linters and formatters that don't come with the respective extensions
+    installRemoteServer = false;
+    extensions = [
+      "nix"
+      "xy-zed"
+      "swift"
+    ]
+    # LSPs, linters and formatters that don't come with the respective extensions and are needed for them to work
     extraPackages = with pkgs; [
       # Nix
       nixd
       nixfmt-rfc-style
       # Python
       black
+    ];
+    userSettings = {
+      theme = {
+        mode = "system";
+        light = "One Light";
+        dark = "Zedokai (Filter Spectrum)";
+      };
+      icon_theme = "Material Icon Theme";
+      ui_font_size = 18;
+      buffer_font_size = 18;
+      features = {
+        edit_prediction_provider = "zed";
+      };
+      collaboration_panel = {
+        button = false;
+      };
+      chat_panel = {
+        button = "never";
+      };
+      outline_panel = {
+        button = false;
+      };
+      terminal = {
+        button = false;
+      };
+      project_panel = {
+        button = true;
+        dock = "left";
+      };
+      git_panel = {
+        button = true;
+        dock = "left";
+      };
+      debugger = {
+        button = true;
+        dock = "left";
+      };
+      search = {
+        button = true;
+        dock = "left";
+      };
+      diagnostics = {
+        button = true;
+        include_warnings = true;
+        inline = {
+          enabled = true;
+          update_debounce_ms = 150;
+          padding = 4;
+          min_column = 0;
+          max_severity = null;
+        };
+      };
+      agent = {
+        button = true;
+        dock = "right";
+        model_parameters = [];
+        play_sound_when_agent_done = false;
+        version = "2";
+      };
+      notification_panel = {
+        button = true;
+        dock = "right";
+      };
+      languages = {
+        Nix = {
+          language_servers = [ "nixd" ];
+          formatter = {
+            external = {
+              command = "nixfmt";
+            };
+          };
+        };
+        Python = {
+          language_servers = [ "pyright" ];
+          formatter = {
+            external = {
+              command = "black";
+            };
+          };
+        };
+      };
+    };
+    userKeymaps = [
+      {
+        bindings = {
+          ctrl-j = null
+        }
+      }
     ];
   };
 
