@@ -54,7 +54,7 @@
     gnome-music # music player, we use Decibels (GNOME Audio Player)
     gnome-tour # introductory tour, not needed
     gnome-console # terminal, we use Ghostty
-    seahorse # keyring management, we use Bitwarden
+    seahorse # password/keyring management, we use Bitwarden
     gnome-terminal # same as above
     yelp # help application, not needed
     totem # video player, we use Celluloid
@@ -68,8 +68,8 @@
     shotcut # Video editor, [LOOKS OUTDATED], waiting on gtk 4 migration update
     gnome-decoder # QR code scanner and creator
     papers # Better document viewer
-    binary # Binary conversion tools (not in calculator)
     bustle # System D-Bus activity viewer
+    bitwarden-desktop # Password manager
     celluloid # Video player, supports most formats
     gaphor # UML, SysML, RAAML and C4 diagram editor
     impression # Bootable drive creator

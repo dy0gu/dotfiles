@@ -24,6 +24,7 @@
 
     # System tools
     htop
+    nvtopPackages.full
     strace
 
     # Network tools

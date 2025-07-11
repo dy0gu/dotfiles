@@ -372,7 +372,7 @@
 
       # Gnome applications settings
       "org/gnome/Geary" = {
-        run-in-background = true;
+        run-in-background = false; # setting to true is cool for background notifications but also makes it open on boot so disable for now
         optional-plugins = [
           "email-templates"
           "mail-merge"
