@@ -224,7 +224,7 @@
         bindings = {
           ctrl-j = null;
         };
-      };
+      }
     ];
   };
 
