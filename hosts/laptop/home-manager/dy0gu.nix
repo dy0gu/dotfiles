@@ -129,7 +129,7 @@
       "xml"
       "zedokai"
       "zig"
-    ]
+    ];
     # LSPs, linters and formatters that don't come with the respective extensions and are needed for them to work
     extraPackages = with pkgs; [
       # Nix
