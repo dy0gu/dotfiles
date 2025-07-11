@@ -40,6 +40,11 @@
   # Enable touchpad support (currently disabled to see if GNOME does it automatically)
   # services.libinput.enable = true;
 
+  # Antivirus
+  services.clamav.daemon.enable = true;
+  services.clamav.scanner.enable = true;
+  services.clamav.updater.enable = true;
+
   # Enable GNOME
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
