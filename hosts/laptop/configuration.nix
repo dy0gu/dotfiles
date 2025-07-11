@@ -65,14 +65,13 @@
   # Alternatives to the disabled defaults above and additional QOL applications
   environment.systemPackages = with pkgs; [
     libreoffice-fresh # Office suite, [LOOKS OUTDATED], waiting on gtk 4 migration update
+    gimp # Image editor, [LOOKS OUTDATED], waiting on gtk 4 migration update
+    shotcut # Video editor, [LOOKS OUTDATED], waiting on gtk 4 migration update
     gnome-decoder # QR code scanner and creator
     papers # Better document viewer
     binary # Binary conversion tools (not in calculator)
     bustle # System D-Bus activity viewer
     celluloid # Video player, supports most formats
-    footage # Video trimmer and converter
-    switcheroo # Image resizer and format converter
-    curtail # Image compression tool
     gaphor # UML, SysML, RAAML and C4 diagram editor
     impression # Bootable drive creator
     share-preview # Local previewer for open graph cards
