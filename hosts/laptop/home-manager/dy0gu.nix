@@ -44,6 +44,7 @@
     enable = true;
     package = pkgs.zed-editor-fhs;
     installRemoteServer = false;
+    # Restart Zed sometime after the first boot so it installs these extensions that will be downloaded in the background
     extensions = [
       "angular"
       "ansible"
@@ -139,6 +140,11 @@
       black
     ];
     userSettings = {
+      telemetry = {
+        metrics = false;
+        diagnostics = false;
+      };
+      buffer_font_family = "FiraCode Nerd Font";
       theme = {
         mode = "system";
         light = "One Light";
@@ -147,6 +153,11 @@
       icon_theme = "Material Icon Theme";
       ui_font_size = 18;
       buffer_font_size = 18;
+      vim_mode = false;
+      autosave = "off";
+      restore_on_startup = "none";
+      auto_update = false;
+      base_keymap = "VSCode";
       features = {
         edit_prediction_provider = "zed";
       };
@@ -221,6 +232,7 @@
     };
     userKeymaps = [
       {
+        # Hide terminal in panel and remove keybind, we intend to only use an external terminal
         bindings = {
           ctrl-j = null;
         };
