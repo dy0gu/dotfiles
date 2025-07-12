@@ -52,7 +52,7 @@
   hardware.nvidia-container-toolkit.enable = true;
 
   # Manually set GPU driver preference (if not found, will automatically try the next one in the list)
-  services.xserver.videoDrivers = [ "nvidia", "modesetting", "fbdev" ];
+  services.xserver.videoDrivers = [ "nvidia" "modesetting" "fbdev" ];
 
   # SSH configuration
   services.openssh = {
