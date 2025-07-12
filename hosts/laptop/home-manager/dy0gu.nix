@@ -19,14 +19,17 @@
     # Development tools
     gh # GitHub CLI
     glab # GitLab CLI
-    nodejs
-    python3
-    rustc
-    cargo
-    go
-    lua
-    ruby
-    perl
+    # Programming language installations are managed with nix-shell(s) on a per-project basis as is the Nix way
+    # See the ./shells folder in the repository root for examples
+
+    # InfoSec tools
+    nmap # Network scanner
+    wireshark # Network protocol analyzer
+    aircrack-ng # Wireless security suite
+    sqlmap # SQL injection tool
+    john # Password cracker
+    metasploit # Pentesting framework
+    zap # Web application security scanner
 
     # Gnome extensions
     gnomeExtensions.appindicator
@@ -402,7 +405,7 @@
         cache-size = 20;
         history-size = 80;
         preview-size = 30;
-        display-mode = 3;
+        display-mode = 0;
         clear-on-boot = false;
         confirm-clear = false;
         disable-down-arrow = true;
@@ -431,7 +434,7 @@
         enable-fullscreen = true;
         enable-mpris = true;
         indicator-position-max = 1;
-        show-indicator = "only-active";
+        show-indicator = "always";
         show-notifications = false;
         show-toggle = true;
         toggle-shortcut = [ "<Super><Control>c" ];
@@ -448,7 +451,7 @@
         enable-format = false;
         enable-notify = true;
         enable-shortcut = true;
-        enable-systray = false;
+        enable-systray = true;
         notify-style = 1;
         persistent-mode = true;
         preview-style = 0;

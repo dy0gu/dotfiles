@@ -23,12 +23,11 @@
     zip
 
     # System tools
+    strace
     htop
     nvtopPackages.full
-    strace
 
     # Network tools
-    nmap
     traceroute
     dig
   ];

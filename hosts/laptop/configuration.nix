@@ -59,11 +59,11 @@
     gnome-music # music player, we use Decibels (GNOME Audio Player)
     gnome-tour # introductory tour, not needed
     gnome-console # terminal, we use Ghostty
-    seahorse # password/keyring management, we use Bitwarden
     gnome-terminal # same as above
-    yelp # help application, not needed
     totem # video player, we use Celluloid
-    #geary # email client, [LOOKS OUTDATED], once Envelope is available start ignoring geary and using it instead
+    seahorse # keyring frontend GUI, not needed
+    yelp # help application, not needed
+    geary # email client, waiting for Envelope to be released to replace it
   ]);
 
   # Alternatives to the disabled defaults above and additional QOL applications
