@@ -40,6 +40,7 @@
 
     # Applications
     discord
+    gns3-gui
   ];
 
   # More applications that have built-in home-manager enablement and configuration
