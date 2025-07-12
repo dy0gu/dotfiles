@@ -83,7 +83,7 @@ This setup is made to not keep any sort of credentials or personal data in the r
 
 ## Tips 💡
 
-- The presence of the `gh` and `glab` CLIs allow for easy authentication with GitHub and GitLab, respectively. You can use them if you prefer an `https` login over setting up SSH keys again.
+- Having the `gh` and `glab` CLI packages installed allows for easy authentication with GitHub and GitLab, respectively. You can use them if you prefer an `https` login over setting up SSH keys again.
 
   - You first have to set `git config --global user.name` and `git config --global user.email` manually, as these are not set by default to keep the repository clean of personal data.
 
