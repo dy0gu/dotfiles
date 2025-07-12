@@ -369,9 +369,9 @@
         color-scheme = "prefer-dark";
       };
 
-      "org/gnome/desktop/default-applications" = {
-        terminal = "exec ghostty";
-      };
+       "org/gnome/desktop/default-applications/terminal" = {
+          exec = "ghostty";
+        };
 
       # Gnome applications settings
       "org/gnome/Geary" = {
