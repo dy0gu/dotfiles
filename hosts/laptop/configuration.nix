@@ -63,7 +63,7 @@
     totem # video player, we use Celluloid
     seahorse # keyring frontend GUI, not needed
     yelp # help application, not needed
-    geary # email client, waiting for Envelope to be released to replace it
+    geary # email client, we use web, waiting for Envelope (https://gitlab.gnome.org/felinira/envelope) to replace it
   ]);
 
   # Alternatives to the disabled defaults above and additional QOL applications
