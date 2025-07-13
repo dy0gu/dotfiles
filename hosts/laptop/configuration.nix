@@ -91,6 +91,7 @@
     impression # Bootable drive creator
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
+    addwater # Firefox adwaita theme
   ];
   programs.firefox = {
     enable = true;

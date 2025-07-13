@@ -501,15 +501,33 @@
         ];
       };
 
-      "org/gnome/mutter/" = {
-      };
-
-      "org/gnome/mutter/keybindings/" = {
+      "org/gnome/mutter/keybindings" = {
+        cancel-input-capture = [ "<Super><Shift>Escape" ];
+        rotate-monitor = [ "XF86RotateWindows" ];
+        switch-monitor = [ "<Super>p" "XF86Display" ];
+        toggle-tiled-left = [ "<Super>u" ];
+        toggle-tiled-right = [ "<Super>Right" ];
       };
 
       "org/gnome/mutter/wayland/keybindings/" = {
         restore-shortcuts = [];
       };
+
+      "org/gnome/mutter" = {
+          attach-modal-dialogs = true;
+          auto-maximize = true;
+          center-new-windows = true;
+          check-alive-timeout = 5000;
+          draggable-border-width = 10;
+          dynamic-workspaces = true;
+          edge-tiling = true;
+          experimental-features = [ ];
+          focus-change-on-pointer-rest = true;
+          locate-pointer-key = "Control_L";
+          output-luminance = [ ];
+          overlay-key = "Super";
+          workspaces-only-on-primary = true;
+        };
 
       "org/gnome/desktop/wm/keybindings" = {
         activate-window-menu = [ "<Alt>space" ];
