@@ -41,6 +41,7 @@
     # Applications
     discord
     gns3-gui
+    gns3-server
   ];
 
   # More applications that have built-in home-manager enablement and configuration
@@ -623,7 +624,7 @@
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
         name = "Open Special Characters";
         command = "gnome-characters";
-        binding = "<Super>.";
+        binding = "<Super>period";
       };
     };
   };

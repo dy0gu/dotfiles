@@ -105,10 +105,6 @@
 
       extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
-  programs.gamescope = {
-      enable = true;
-      capSysNice = true;
-  };
 
   # Additional font configurations (GNOME handles a lot of them already when enabled)
   fonts.packages = with pkgs; [
