@@ -501,7 +501,46 @@
         ];
       };
 
+      "org/gnome/mutter/" = {
+      };
+
+      "org/gnome/mutter/keybindings/" = {
+      };
+
+      "org/gnome/mutter/wayland/keybindings/" = {
+        restore-shortcuts = [];
+      };
+
       "org/gnome/desktop/wm/keybindings" = {
+        activate-window-menu = [ "<Alt>space" ];
+        begin-move = [ "<Alt>F1" ];
+        begin-resize = [ "<Alt>F2" ];
+        switch-applications = [ "<Alt>Tab" "<Super>Tab" ];
+        switch-applications-backward = [ ];
+        switch-input-source = [ "<Super>F11" "XF86Keyboard" ];
+        switch-input-source-backward = [];
+        cycle-group = [ ];
+        cycle-group-backward = [ ];
+        cycle-panels = [ ];
+        cycle-panels-backward = [ ];
+        cycle-windows = [ ];
+        cycle-windows-backward = [ ];
+        raise = [];
+        lower = [];
+        raise-or-lower = [];
+        maximize-horizontally = [];
+        maximize-vertically = [];
+        maximize = ["<Super>Up" ];
+        restore = [ "<Super>Down" ];
+        move-to-center = [ "<Super>c" ];
+        move-to-corner-ne = [ ];
+        move-to-corner-nw = [ ];
+        move-to-corner-se = [ ];
+        move-to-corner-sw = [ ];
+        move-to-side-e = [ ];
+        move-to-side-n = [ ];
+        move-to-side-s = [];
+        move-to-side-w = [ ];
         move-to-monitor-down = [ ];
         move-to-monitor-left = [ ];
         move-to-monitor-right = [ ];
@@ -515,16 +554,37 @@
         move-to-workspace-2 = [ "<Super><Shift>2" ];
         move-to-workspace-3 = [ "<Super><Shift>3" ];
         move-to-workspace-4 = [ "<Super><Shift>4" ];
+        move-to-workspace-5 = [ "<Super><Shift>5" ];
+        move-to-workspace-6 = [ "<Super><Shift>6" ];
+        move-to-workspace-7 = [ "<Super><Shift>7" ];
+        move-to-workspace-8 = [ "<Super><Shift>8" ];
+        move-to-workspace-9 = [ "<Super><Shift>9" ];
+        move-to-workspace-10 = [ "<Super><Shift>0" ];
+        move-to-workspace-11 = [ ];
+        move-to-workspace-12 = [ ];
         switch-to-workspace-left = [ ];
         switch-to-workspace-right = [ ];
         switch-to-workspace-1 = [ "<Super>1" ];
         switch-to-workspace-2 = [ "<Super>2" ];
         switch-to-workspace-3 = [ "<Super>3" ];
         switch-to-workspace-4 = [ "<Super>4" ];
-        maximize = [ "<Super>Up" ];
-        unmaximize = [ "<Super>Down" ];
-        view-split-on-right = [ "<Super>Right" ];
-        view-split-on-left = [ "<Super>Left" ];
+        switch-to-workspace-5 = [ "<Super>5" ];
+        switch-to-workspace-6 = [ "<Super>6" ];
+        switch-to-workspace-7 = [ "<Super>7" ];
+        switch-to-workspace-8 = [ "<Super>8" ];
+        switch-to-workspace-9 = [ "<Super>9" ];
+        switch-to-workspace-10 = [ "<Super>0" ];
+        switch-to-workspace-11 = [ ];
+        switch-to-workspace-12 = [ ];
+        switch-to-workspace-down = [ ];
+        switch-to-workspace-up = [ ];
+        switch-to-workspace-last = [ ];
+        toggle-maximized = [ "<Super>m" ];
+        minimize = [ "<Super>h" ];
+        toggle-on-all-workspaces = [];
+        unmaximize = [];
+        switch-panels = [ ];
+        switch-panels-backward = [ ];
         panel-run-dialog = [ "<Super>r" ];
         always-on-top = [ "<Super>p" ];
         show-desktop = [ "<Super>d" ];
@@ -533,6 +593,18 @@
       };
 
       "org/gnome/shell/keybindings" = {
+        focus-active-notification = [];
+        open-new-window-application-1 = [];
+        open-new-window-application-2 = [];
+        open-new-window-application-3 = [];
+        open-new-window-application-4 = [];
+        open-new-window-application-5 = [];
+        open-new-window-application-6 = [];
+        open-new-window-application-7 = [];
+        open-new-window-application-8 = [];
+        open-new-window-application-9 = [];
+        shift-overview-down = [];
+        shift-overview-up = [];
         switch-to-application-1 = [ ];
         switch-to-application-2 = [ ];
         switch-to-application-3 = [ ];
@@ -542,6 +614,7 @@
         switch-to-application-7 = [ ];
         switch-to-application-8 = [ ];
         switch-to-application-9 = [ ];
+        toggle-overview = [ "<Super>" ];
         toggle-application-view = [ "<Super>a" ];
         toggle-quick-settings = [ "<Super>s" ];
         show-screenshot-ui = [ "Print" ];
@@ -585,16 +658,21 @@
         # "volume-up"
         # "volume-up-precise"
         # "volume-up-quiet"
+        rfkill = [ ];
+        rfkill-bluetooth = [ ];
         calculator = [ ];
         battery-status = [ ];
         eject = [ ];
         email = [ ];
         help = [ ];
         screenreader = [ ];
+        www = [ ];
         search = [ ];
         logout = [ ];
         suspend = [ ];
         hibernate = [ ];
+        reboot = [ ];
+        shutdown = [ ];
         power = [ ];
         home = [ ];
         media = [ ];
