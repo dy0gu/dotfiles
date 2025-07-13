@@ -509,7 +509,7 @@
         toggle-tiled-right = [ "<Super>Right" ];
       };
 
-      "org/gnome/mutter/wayland/keybindings/" = {
+      "org/gnome/mutter/wayland/keybindings" = {
         restore-shortcuts = [];
       };
 
