@@ -5,10 +5,10 @@
   environment.defaultPackages = with pkgs; [];
   documentation.enable = false;
 
-  # Leave nano as backup in case a user doesn't install a text editor
+  # Add nano as a root backup editor in case a user doesn't install a text editor
   programs.nano.enable = true;
 
-  # Globally enable Git and leave configuration out of home-manager
+  # Globally enable Git and leave configuration manual to the user
   programs.git.enable = true;
 
   # Install packages

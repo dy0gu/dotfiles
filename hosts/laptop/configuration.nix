@@ -42,7 +42,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker)
-  hardware.nvidia-container-toolkit.enable = true;
+  # hardware.nvidia-container-toolkit.enable = true;
 
   # Manually set GPU driver preference (if not found, will automatically try the next one in the list)
   services.xserver.videoDrivers = [ "nvidia" "modesetting" "fbdev" ];
@@ -91,26 +91,16 @@
     impression # Bootable drive creator
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
-    addwater # Firefox adwaita theme
   ];
   programs.firefox = {
     enable = true;
   };
   programs.steam = {
       enable = true;
-
       remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = false;
-
+      dedicatedServer.openFirewall = true;
       gamescopeSession.enable = true;
-
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
-
-  # Additional font configurations (GNOME handles a lot of them already when enabled)
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-  ];
 
   # Docker configuration
   virtualisation.docker = {
@@ -124,4 +114,9 @@
       };
     };
   };
+
+  # Additional font configurations (GNOME handles a lot of them already when enabled)
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
 }
