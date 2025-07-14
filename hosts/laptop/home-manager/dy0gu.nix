@@ -647,20 +647,18 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
-        mic-mute = [ "<Alt>F3" ];
-        next = [ "<Alt>F4" ];
-        pause = [ "<Alt>F5" ];
-        play = [ "<Alt>F6" ];
-        stop = [ "<Alt>F7" ];
-        previous = [ "<Alt>F8" ];
-        screen-brightness-down = [ "<Alt>F9" ];
-        screen-brightness-up = [ "<Alt>F10" ];
-        keyboard-brightness-down = [ "<Alt>F11" ];
-        keyboard-brightness-up = [ "<Alt>F12" ];
-        volume-down-precise = [ "<Alt>Shift>F4" ];
-        volume-up-precise = [ "<Alt>Shift>F5" ];
-        volume-mute = [ "<Alt>Shift>F6" ];
-        touchpad-toggle = [ "<Alt>Shift>F10" ];
+        volume-down-precise = [ "<Alt>F3" ];
+        volume-up-precise = [ "<Alt>F4" ];
+        volume-mute = [ "<Alt>F5" ];
+        mic-mute = [ "<Alt>F6" ];
+        play = [ "<Alt>F7" ];
+        next = [ "<Alt>F8" ];
+        previous = [ "<Alt>F9" ];
+        touchpad-toggle = [ "<Alt>F10" ];
+        screen-brightness-down = [ "<Alt>F11" ];
+        screen-brightness-up = [ "<Alt>F12" ];
+        keyboard-brightness-down = [];
+        keyboard-brightness-up = [];
         playback-forward = [  ];
         playback-random = [  ];
         playback-repeat = [  ];
