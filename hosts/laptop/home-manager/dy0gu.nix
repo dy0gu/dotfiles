@@ -37,7 +37,6 @@
     gnomeExtensions.caffeine
     gnomeExtensions.vitals
     gnomeExtensions.lock-keys
-    gnomeExtensions.media-controls
 
     # Applications
     discord
@@ -396,7 +395,6 @@
           "caffeine@patapon.info"
           "appindicatorsupport@rgcjonas.gmail.com"
           "lockkeys@vaina.lt"
-          "mediacontrols@cliffniff.github.com"
         ];
         favorite-apps = [
         ];
@@ -493,6 +491,11 @@
         icon-saturation = 1;
         icon-size = 21;
         tray-pos = "left";
+      };
+
+      "org/gnome/shell/extensions/lockkeys" = {
+        notification-preferences = "osd";
+        style = "none";
       };
 
       "org/gnome/desktop/input-sources" = {
