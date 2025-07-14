@@ -524,7 +524,7 @@
           focus-change-on-pointer-rest = true;
           locate-pointer-key = "Control_L";
           output-luminance = [ ];
-          overlay-key = "";
+          overlay-key = "Super";
           workspaces-only-on-primary = true;
         };
 
@@ -610,6 +610,9 @@
       };
 
       "org/gnome/shell/keybindings" = {
+        toggle-application-view = [ "<Super>a" ];
+        toggle-quick-settings = [ "<Super>s" ];
+        toggle-overview = [];
         focus-active-notification = [];
         open-new-window-application-1 = [];
         open-new-window-application-2 = [];
@@ -631,9 +634,6 @@
         switch-to-application-7 = [ ];
         switch-to-application-8 = [ ];
         switch-to-application-9 = [ ];
-        toggle-overview = [ "<Super>" ];
-        toggle-application-view = [ "<Super>a" ];
-        toggle-quick-settings = [ "<Super>s" ];
         show-screenshot-ui = [ "Print" ];
         screenshot-window = [ "<Shift>Print" ];
         screenshot = [ ];
