@@ -13,7 +13,7 @@
   networking.useDHCP = false;
   networking.dhcpcd.enable = false;
 
-  # Configure DNS servers manually (this example uses Cloudflare and Google DNS)
+  # Configure DNS servers manually (Cloudflare and Google DNS)
   # IPv6 DNS servers can be used here as well.
   networking.nameservers = [
     "1.1.1.1"

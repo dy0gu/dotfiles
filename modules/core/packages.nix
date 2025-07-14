@@ -23,6 +23,7 @@
     zip
 
     # System tools
+    nmap
     strace
     htop
     nvtopPackages.full

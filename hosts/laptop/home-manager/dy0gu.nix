@@ -23,13 +23,12 @@
     # See the ./shells folder in the repository root for examples
 
     # InfoSec tools
-    nmap # Network scanner
     wireshark # Network protocol analyzer
     aircrack-ng # Wireless security suite
     sqlmap # SQL injection tool
     john # Password cracker
-    metasploit # Pentesting framework
-    zap # Web application security scanner
+    metasploit # Pentesting framework for known vulnerabilities
+    burpsuite # Web security testing tool
 
     # Gnome extensions
     gnomeExtensions.appindicator
@@ -491,7 +490,7 @@
         icon-contrast = 0.3;
         icon-opacity = 255;
         icon-saturation = 1;
-        icon-size = 22;
+        icon-size = 21;
         tray-pos = "left";
       };
 
