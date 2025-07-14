@@ -36,6 +36,8 @@
     gnomeExtensions.color-picker
     gnomeExtensions.caffeine
     gnomeExtensions.vitals
+    gnomeExtensions.lock-keys
+    gnomeExtensions.media-controls
 
     # Applications
     discord
