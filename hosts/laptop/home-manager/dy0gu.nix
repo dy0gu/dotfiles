@@ -388,18 +388,17 @@
       "org/gnome/shell" = {
         allow-extension-installation = true;
         disable-user-extensions = false;
+        # The UUIDs needed here can be found by looking at the metadata.json in the extension source code repository
         enabled-extensions = [
           "clipboard-indicator@tudmotu.com"
           "color-picker@tuberry"
           "Vitals@CoreCoding.com"
           "caffeine@patapon.info"
           "appindicatorsupport@rgcjonas.gmail.com"
+          "lockkeys@vaina.lt"
+          "mediacontrols@cliffniff.github.com"
         ];
         favorite-apps = [
-          # "firefox.desktop"
-          # "org.gnome.Nautilus.desktop"
-          # "org.gnome.TextEditor.desktop"
-          # "org.gnome.Settings.desktop"
         ];
       };
 
