@@ -524,15 +524,13 @@
           focus-change-on-pointer-rest = true;
           locate-pointer-key = "Control_L";
           output-luminance = [ ];
-          overlay-key = "Super";
+          overlay-key = "";
           workspaces-only-on-primary = true;
         };
 
       "org/gnome/desktop/wm/keybindings" = {
         maximize = ["<Super>Up" ];
-        restore = [ "<Super>Down" ];
-        toggle-maximized = [ "<Super>m" ];
-        minimize = [ "<Super>h" ];
+        unmaximize = [ "<Super>Down" ];
         activate-window-menu = [ "<Alt>space" ];
         begin-move = [ "<Alt>F1" ];
         begin-resize = [ "<Alt>F2" ];
@@ -599,9 +597,11 @@
         switch-to-workspace-up = [ ];
         switch-to-workspace-last = [ ];
         toggle-on-all-workspaces = [];
-        unmaximize = [];
         switch-panels = [ ];
         switch-panels-backward = [ ];
+        restore = [ "<Super>Down" ];
+        toggle-maximized = [ "<Super>m" ];
+        minimize = [ "<Super>h" ];
         panel-run-dialog = [ "<Super>r" ];
         always-on-top = [ "<Super>p" ];
         show-desktop = [ "<Super>d" ];
@@ -631,7 +631,7 @@
         switch-to-application-7 = [ ];
         switch-to-application-8 = [ ];
         switch-to-application-9 = [ ];
-        toggle-overview = [];
+        toggle-overview = [ "<Super>" ];
         toggle-application-view = [ "<Super>a" ];
         toggle-quick-settings = [ "<Super>s" ];
         show-screenshot-ui = [ "Print" ];
@@ -646,35 +646,37 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
+        mic-mute = [ "<Alt>F3" ];
+        next = [ "<Alt>F4" ];
+        pause = [ "<Alt>F5" ];
+        play = [ "<Alt>F6" ];
+        stop = [ "<Alt>F7" ];
+        previous = [ "<Alt>F8" ];
+        screen-brightness-down = [ "<Alt>F9" ];
+        screen-brightness-up = [ "<Alt>F10" ];
+        keyboard-brightness-down = [ "<Alt>F11" ];
+        keyboard-brightness-up = [ "<Alt>F12" ];
+        volume-down-precise = [ "<Alt>Shift>F4" ];
+        volume-up-precise = [ "<Alt>Shift>F5" ];
+        volume-mute = [ "<Alt>Shift>F6" ];
+        touchpad-toggle = [ "<Alt>Shift>F10" ];
+        playback-forward = [  ];
+        playback-random = [  ];
+        playback-repeat = [  ];
+        playback-rewind = [  ];
+        volume-step = [  ];
+        volume-up = [  ];
+        volume-up-quiet = [  ];
+        volume-down = [  ];
+        volume-down-quiet = [  ];
+        volume-mute-quiet = [  ];
         screensaver = [ "<Super>l" ];
         on-screen-keyboard = [ "<Super><Alt>k" ];
         magnifier = [ "<Alt><Shift>m" ];
         magnifier-zoom-in = [ "<Alt><Shift>q" ];
         magnifier-zoom-out = [ "<Alt><Shift>e" ];
-        touchpad-toggle = [ "<Super>t" ];
-        # "keyboard-brightness-down"
-        # "keyboard-brightness-up"
-        # "mic-mute"
-        # "next"
-        # "pause"
-        # "play"
-        # "stop"
-        # "previous"
-        # "playback-forward"
-        # "playback-random"
-        # "playback-repeat"
-        # "playback-rewind"
-        # "screen-brightness-down"
-        # "screen-brightness-up"
-        # "volume-down"
-        # "volume-down-precise"
-        # "volume-down-quiet"
-        # "volume-mute"
-        # "volume-mute-quiet"
-        # "volume-step"
-        # "volume-up"
-        # "volume-up-precise"
-        # "volume-up-quiet"
+        decrease-text-size = [ "<Alt><Shift>minus" ];
+        increase-text-size = [ "<Alt><Shift>equal" ];
         rfkill = [ ];
         rfkill-bluetooth = [ ];
         calculator = [ ];
@@ -700,8 +702,6 @@
         toggle-contrast = [ ];
         screen-brightness-cycle = [ ];
         keyboard-brightness-toggle = [ ];
-        decrease-text-size = [ ];
-        increase-text-size = [ ];
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
