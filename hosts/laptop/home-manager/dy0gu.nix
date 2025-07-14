@@ -501,10 +501,10 @@
       };
 
       "org/gnome/mutter/keybindings" = {
-        cancel-input-capture = [ "<Super><Shift>Escape" ];
+        cancel-input-capture = [ ];
         rotate-monitor = [ "XF86RotateWindows" ];
         switch-monitor = [ "<Super>p" "XF86Display" ];
-        toggle-tiled-left = [ "<Super>u" ];
+        toggle-tiled-left = [ "<Super>Left" ];
         toggle-tiled-right = [ "<Super>Right" ];
       };
 
@@ -529,6 +529,10 @@
         };
 
       "org/gnome/desktop/wm/keybindings" = {
+        maximize = ["<Super>Up" ];
+        restore = [ "<Super>Down" ];
+        toggle-maximized = [ "<Super>m" ];
+        minimize = [ "<Super>h" ];
         activate-window-menu = [ "<Alt>space" ];
         begin-move = [ "<Alt>F1" ];
         begin-resize = [ "<Alt>F2" ];
@@ -547,8 +551,6 @@
         raise-or-lower = [];
         maximize-horizontally = [];
         maximize-vertically = [];
-        maximize = ["<Super>Up" ];
-        restore = [ "<Super>Down" ];
         move-to-center = [ "<Super>c" ];
         move-to-corner-ne = [ ];
         move-to-corner-nw = [ ];
@@ -596,8 +598,6 @@
         switch-to-workspace-down = [ ];
         switch-to-workspace-up = [ ];
         switch-to-workspace-last = [ ];
-        toggle-maximized = [ "<Super>m" ];
-        minimize = [ "<Super>h" ];
         toggle-on-all-workspaces = [];
         unmaximize = [];
         switch-panels = [ ];
@@ -631,7 +631,7 @@
         switch-to-application-7 = [ ];
         switch-to-application-8 = [ ];
         switch-to-application-9 = [ ];
-        toggle-overview = [ "<Super>" ];
+        toggle-overview = [];
         toggle-application-view = [ "<Super>a" ];
         toggle-quick-settings = [ "<Super>s" ];
         show-screenshot-ui = [ "Print" ];
