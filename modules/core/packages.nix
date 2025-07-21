@@ -8,7 +8,7 @@
   # Add nano as a root backup editor in case a user doesn't install a text editor
   programs.nano.enable = true;
 
-  # Globally enable Git and leave configuration manual to the user
+  # Globally enable Git and leave manual configuration to the user
   programs.git.enable = true;
 
   # Install packages

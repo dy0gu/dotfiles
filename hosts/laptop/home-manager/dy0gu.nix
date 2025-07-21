@@ -15,6 +15,7 @@
   home.packages = with pkgs; [
     # System utilities
     fastfetch
+    pipes
 
     # Development tools
     gh # GitHub CLI
@@ -281,6 +282,7 @@
       title = " ";
       window-subtitle = false;
       confirm-close-surface = false;
+      gtk-single-instance = true;
       adw-toolbar-style = "flat";
       auto-update = "off";
       clipboard-trim-trailing-spaces = true;
@@ -319,7 +321,21 @@
     ];
   };
 
+  programs.cava = {
+    enable = true;
+    settings = {
+    general.framerate = 60;
+    smoothing.noise_reduction = 88;
+    color = {
+      background = "'#000000'";
+      foreground = "'#FFFFFF'";
+    };
+  };
+
   programs.lazydocker = {
+    enable = true;
+  };
+  programs.lazygit = {
     enable = true;
   };
 
@@ -371,17 +387,8 @@
         color-scheme = "prefer-dark";
       };
 
-       "org/gnome/desktop/default-applications/terminal" = {
-          exec = "ghostty";
-        };
-
-      # Gnome applications settings
-      "org/gnome/Geary" = {
-        run-in-background = false; # setting to true is cool for background notifications but also makes it open on boot so disable for now
-        optional-plugins = [
-          "email-templates"
-          "mail-merge"
-        ];
+      "org/gnome/desktop/default-applications/terminal" = {
+        exec = "ghostty";
       };
 
       "org/gnome/shell" = {
@@ -460,27 +467,33 @@
       "org/gnome/shell/extensions/vitals" = {
         alphabetize = true;
         fixed-widths = true;
+        hide-zeros = false;
+        menu-centered = false;
         hide-icons = false;
-        hide-zeros = true;
         hot-sensors = [
           "_memory_usage_"
           "_processor_usage_"
-        ];
+          "_system_load_1m_"
+          "__network-rx_max__"
+        ]
+        unit = 0
+        memory-measurement = 1;
         icon-style = 1;
-        include-public-ip = false;
-        include-static-info = true;
-        menu-centered = false;
+        update-time = 3;
         network-speed-format = 0;
-        position-in-panel = 4;
+        position-in-panel = 1;
         show-fan = true;
         show-gpu = true;
         show-memory = true;
         show-network = true;
         show-processor = true;
-        show-storage = false;
         show-system = true;
         show-temperature = true;
+        show-storage = false;
         show-battery = false;
+        show-voltage = false;
+        include-public-ip = false;
+        include-static-info = false;
         use-higher-precision = false;
       };
 
@@ -603,11 +616,11 @@
         toggle-on-all-workspaces = [];
         switch-panels = [ ];
         switch-panels-backward = [ ];
-        restore = [ "<Super>Down" ];
         toggle-maximized = [ "<Super>m" ];
         minimize = [ "<Super>h" ];
         panel-run-dialog = [ "<Super>r" ];
-        always-on-top = [ "<Super>p" ];
+        always-on-top = [  ];
+        toggle-above = [ "<Super>p" ];
         show-desktop = [ "<Super>d" ];
         toggle-fullscreen = [ "<Super>f" ];
         close = [ "<Super>q" ];
@@ -616,6 +629,7 @@
       "org/gnome/shell/keybindings" = {
         toggle-application-view = [ "<Super>a" ];
         toggle-quick-settings = [ "<Super>s" ];
+        toggle-message-tray = [ "<Super>n" ];
         toggle-overview = [];
         focus-active-notification = [];
         open-new-window-application-1 = [];
@@ -708,7 +722,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         name = "Open Files";
-        command = "nautilus --new-window";
+        command = "nautilus";
         binding = "<Super>e";
       };
 
