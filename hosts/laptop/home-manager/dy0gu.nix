@@ -327,7 +327,7 @@
       general.framerate = 60;
       smoothing.noise_reduction = 88;
       color = {
-        background = "'#000000'";
+        background = "'#222226'";
         foreground = "'#FFFFFF'";
       };
     };
