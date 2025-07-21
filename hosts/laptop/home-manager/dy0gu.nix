@@ -324,11 +324,12 @@
   programs.cava = {
     enable = true;
     settings = {
-    general.framerate = 60;
-    smoothing.noise_reduction = 88;
-    color = {
-      background = "'#000000'";
-      foreground = "'#FFFFFF'";
+      general.framerate = 60;
+      smoothing.noise_reduction = 88;
+      color = {
+        background = "'#000000'";
+        foreground = "'#FFFFFF'";
+      };
     };
   };
 
@@ -476,7 +477,7 @@
           "_system_load_1m_"
           "__network-rx_max__"
         ]
-        unit = 0
+        unit = 0;
         memory-measurement = 1;
         icon-style = 1;
         update-time = 3;
