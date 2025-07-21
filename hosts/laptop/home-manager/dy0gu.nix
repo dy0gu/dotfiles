@@ -332,7 +332,6 @@
       };
     };
   };
-
   programs.lazydocker = {
     enable = true;
   };
@@ -476,7 +475,7 @@
           "_processor_usage_"
           "_system_load_1m_"
           "__network-rx_max__"
-        ]
+        ];
         unit = 0;
         memory-measurement = 1;
         icon-style = 1;
