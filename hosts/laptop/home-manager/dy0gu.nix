@@ -36,7 +36,6 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.color-picker
     gnomeExtensions.caffeine
-    gnomeExtensions.vitals
     gnomeExtensions.lock-keys
 
     # Applications
@@ -398,7 +397,6 @@
         enabled-extensions = [
           "clipboard-indicator@tudmotu.com"
           "color-picker@tuberry"
-          "Vitals@CoreCoding.com"
           "caffeine@patapon.info"
           "appindicatorsupport@rgcjonas.gmail.com"
           "lockkeys@vaina.lt"
@@ -462,39 +460,6 @@
         notify-style = 1;
         persistent-mode = true;
         preview-style = 0;
-      };
-
-      "org/gnome/shell/extensions/vitals" = {
-        alphabetize = true;
-        fixed-widths = true;
-        hide-zeros = false;
-        menu-centered = false;
-        hide-icons = false;
-        hot-sensors = [
-          "_memory_usage_"
-          "_processor_usage_"
-          "_system_load_1m_"
-          "__network-rx_max__"
-        ];
-        unit = 0;
-        memory-measurement = 1;
-        icon-style = 1;
-        update-time = 3;
-        network-speed-format = 0;
-        position-in-panel = 1;
-        show-fan = true;
-        show-gpu = true;
-        show-memory = true;
-        show-network = true;
-        show-processor = true;
-        show-system = true;
-        show-temperature = true;
-        show-storage = false;
-        show-battery = false;
-        show-voltage = false;
-        include-public-ip = false;
-        include-static-info = false;
-        use-higher-precision = false;
       };
 
       "org/gnome/shell/extensions/appindicator" = {
