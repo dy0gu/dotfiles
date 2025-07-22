@@ -436,7 +436,7 @@
         check-alive-timeout = 5000;
         draggable-border-width = 10;
         dynamic-workspaces = true;
-        edge-tiling = true;
+        edge-tiling = false;
         experimental-features = [ ];
         focus-change-on-pointer-rest = true;
         locate-pointer-key = "Control_L";
@@ -521,6 +521,7 @@
         accessibility-menu = true;
         activities-button = true;
         animation = 1;
+        panel = true;
         dash = true;
         dash-app-running = true;
         dash-separator = true;
@@ -560,6 +561,30 @@
         workspace-switcher-should-show = true;
         workspace-wrap-around = false;
         world-clock = false;
+      };
+
+      "org/gnome/shell/extensions/openbar/" = {
+        position = "top";
+        bartype = "islands";
+        font = "Adwaita Sans 11";
+        bgcolor-wmax = [ "0.133" "0.133" "0.149" ];
+        menustyle = false;
+        neon = false;
+        dborder = false;
+        dshadow = false;
+        set-bottom-margin = true;
+        margin = 10;
+        shalpha = 0;
+        halpha = 0;
+        balpha = 0;
+        bgalpha = 0;
+        bgalpha2 = 0;
+        marginwmax = 0;
+        set-fullscreen = false;
+        set-overview = false;
+        wmaxbar = true;
+        dashdock-style = "custom";
+        dbgcolor = [ "0.133" "0.133" "0.149" ];
       };
 
       "org/gnome/desktop/input-sources" = {
