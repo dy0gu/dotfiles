@@ -577,11 +577,11 @@
         vpad = 4;
         margin = 10;
         height = 25;
-        fgcolor = [ "1.000" "1.000" "1.000" ];
+        fgcolor = [ "0.133" "0.133" "0.149"  ];
         dark-fgcolor = [ "1.000" "1.000" "1.000" ];
         fgalpha = 1;
         bgalpha-wmax = 1;
-        iscolor = [ "0.133" "0.133" "0.149" ];
+        iscolor = [ "1.000" "1.000" "1.000" ];
         dark-iscolor = [ "0.133" "0.133" "0.149" ];
         isalpha = 1;
         hcolor = ["1.000" "1.000" "1.000"];
