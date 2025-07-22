@@ -37,9 +37,8 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.color-picker
     gnomeExtensions.lock-keys
-    gnomeExtensions.dash-to-dock
     gnomeExtensions.just-perfection
-    gnomeExtensions.blur-my-shell
+    gnomeExtensions.open-bar
 
     # Applications
     discord
@@ -367,8 +366,6 @@
 
       "org/gnome/login-screen" = {
         banner-message-enable = false;
-        fallback-logo = " ";
-        logo = " ";
       };
 
       "org/gnome/desktop/peripherals/mouse" = {
@@ -433,23 +430,19 @@
       };
 
       "org/gnome/mutter" = {
-          attach-modal-dialogs = true;
-          auto-maximize = true;
-          center-new-windows = true;
-          check-alive-timeout = 5000;
-          draggable-border-width = 10;
-          dynamic-workspaces = true;
-          edge-tiling = true;
-          experimental-features = [ ];
-          focus-change-on-pointer-rest = true;
-          locate-pointer-key = "Control_L";
-          output-luminance = [ ];
-          overlay-key = "Super";
-          workspaces-only-on-primary = true;
-        };
-
-      "org/gnome/desktop/a11y" = {
-        always-show-universal-access-status = true;
+        attach-modal-dialogs = true;
+        auto-maximize = true;
+        center-new-windows = true;
+        check-alive-timeout = 5000;
+        draggable-border-width = 10;
+        dynamic-workspaces = true;
+        edge-tiling = true;
+        experimental-features = [ ];
+        focus-change-on-pointer-rest = true;
+        locate-pointer-key = "Control_L";
+        output-luminance = [ ];
+        overlay-key = "Super";
+        workspaces-only-on-primary = true;
       };
 
       "org/gnome/desktop/default-applications/terminal" = {
@@ -465,9 +458,8 @@
           "color-picker@tuberry"
           "appindicatorsupport@rgcjonas.gmail.com"
           "lockkeys@vaina.lt"
-          "dash-to-dock@micxgx.gmail.com"
           "just-perfection-desktop@just-perfection"
-          "blur-my-shell@aunetx"
+          "openbar@neuromorph"
         ];
         favorite-apps = [
         ];
@@ -529,10 +521,8 @@
         accessibility-menu = true;
         activities-button = true;
         animation = 1;
-        # Leave for dash-to-dock to customize
-        # dash = true;
-        # dash-app-running = true;
-        # dash-icon-size = 0;
+        dash = true;
+        dash-app-running = true;
         dash-separator = true;
         double-super-to-appgrid = false;
         quick-settings-dark-mode = false;
@@ -570,45 +560,6 @@
         workspace-switcher-should-show = true;
         workspace-wrap-around = false;
         world-clock = false;
-      };
-
-      "org/gnome/shell/extensions/dash-to-dock" = {
-        apply-custom-theme = false;
-        apply-glossy-effect = false;
-        unity-backlit-items = false;
-        autohide = true;
-        autohide-in-fullscreen = false;
-        custom-background-color = true;
-        transparency-mode = "FIXED";
-        background-color = "rgb(34,34,38)";
-        background-opacity = 1.0;
-        dock-position = "BOTTOM";
-        dock-fixed = false;
-        extend-height = false;
-        height-fraction = 0.75;
-        dash-max-icon-size = 32;
-        icon-size-fixed = false;
-        hide-tooltip = false;
-        hot-keys = false;
-        intellihide-mode = "MAXIMIZED_WINDOWS";
-        isolate-monitors = false;
-        isolate-workspaces = false;
-        max-alpha = 0.8;
-        preview-size-scale = 0;
-        require-pressure-to-show = false;
-        running-indicator-dominant-color = true;
-        running-indicator-style = "DASHES";
-        scroll-action = "do-nothing";
-        scroll-to-focused-application = true;
-        show-apps-always-in-the-edge = true;
-        show-apps-at-top = true;
-        show-dock-urgent-notify = true;
-        show-favorites = true;
-        show-mounts = false;
-        show-mounts-network = false;
-        show-show-apps-button = true;
-        show-trash = false;
-        show-windows-preview = true;
       };
 
       "org/gnome/desktop/input-sources" = {
