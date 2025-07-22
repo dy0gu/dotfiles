@@ -35,10 +35,10 @@
     gnomeExtensions.appindicator
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.color-picker
-    gnomeExtensions.caffeine
     gnomeExtensions.lock-keys
     gnomeExtensions.dash-to-dock
     gnomeExtensions.just-perfection
+    gnomeExtensions.blur-my-shell
 
     # Applications
     discord
@@ -358,8 +358,8 @@
     settings = {
       "org/gnome/desktop/background" = {
         color-shading-type = "solid";
-        picture-uri = "file:///home/dy0gu/.dotfiles/wallpapers/background.png";
-        picture-uri-dark = "file:///home/dy0gu/.dotfiles/wallpapers/background.png";
+        picture-uri = "file:///home/dy0gu/.dotfiles/wallpapers/background.jpg";
+        picture-uri-dark = "file:///home/dy0gu/.dotfiles/wallpapers/background.jpg";
       };
 
       "org/gnome/login-screen" = {
@@ -460,11 +460,11 @@
         enabled-extensions = [
           "clipboard-indicator@tudmotu.com"
           "color-picker@tuberry"
-          "caffeine@patapon.info"
           "appindicatorsupport@rgcjonas.gmail.com"
           "lockkeys@vaina.lt"
           "dash-to-dock@micxgx.gmail.com"
           "just-perfection-desktop@just-perfection"
+          "blur-my-shell@aunetx"
         ];
         favorite-apps = [
         ];
@@ -492,23 +492,6 @@
         prev-entry = [ ];
         private-mode-binding = [ ];
         clear-history = [ ];
-      };
-
-      "org/gnome/shell/extensions/caffeine" = {
-        duration-timer = 2;
-        duration-timer-list = [
-          900
-          1800
-          3600
-        ];
-        enable-fullscreen = true;
-        enable-mpris = true;
-        indicator-position-max = 1;
-        show-indicator = "always";
-        show-notifications = false;
-        show-toggle = true;
-        toggle-shortcut = [ "<Super><Control>c" ];
-        user-enabled = false;
       };
 
       "org/gnome/shell/extensions/color-picker" = {
@@ -583,7 +566,7 @@
         workspace = false;
         workspace-peek = true;
         workspace-popup = false;
-        workspaces-in-app-grid = true;
+        workspaces-in-app-grid = false;
         workspace-switcher-should-show = true;
         workspace-wrap-around = false;
         world-clock = false;
