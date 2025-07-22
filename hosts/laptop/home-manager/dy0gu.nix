@@ -573,9 +573,19 @@
         dborder = false;
         dshadow = false;
         set-bottom-margin = true;
+        hpad = 5;
+        vpad = 4;
         margin = 10;
+        height = 25;
+        fgcolor = [ "1.000" "1.000" "1.000" ];
+        fgalpha = 1;
+        bgalpha-wmax = 1;
+        isalpha = 1;
+        hcolor = ["0.753" "0.749" "0.737"];
+        halpha = 0.5;
         shalpha = 0;
-        halpha = 0;
+        boxalpha = 0;
+        candyalpha = 0;
         balpha = 0;
         bgalpha = 0;
         bgalpha2 = 0;
@@ -585,6 +595,7 @@
         wmaxbar = true;
         dashdock-style = "custom";
         dbgcolor = [ "0.133" "0.133" "0.149" ];
+        dbgalpha = 1;
       };
 
       "org/gnome/desktop/input-sources" = {
