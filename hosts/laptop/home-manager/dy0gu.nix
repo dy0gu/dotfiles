@@ -377,7 +377,7 @@
       };
 
       "org/gnome/desktop/interface" = {
-        accent-color = "slate";
+        accent-color = "red";
         can-change-accels = false;
         clock-format = "24h";
         clock-show-date = true;
