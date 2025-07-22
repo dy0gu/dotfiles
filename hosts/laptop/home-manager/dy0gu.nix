@@ -16,6 +16,7 @@
     # System utilities
     fastfetch
     pipes
+    cmatrix
 
     # Development tools
     gh # GitHub CLI
@@ -249,8 +250,10 @@
     userKeymaps = [
       {
         # Hide terminal in panel and remove keybind, we intend to only use an external terminal
+        # Maybe start using integrated terminal when it remembers the state it was closed in
         bindings = {
           ctrl-j = null;
+          ctrl-r = "projects::OpenRecent";
         };
       }
     ];
@@ -496,10 +499,7 @@
 
       "org/gnome/shell/extensions/color-picker" = {
         color-picker-shortcut = [ "<Super><Control>p" ];
-        custom-formats = [
-          "<{ 'enable' = <true>; 'name' = <'HSV'>; 'format' = <'hsv({Hu}, {Sv}, {Va})'>; }>"
-          "<{ 'enable' = <true>; 'name' = <'CMYK'>; 'format' = <'cmyk({Cy}, {Ma}, {Ye}, {Bk})'>; }>"
-        ];
+        custom-formats = [];
         default-format = 0;
         enable-format = false;
         enable-notify = true;
@@ -561,7 +561,7 @@
         weather = true;
         window-demands-attention-focus = true;
         window-picker-icon = false;
-        window-preview-caption = true;
+        window-preview-caption = false;
         window-preview-close-button = true;
         workspace = false;
         workspace-peek = true;
@@ -581,14 +581,14 @@
         custom-background-color = true;
         transparency-mode = "FIXED";
         background-color = "rgb(34,34,38)";
-        background-opacity = 0.0;
+        background-opacity = 1.0;
         dock-position = "BOTTOM";
         dock-fixed = false;
         extend-height = false;
         height-fraction = 0.75;
-        dash-max-icon-size = 48;
+        dash-max-icon-size = 32;
         icon-size-fixed = false;
-        hide-tooltip = true;
+        hide-tooltip = false;
         hot-keys = false;
         intellihide-mode = "MAXIMIZED_WINDOWS";
         isolate-monitors = false;
