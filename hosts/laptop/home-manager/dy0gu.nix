@@ -563,8 +563,8 @@
       };
 
       "org/gnome/shell/extensions/openbar" = {
-        position = "top";
-        bartype = "islands";
+        position = "Top";
+        bartype = "Islands";
         font = "Adwaita Sans 11";
         bgcolor-wmax = [ "0.133" "0.133" "0.149" ];
         menustyle = false;
@@ -580,7 +580,7 @@
         fgalpha = 1;
         bgalpha-wmax = 1;
         isalpha = 1;
-        hcolor = ["0.753" "0.749" "0.737"];
+        hcolor = ["1.000" "1.000" "1.000"];
         halpha = 0.5;
         shalpha = 0;
         boxalpha = 0;
