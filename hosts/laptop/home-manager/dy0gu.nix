@@ -37,6 +37,8 @@
     gnomeExtensions.color-picker
     gnomeExtensions.caffeine
     gnomeExtensions.lock-keys
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.just-perfection
 
     # Applications
     discord
@@ -375,8 +377,62 @@
       };
 
       "org/gnome/desktop/interface" = {
+        accent-color = "slate";
+        can-change-accels = false;
+        clock-format = "24h";
+        clock-show-date = true;
+        clock-show-seconds = false;
+        clock-show-weekday = false;
+        color-scheme = "prefer-dark";
+        cursor-blink = true;
+        cursor-blink-time = 1200;
+        cursor-blink-timeout = 10;
+        cursor-size = 24;
+        cursor-theme = "Adwaita";
+        document-font-name = "Adwaita Sans 11";
+        enable-animations = true;
         enable-hot-corners = false;
+        font-antialiasing = "grayscale";
+        font-hinting = "slight";
+        font-name = "Adwaita Sans 11";
+        font-rendering = "automatic";
+        font-rgba-order = "rgb";
+        gtk-color-scheme = "";
+        gtk-enable-primary-paste = true;
+        gtk-theme = "Adwaita";
+        gtk-timeout-initial = 200;
+        gtk-timeout-repeat = 20;
+        icon-theme = "Adwaita";
+        locate-pointer = false;
+        menubar-accel = "F10";
+        menubar-detachable = false;
+        menus-have-tearoff = false;
+        monospace-font-name = "Adwaita Mono 11";
+        overlay-scrolling = true;
+        scaling-factor = 0;
+        show-battery-percentage = false;
+        text-scaling-factor = 1.0;
+        toolbar-detachable = false;
+        toolbar-icons-size = "large";
+        toolbar-style = "both-horiz";
+        toolkit-accessibility = true;
       };
+
+      "org/gnome/mutter" = {
+          attach-modal-dialogs = true;
+          auto-maximize = true;
+          center-new-windows = true;
+          check-alive-timeout = 5000;
+          draggable-border-width = 10;
+          dynamic-workspaces = true;
+          edge-tiling = true;
+          experimental-features = [ ];
+          focus-change-on-pointer-rest = true;
+          locate-pointer-key = "Control_L";
+          output-luminance = [ ];
+          overlay-key = "Super";
+          workspaces-only-on-primary = true;
+        };
 
       "org/gnome/desktop/a11y" = {
         always-show-universal-access-status = true;
@@ -400,6 +456,8 @@
           "caffeine@patapon.info"
           "appindicatorsupport@rgcjonas.gmail.com"
           "lockkeys@vaina.lt"
+          "dash-to-dock@micxgx.gmail.com"
+          "just-perfection-desktop@just-perfection"
         ];
         favorite-apps = [
         ];
@@ -479,6 +537,7 @@
       "org/gnome/desktop/input-sources" = {
         xkb-options = [
           "compose:menu"
+          "lv3:ralt_switch"
         ];
       };
 
@@ -493,22 +552,6 @@
       "org/gnome/mutter/wayland/keybindings" = {
         restore-shortcuts = [];
       };
-
-      "org/gnome/mutter" = {
-          attach-modal-dialogs = true;
-          auto-maximize = true;
-          center-new-windows = true;
-          check-alive-timeout = 5000;
-          draggable-border-width = 10;
-          dynamic-workspaces = true;
-          edge-tiling = true;
-          experimental-features = [ ];
-          focus-change-on-pointer-rest = true;
-          locate-pointer-key = "Control_L";
-          output-luminance = [ ];
-          overlay-key = "Super";
-          workspaces-only-on-primary = true;
-        };
 
       "org/gnome/desktop/wm/keybindings" = {
         maximize = ["<Super>Up" ];
