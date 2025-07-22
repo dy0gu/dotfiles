@@ -521,7 +521,6 @@
         accessibility-menu = true;
         activities-button = true;
         animation = 1;
-        panel = true;
         dash = true;
         dash-app-running = true;
         dash-separator = true;
