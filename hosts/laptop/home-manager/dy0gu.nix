@@ -438,10 +438,6 @@
         always-show-universal-access-status = true;
       };
 
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-
       "org/gnome/desktop/default-applications/terminal" = {
         exec = "ghostty";
       };
