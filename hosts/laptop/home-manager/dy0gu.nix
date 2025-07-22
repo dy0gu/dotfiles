@@ -607,7 +607,7 @@
         set-fullscreen = false;
         set-overview = false;
         wmaxbar = true;
-        dashdock-style = "custom";
+        dashdock-style = "Custom";
         dbgcolor = [ "0.133" "0.133" "0.149" ];
         dark-dbgcolor = [ "0.133" "0.133" "0.149" ];
         dbgalpha = 0;
