@@ -44,9 +44,18 @@
     discord
     gns3-gui
     gns3-server
+    blender
   ];
 
   # More applications that have built-in home-manager enablement and configuration
+  programs.obs-studio = {
+    enable = true;
+    package = pkgs.obs-studio;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+    ];
+  };
+
   programs.zed-editor = {
     enable = true;
     package = pkgs.zed-editor-fhs;
@@ -284,6 +293,7 @@
       window-subtitle = false;
       confirm-close-surface = false;
       gtk-single-instance = true;
+      linux-cgroup = "single-instance";
       adw-toolbar-style = "flat";
       auto-update = "off";
       clipboard-trim-trailing-spaces = true;
@@ -300,6 +310,7 @@
         "shift+alt+up=new_split:up"
         "shift+alt+down=new_split:down"
         "ctrl+w=close_surface"
+        "ctrl+q=close_window"
         "ctrl+shift+c=copy_to_clipboard"
         "ctrl+shift+v=paste_from_clipboard"
         "ctrl+l=clear_screen"
@@ -377,7 +388,7 @@
       };
 
       "org/gnome/desktop/interface" = {
-        accent-color = "red";
+        accent-color = "slate";
         can-change-accels = false;
         clock-format = "24h";
         clock-show-date = true;
@@ -529,6 +540,94 @@
         notification-preferences = "osd";
         style = "none";
       };
+
+      "org/gnome/shell/extensions/just-perfection" = {
+        accent-color-icon = false;
+        accessibility-menu = true;
+        activities-button = true;
+        animation = 1;
+        # Leave for dash-to-dock to customize
+        # dash = true;
+        # dash-app-running = true;
+        # dash-icon-size = 0;
+        dash-separator = true;
+        double-super-to-appgrid = false;
+        quick-settings-dark-mode = false;
+        quick-settings-airplane-mode = true;
+        max-displayed-search-results = 2;
+        ripple-box = false;
+        search = true;
+        osd = true;
+        osd-position = 5;
+        notification-banner-position = 1;
+        power-icon = true;
+        overlay-key = true;
+        panel = true;
+        panel-in-overview = true;
+        panel-notification-icon = true;
+        show-apps-button = true;
+        startup-status = 0;
+        support-notifier-showed-version = 34;
+        support-notifier-type = 0;
+        switcher-popup-delay = true;
+        invert-calendar-column-items = false;
+        keyboard-layout = true;
+        theme = false;
+        top-panel-position = 0;
+        type-to-search = true;
+        weather = true;
+        window-demands-attention-focus = true;
+        window-picker-icon = false;
+        window-preview-caption = true;
+        window-preview-close-button = true;
+        workspace = false;
+        workspace-peek = true;
+        workspace-popup = false;
+        workspaces-in-app-grid = true;
+        workspace-switcher-should-show = true;
+        workspace-wrap-around = false;
+        world-clock = false;
+      };
+
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        apply-custom-theme = false;
+        apply-glossy-effect = false;
+        unity-backlit-items = false;
+        autohide = true;
+        autohide-in-fullscreen = false;
+        custom-background-color = true;
+        transparency-mode = "FIXED";
+        background-color = "rgb(34,34,38)";
+        background-opacity = 0.0;
+        dock-position = "BOTTOM";
+        dock-fixed = false;
+        extend-height = false;
+        height-fraction = 0.75;
+        dash-max-icon-size = 48;
+        icon-size-fixed = false;
+        hide-tooltip = true;
+        hot-keys = false;
+        intellihide-mode = "MAXIMIZED_WINDOWS";
+        isolate-monitors = false;
+        isolate-workspaces = false;
+        max-alpha = 0.8;
+        preview-size-scale = 0;
+        require-pressure-to-show = false;
+        running-indicator-dominant-color = true;
+        running-indicator-style = "DASHES";
+        scroll-action = "do-nothing";
+        scroll-to-focused-application = true;
+        show-apps-always-in-the-edge = true;
+        show-apps-at-top = true;
+        show-dock-urgent-notify = true;
+        show-favorites = true;
+        show-mounts = false;
+        show-mounts-network = false;
+        show-show-apps-button = true;
+        show-trash = false;
+        show-windows-preview = true;
+      };
+    };
 
       "org/gnome/desktop/input-sources" = {
         xkb-options = [
