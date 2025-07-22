@@ -627,7 +627,6 @@
         show-trash = false;
         show-windows-preview = true;
       };
-    };
 
       "org/gnome/desktop/input-sources" = {
         xkb-options = [
