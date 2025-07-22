@@ -562,7 +562,7 @@
         world-clock = false;
       };
 
-      "org/gnome/shell/extensions/openbar/" = {
+      "org/gnome/shell/extensions/openbar" = {
         position = "top";
         bartype = "islands";
         font = "Adwaita Sans 11";
