@@ -448,6 +448,10 @@
         enabled = true;
       };
 
+      "org/gnome/desktop/a11y" = {
+        always-show-universal-access-status = true;
+      };
+
       "org/gnome/desktop/sound" = {
         allow-volume-above-100-percent = true;
         event-sounds = false;
@@ -588,7 +592,7 @@
         accent-color-icon = false;
         accessibility-menu = true;
         activities-button = false;
-        animation = 1;
+        animation = 5;
         dash = true;
         dash-app-running = true;
         dash-separator = true;
@@ -607,7 +611,7 @@
         panel-in-overview = true;
         panel-notification-icon = true;
         show-apps-button = true;
-        startup-status = 0;
+        startup-status = 1;
         support-notifier-type = 0;
         switcher-popup-delay = true;
         invert-calendar-column-items = false;
@@ -622,7 +626,7 @@
         window-preview-close-button = true;
         workspace = false;
         workspace-peek = true;
-        workspace-popup = false;
+        workspace-popup = true;
         workspaces-in-app-grid = false;
         workspace-switcher-should-show = true;
         workspace-wrap-around = false;
