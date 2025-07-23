@@ -35,25 +35,21 @@
     ];
   };
 
-  # Enable Nvidia support
-  hardware.nvidia = {
-    # Old GPUs need proprietary drivers so this can only be true for newer GPUs
-    open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-  # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker)
-  # hardware.nvidia-container-toolkit.enable = true;
+  # # Enable Nvidia support
+  # hardware.nvidia = {
+  #   # Old GPUs need proprietary drivers so this can only be true for newer GPUs
+  #   open = false;
+  #   package = config.boot.kernelPackages.nvidiaPackages.stable;
+  # };
+  # # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker)
+  # # hardware.nvidia-container-toolkit.enable = true;
 
-  # Manually set GPU driver preference (if not found, will automatically try the next one in the list)
-  services.xserver.videoDrivers = [ "nvidia" "modesetting" "fbdev" ];
+  # # Manually set GPU driver preference (if not found, will automatically try the next one in the list)
+  # services.xserver.videoDrivers = [ "nvidia" "modesetting" "fbdev" ];
+  services.xserver.videoDrivers = [ "modesetting" "fbdev" ];
 
   # Enable touchpad support (currently disabled to see if GNOME does it automatically)
   # services.libinput.enable = true;
-
-  # Antivirus process
-  services.clamav.daemon.enable = true;
-  services.clamav.scanner.enable = true;
-  services.clamav.updater.enable = true;
 
   # Enable GNOME
   services.displayManager.gdm.enable = true;
