@@ -38,6 +38,7 @@
     gnomeExtensions.color-picker
     gnomeExtensions.lock-keys
     gnomeExtensions.just-perfection
+    gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.open-bar
 
     # Applications
@@ -346,12 +347,6 @@
       };
     };
   };
-  programs.lazydocker = {
-    enable = true;
-  };
-  programs.lazygit = {
-    enable = true;
-  };
 
   # Gnome settings using dconf
   # Run "nix-shell -p dconf-editor" and then "dconf-editor" inside it to get a GUI that shows all the keys that can be edited here
@@ -460,6 +455,7 @@
           "lockkeys@vaina.lt"
           "just-perfection-desktop@just-perfection"
           "openbar@neuromorph"
+          "AlphabeticalAppGrid@stuarthayhurst"
         ];
         favorite-apps = [
         ];
@@ -491,7 +487,10 @@
 
       "org/gnome/shell/extensions/color-picker" = {
         color-picker-shortcut = [ "<Super><Control>p" ];
-        custom-formats = [];
+        custom-formats = [
+          "<{ 'enable' = <true>; 'name' = <'HSV'>; 'format' = <'hsv({Hu}, {Sv}, {Va})'>; }>"
+          "<{ 'enable' = <true>; 'name' = <'CMYK'>; 'format' = <'cmyk({Cy}, {Ma}, {Ye}, {Bk})'>; }>"
+        ];
         default-format = 0;
         enable-format = false;
         enable-notify = true;
@@ -563,6 +562,7 @@
       };
 
       "org/gnome/shell/extensions/openbar" = {
+        color-scheme = "prefer-dark";
         position = "Top";
         bartype = "Islands";
         default-font = "Adwaita Sans Bold 11";
@@ -572,16 +572,17 @@
         neon = false;
         dborder = false;
         dshadow = false;
+        bg-change = false;
         set-bottom-margin = true;
         hpad = 4;
         vpad = 4;
         margin = 10;
         height = 25;
         fgcolor = [ "0.133" "0.133" "0.149"  ];
-        dark-fgcolor = [ "1.000" "1.000" "1.000" ];
+        dark-fgcolor = [ "0.133" "0.133" "0.149" ];
         fgalpha = 1;
         bgalpha-wmax = 1;
-        iscolor = [ "1.000" "1.000" "1.000" ];
+        iscolor = [ "0.133" "0.133" "0.149" ];
         dark-iscolor = [ "0.133" "0.133" "0.149" ];
         isalpha = 1;
         hcolor = ["1.000" "1.000" "1.000"];
