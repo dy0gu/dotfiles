@@ -64,7 +64,7 @@ The instructions here target the minimal configuration left after the NixOS inst
    sudo nixos-rebuild switch --option cores <cores> --option max-jobs <cores> --flake .#<host>
    ```
 
-- You might see a `git tree is dirty warning` during the build process. This is the flake warning you that you have `git add`-ed changes but still haven't `git push`-ed them to the remote repository for safekeeping.
+- You might see a `git tree is dirty warning` during the build process. This is a flake warning, it tells you that you have `git add`-ed changes but still haven't `git push`-ed them to the remote repository for safekeeping.
 
 ## Usage 🚀
 
