@@ -38,8 +38,7 @@
     gnomeExtensions.color-picker
     gnomeExtensions.lock-keys
     gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.grand-theft-focus
-    gnomeExtensions.hide-top-bar
+    gnomeExtensions.just-perfection
 
     # Applications
     discord
@@ -445,10 +444,6 @@
         visual-bell-type = "frame-flash";
       };
 
-      "org/gnome/desktop/a11y" = {
-        always-show-universal-access-status = true;
-      };
-
       "org/gnome/system/location" = {
         enabled = true;
       };
@@ -517,6 +512,7 @@
         workspaces-only-on-primary = true;
       };
 
+
       "org/gnome/desktop/default-applications/terminal" = {
         exec = "ghostty";
       };
@@ -531,8 +527,7 @@
           "appindicatorsupport@rgcjonas.gmail.com"
           "lockkeys@vaina.lt"
           "AlphabeticalAppGrid@stuarthayhurst"
-          "grand-theft-focus@zalckos.github.com"
-          "hidetopbar@mathieu.bidon.ca"
+          "just-perfection-desktop@just-perfection"
         ];
         favorite-apps = [
         ];
@@ -563,7 +558,7 @@
       };
 
       "org/gnome/shell/extensions/color-picker" = {
-        color-picker-shortcut = [ "<Super><Control>p" ];
+        color-picker-shortcut = [ "<Super>p" ];
         custom-formats = [
           "<{ 'enable' = <true>; 'name' = <'HSV'>; 'format' = <'hsv({Hu}, {Sv}, {Va})'>; }>"
           "<{ 'enable' = <true>; 'name' = <'CMYK'>; 'format' = <'cmyk({Cy}, {Ma}, {Ye}, {Bk})'>; }>"
@@ -587,6 +582,51 @@
         icon-saturation = 1;
         icon-size = 21;
         tray-pos = "left";
+      };
+
+      "org/gnome/shell/extensions/just-perfection" = {
+        accent-color-icon = false;
+        accessibility-menu = true;
+        activities-button = false;
+        animation = 1;
+        dash = true;
+        dash-app-running = true;
+        dash-separator = true;
+        double-super-to-appgrid = false;
+        quick-settings-dark-mode = true;
+        quick-settings-airplane-mode = true;
+        max-displayed-search-results = 2;
+        ripple-box = false;
+        search = true;
+        osd = true;
+        osd-position = 5;
+        notification-banner-position = 1;
+        power-icon = true;
+        overlay-key = true;
+        panel = false;
+        panel-in-overview = true;
+        panel-notification-icon = true;
+        show-apps-button = true;
+        startup-status = 0;
+        support-notifier-type = 0;
+        switcher-popup-delay = true;
+        invert-calendar-column-items = false;
+        keyboard-layout = true;
+        theme = false;
+        top-panel-position = 0;
+        type-to-search = true;
+        weather = true;
+        window-demands-attention-focus = true;
+        window-picker-icon = false;
+        window-preview-caption = false;
+        window-preview-close-button = true;
+        workspace = false;
+        workspace-peek = true;
+        workspace-popup = false;
+        workspaces-in-app-grid = false;
+        workspace-switcher-should-show = true;
+        workspace-wrap-around = false;
+        world-clock = false;
       };
 
       "org/gnome/shell/extensions/lockkeys" = {
@@ -690,7 +730,7 @@
         minimize = [ "<Super>h" ];
         panel-run-dialog = [ "<Super>r" ];
         always-on-top = [  ];
-        toggle-above = [ "<Super>p" ];
+        toggle-above = [ ];
         show-desktop = [ "<Super>d" ];
         toggle-fullscreen = [ "<Super>f" ];
         close = [ "<Super>q" ];
