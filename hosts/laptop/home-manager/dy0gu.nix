@@ -289,10 +289,8 @@
     enable = true;
     settings = {
       command = "zsh --login";
-      theme = "dark:Adwaita Dark,light:Adwaita";
-      background = "#222226";
+      theme = "dark:custom-adwaita-dark,light:custom-adwaita-light";
       font-family = "FiraCode Nerd Font";
-      title = " ";
       window-subtitle = false;
       confirm-close-surface = false;
       gtk-single-instance = true;
@@ -319,6 +317,60 @@
         "ctrl+l=clear_screen"
       ];
     };
+    themes = {
+      custom-adwaita-dark = {
+        background = "222226";
+        foreground = "ffffff";
+        cursor-color = "ffffff";
+        cursor-text = "1e1e1e";
+        selection-background = "ffffff";
+        selection-foreground = "5e5c64";
+        palette = [
+          "0=#241f31"
+          "1=#c01c28"
+          "2=#2ec27e"
+          "3=#f5c211"
+          "4=#1e78e4"
+          "5=#9841bb"
+          "6=#0ab9dc"
+          "7=#c0bfbc"
+          "8=#5e5c64"
+          "9=#ed333b"
+          "10=#57e389"
+          "11=#f8e45c"
+          "12=#51a1ff"
+          "13=#c061cb"
+          "14=#4fd2fd"
+          "15=#f6f5f4"
+        ];
+      };
+      custom-adwaita-light = {
+        background = "fffafb";
+        foreground = "000000";
+        cursor-color = "000000";
+        cursor-text = "ffffff";
+        selection-background = "c0bfbc";
+        selection-foreground = "000000";
+        palette = [
+          "0=#241f31"
+          "1=#c01c28"
+          "2=#2ec27e"
+          "3=#f5c211"
+          "4=#1e78e4"
+          "5=#9841bb"
+          "6=#0ab9dc"
+          "7=#c0bfbc"
+          "8=#5e5c64"
+          "9=#ed333b"
+          "10=#57e389"
+          "11=#f8e45c"
+          "12=#51a1ff"
+          "13=#c061cb"
+          "14=#4fd2fd"
+          "15=#f6f5f4"
+        ];
+      };
+    }
   };
 
   programs.neovim = {
