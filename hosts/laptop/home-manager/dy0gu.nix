@@ -593,7 +593,7 @@
         dash-app-running = true;
         dash-separator = true;
         double-super-to-appgrid = false;
-        quick-settings-dark-mode = true;
+        quick-settings-dark-mode = false;
         quick-settings-airplane-mode = true;
         max-displayed-search-results = 2;
         ripple-box = false;
