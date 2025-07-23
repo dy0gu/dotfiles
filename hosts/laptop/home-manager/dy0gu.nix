@@ -39,7 +39,7 @@
     gnomeExtensions.lock-keys
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.grand-theft-focus
-    gnomeExtensions.open-bar
+    gnomeExtensions.hide-top-bar
 
     # Applications
     discord
@@ -480,7 +480,7 @@
           "lockkeys@vaina.lt"
           "AlphabeticalAppGrid@stuarthayhurst"
           "grand-theft-focus@zalckos.github.com"
-          "openbar@neuromorph"
+          "hidetopbar@mathieu.bidon.ca"
         ];
         favorite-apps = [
         ];
@@ -540,39 +540,6 @@
       "org/gnome/shell/extensions/lockkeys" = {
         notification-preferences = "osd";
         style = "none";
-      };
-
-      "org/gnome/shell/extensions/openbar" = {
-        position = "Top";
-        bartype = "Islands";
-        default-font = "Adwaita Sans Bold 11";
-        bgcolor-wmax = [ "0.133" "0.133" "0.149" ];
-        menustyle = false;
-        neon = false;
-        dborder = false;
-        dshadow = false;
-        bg-change = false;
-        set-bottom-margin = true;
-        hpad = 4;
-        vpad = 4;
-        margin = 10;
-        height = 25;
-        fgcolor = [ "0.133" "0.133" "0.149"  ];
-        fgalpha = 1;
-        bgalpha-wmax = 1;
-        iscolor = [ "0.133" "0.133" "0.149" ];
-        isalpha = 1;
-        hcolor = ["1.000" "1.000" "1.000"];
-        halpha = 0.5;
-        shalpha = 0;
-        boxalpha = 0;
-        candyalpha = 0;
-        balpha = 0;
-        bgalpha = 0;
-        bradius = 12;
-        wmaxbar = true;
-        dashdock-style = "Custom";
-        dbgalpha = 0;
       };
 
       "org/gnome/desktop/input-sources" = {

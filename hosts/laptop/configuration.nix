@@ -63,6 +63,7 @@
     gnome-tour # introductory tour, not needed
     gnome-console # terminal, we use Ghostty
     gnome-terminal # same as above
+    gnome-system-monitor # system monitor, we use resources
     totem # video player, we use Celluloid
     seahorse # keyring frontend GUI, not needed
     yelp # help application, not needed
@@ -84,6 +85,7 @@
     impression # Bootable drive creator
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
+    resources # Modern resource monitor
   ];
   programs.firefox = {
     enable = true;
