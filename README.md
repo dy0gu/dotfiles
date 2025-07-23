@@ -4,9 +4,11 @@
 
 ## Installation 🛠️
 
+It is recommeded that you install NixOS using the official **graphical image**, then check the box to **allow unfree software** and pick the option to **start with no desktop environment** in the installer.
+
 This section assumes you already have a NixOS itself installed and understand basic Linux commands.
 
-The instructions target the minimal configuration provided by the official NixOS installer as a base, but they should work with any existing setup, since it will be overwritten.
+The instructions here target the minimal configuration provided by the official NixOS installer as a base, but they should work with any existing setup, since it will be overwritten.
 
 Some steps may be skipped when installing on more advanced existing configurations, as noted throughout.
 
