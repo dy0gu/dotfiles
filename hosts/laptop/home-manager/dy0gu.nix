@@ -39,6 +39,7 @@
     gnomeExtensions.lock-keys
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.grand-theft-focus
+    gnomeExtensions.open-bar
 
     # Applications
     discord
