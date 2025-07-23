@@ -37,9 +37,8 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.color-picker
     gnomeExtensions.lock-keys
-    gnomeExtensions.just-perfection
     gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.open-bar
+    gnomeExtensions.grand-theft-focus
 
     # Applications
     discord
@@ -349,7 +348,9 @@
   };
 
   # Gnome settings using dconf
-  # Run "nix-shell -p dconf-editor" and then "dconf-editor" inside it to get a GUI that shows all the keys that can be edited here
+  # Use "dconf watch /" to see the keys that are being changed while you play around with the Gnome settings to later write them here
+  # You can also run "nix-shell -p dconf-editor" and then "dconf-editor" inside it to get a GUI that shows all
+  # the keys that have been created or edited
   dconf = {
     enable = true;
     settings = {
@@ -369,7 +370,30 @@
       };
 
       "org/gnome/desktop/wm/preferences" = {
+        action-double-click-titlebar = "toggle-maximize";
+        action-middle-click-titlebar = "toggle-maximize";
+        action-right-click-titlebar = "menu";
+        audible-bell = false;
+        auto-raise = true;
+        auto-raise-delay = 300;
         button-layout = "appmenu:minimize,maximize,close";
+        disable-workarounds = false;
+        focus-mode = "click";
+        focus-new-windows = "smart";
+        mouse-button-modifier = "<Super>";
+        num-workspaces = 5;
+        workspace-names = [];
+        raise-on-click = true;
+        resize-with-right-button = false;
+        theme = "Adwaita";
+        titlebar-uses-system-font = false;
+        titlebar-font = "Adwaita Sans Bold 11";
+        visual-bell = true;
+        visual-bell-type = "frame-flash";
+      };
+
+      "org/gnome/desktop/a11y" = {
+        always-show-universal-access-status = true;
       };
 
       "org/gnome/system/location" = {
@@ -430,12 +454,12 @@
         center-new-windows = true;
         check-alive-timeout = 5000;
         draggable-border-width = 10;
-        dynamic-workspaces = true;
+        dynamic-workspaces = false;
         edge-tiling = false;
         experimental-features = [ ];
         focus-change-on-pointer-rest = true;
-        locate-pointer-key = "Control_L";
-        output-luminance = [ ];
+        locate-pointer = false;
+        locate-pointer-key = "";
         overlay-key = "Super";
         workspaces-only-on-primary = true;
       };
@@ -453,9 +477,9 @@
           "color-picker@tuberry"
           "appindicatorsupport@rgcjonas.gmail.com"
           "lockkeys@vaina.lt"
-          "just-perfection-desktop@just-perfection"
-          "openbar@neuromorph"
           "AlphabeticalAppGrid@stuarthayhurst"
+          "grand-theft-focus@zalckos.github.com"
+          "openbar@neuromorph"
         ];
         favorite-apps = [
         ];
@@ -491,12 +515,14 @@
           "<{ 'enable' = <true>; 'name' = <'HSV'>; 'format' = <'hsv({Hu}, {Sv}, {Va})'>; }>"
           "<{ 'enable' = <true>; 'name' = <'CMYK'>; 'format' = <'cmyk({Cy}, {Ma}, {Ye}, {Bk})'>; }>"
         ];
+        auto-copy = true;
         default-format = 0;
         enable-format = false;
         enable-notify = true;
         enable-shortcut = true;
         enable-systray = true;
         notify-style = 1;
+        menu-size = 8;
         persistent-mode = true;
         preview-style = 0;
       };
@@ -515,59 +541,11 @@
         style = "none";
       };
 
-      "org/gnome/shell/extensions/just-perfection" = {
-        accent-color-icon = false;
-        accessibility-menu = true;
-        activities-button = true;
-        animation = 1;
-        dash = true;
-        dash-app-running = true;
-        dash-separator = true;
-        double-super-to-appgrid = false;
-        quick-settings-dark-mode = false;
-        quick-settings-airplane-mode = true;
-        max-displayed-search-results = 2;
-        ripple-box = false;
-        search = true;
-        osd = true;
-        osd-position = 5;
-        notification-banner-position = 1;
-        power-icon = true;
-        overlay-key = true;
-        panel = true;
-        panel-in-overview = true;
-        panel-notification-icon = true;
-        show-apps-button = true;
-        startup-status = 0;
-        support-notifier-showed-version = 34;
-        support-notifier-type = 0;
-        switcher-popup-delay = true;
-        invert-calendar-column-items = false;
-        keyboard-layout = true;
-        theme = false;
-        top-panel-position = 0;
-        type-to-search = true;
-        weather = true;
-        window-demands-attention-focus = true;
-        window-picker-icon = false;
-        window-preview-caption = false;
-        window-preview-close-button = true;
-        workspace = false;
-        workspace-peek = true;
-        workspace-popup = false;
-        workspaces-in-app-grid = false;
-        workspace-switcher-should-show = true;
-        workspace-wrap-around = false;
-        world-clock = false;
-      };
-
       "org/gnome/shell/extensions/openbar" = {
-        color-scheme = "prefer-dark";
         position = "Top";
         bartype = "Islands";
         default-font = "Adwaita Sans Bold 11";
         bgcolor-wmax = [ "0.133" "0.133" "0.149" ];
-        dark-bgcolor-wmax = [ "0.133" "0.133" "0.149" ];
         menustyle = false;
         neon = false;
         dborder = false;
@@ -579,14 +557,11 @@
         margin = 10;
         height = 25;
         fgcolor = [ "0.133" "0.133" "0.149"  ];
-        dark-fgcolor = [ "0.133" "0.133" "0.149" ];
         fgalpha = 1;
         bgalpha-wmax = 1;
         iscolor = [ "0.133" "0.133" "0.149" ];
-        dark-iscolor = [ "0.133" "0.133" "0.149" ];
         isalpha = 1;
         hcolor = ["1.000" "1.000" "1.000"];
-        dark-hcolor = ["1.000" "1.000" "1.000"];
         halpha = 0.5;
         shalpha = 0;
         boxalpha = 0;
@@ -594,29 +569,9 @@
         balpha = 0;
         bgalpha = 0;
         bradius = 12;
-        autotheme-font = false;
-        import-export = false;
-        radius-bottomleft = true;
-        radius-bottomright = true;
-        radius-topleft = true;
-        radius-topright = true;
-        buttonbg-wmax = false;
-        bgalpha2 = 0;
-        marginwmax = 0;
-        margin-wmax = 0;
-        cust-margin-wmax = true;
-        set-fullscreen = false;
-        set-overview = false;
         wmaxbar = true;
         dashdock-style = "Custom";
-        dbgcolor = [ "0.133" "0.133" "0.149" ];
-        dark-dbgcolor = [ "0.133" "0.133" "0.149" ];
         dbgalpha = 0;
-        dbradius = 0;
-        disize = 72;
-        wmax-hbarhint = false;
-        reload-style = false;
-        trigger-reload = false;
       };
 
       "org/gnome/desktop/input-sources" = {
@@ -628,8 +583,8 @@
 
       "org/gnome/mutter/keybindings" = {
         cancel-input-capture = [ ];
-        rotate-monitor = [ "XF86RotateWindows" ];
-        switch-monitor = [ "<Super>p" "XF86Display" ];
+        rotate-monitor = [];
+        switch-monitor = [ "<Super>p"];
         toggle-tiled-left = [ "<Super>Left" ];
         toggle-tiled-right = [ "<Super>Right" ];
       };
@@ -645,8 +600,8 @@
         begin-move = [ "<Alt>F1" ];
         begin-resize = [ "<Alt>F2" ];
         switch-applications = [ "<Alt>Tab" "<Super>Tab" ];
-        switch-applications-backward = [ ];
-        switch-input-source = [ "<Super>F11" "XF86Keyboard" ];
+        switch-applications-backward = [];
+        switch-input-source = [];
         switch-input-source-backward = [];
         cycle-group = [ ];
         cycle-group-backward = [ ];
@@ -658,6 +613,8 @@
         lower = [];
         raise-or-lower = [];
         maximize-horizontally = [];
+        switch-group = [];
+        switch-group-backward = [];
         maximize-vertically = [];
         move-to-center = [ "<Super>c" ];
         move-to-corner-ne = [ ];

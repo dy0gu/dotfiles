@@ -2,8 +2,15 @@
 
 {
   # Boot loader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+    };
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 8;
+    };
+  };
 
   # System version
   system.stateVersion = "24.05";
