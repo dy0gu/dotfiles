@@ -1,25 +1,28 @@
-# Info 📰
+# .files 🗄️
 
-...
+The first time I tried **NixOS** I immediately fell in love with its declarative configuration and reproducibility. It was like something I had always been looking for but never knew existed.
+
+Since then, I have been using it as the main operating system in most of my machines and _slowly_ iterating on their configurations.
+
+This repository holds the collection of all those configurations, for
+a multitude of hosts, completely bundled into a flake.
 
 ## Forking + Customization 🎨
 
 There are no detailed instructions for forking and customizing this repository for yourself at the moment, since it's primarily maintained for personal use. However, you're welcome to adapt it for your own setup.
 
-If you want to (before running an initial `nixos-rebuild switch` in the installation process) the main things you would need to update/add are user profile and home configurations for each host, so the system is personalized to your username(s).
+If you want to, the main things that would need to be changed are the user profile and home configurations for each host, so the system is personalized to your username(s). You should do this before the initial `nixos-rebuild switch` command, since some changes at the system/users level can leave remnants of the previous profiles.
 
 ## Installation 🛠️
 
-It is recommeded that NixOS is installed using the official **graphical image**, with the **allow unfree software** option enabled and **No Desktop** chosen in the installer.
+It is recommeded that NixOS is installed using the official [graphical image](https://nixos.org/download/#nixos-iso), with the **allow unfree software** option enabled and **No Desktop** chosen in the installer.
 
 This next section assumes you already have a NixOS itself installed and understand basic Linux commands.
 
-The instructions here target the minimal configuration provided by the official NixOS installer as a base, but they should work with any existing setup, since it will be overwritten.
-
-Some steps may be skipped when installing on more advanced existing configurations, as noted throughout.
+The instructions here target the minimal configuration left after the NixOS installer is ran, but they should work with any existing setup, since it will be overwritten.
 
 > [!NOTE]
-> Once `flakes` leave experimental state this first step is no longer needed and will be deleted, whenever that may be.
+> Once `flakes` leave experimental state this first step is no longer needed and should be skipped, whenever that may be.
 
 - Enable the `flakes` experimental feature.
 
