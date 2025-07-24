@@ -39,6 +39,7 @@
     gnomeExtensions.lock-keys
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.just-perfection
+    gnomeExtensions.easy-docker-containers
     gnomeExtensions.activate-window-by-title
 
     # Applications
@@ -522,6 +523,7 @@
           "AlphabeticalAppGrid@stuarthayhurst"
           "just-perfection-desktop@just-perfection"
           "activate-window-by-title@lucaswerkmeister.de"
+          "easy_docker_containers@red.software.systems"
         ];
         favorite-apps = [
         ];
