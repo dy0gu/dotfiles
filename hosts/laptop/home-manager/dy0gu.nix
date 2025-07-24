@@ -39,6 +39,7 @@
     gnomeExtensions.lock-keys
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.just-perfection
+    gnomeExtensions.activate-window-by-title
 
     # Applications
     discord
@@ -532,6 +533,7 @@
           "lockkeys@vaina.lt"
           "AlphabeticalAppGrid@stuarthayhurst"
           "just-perfection-desktop@just-perfection"
+          "activate-window-by-title@lucaswerkmeister.de"
         ];
         favorite-apps = [
         ];
@@ -777,6 +779,7 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
         ];
         volume-down-precise = [ "<Alt>F3" ];
         volume-up-precise = [ "<Alt>F4" ];
@@ -840,16 +843,22 @@
         binding = "<Super>e";
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        name = "Open Terminal";
-        command = "ghostty";
-        binding = "<Super>backslash";
-      };
-
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
         name = "Open Special Characters";
         command = "gnome-characters";
         binding = "<Super>period";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+        name = "Open System Monitor";
+        command = "resources";
+        binding = "<Ctrl><Alt>Delete";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        name = "Open Terminal";
+        command = "if pgrep -x .ghostty-wrappe > /dev/null; then gdbus call --session --dest org.gnome.Shell --object-path /de/lucaswerkmeister/ActivateWindowByTitle --method de.lucaswerkmeister.ActivateWindowByTitle.activateBySubstring \"Ghostty\"; else ghostty; fi";
+        binding = "<Super>backslash";
       };
     };
   };
