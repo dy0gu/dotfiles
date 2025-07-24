@@ -632,7 +632,7 @@
       "org/gnome/mutter/keybindings" = {
         cancel-input-capture = [ ];
         rotate-monitor = [];
-        switch-monitor = [ "<Super>p"];
+        switch-monitor = [];
         toggle-tiled-left = [ "<Super>Left" ];
         toggle-tiled-right = [ "<Super>Right" ];
       };
@@ -664,7 +664,7 @@
         switch-group = [];
         switch-group-backward = [];
         maximize-vertically = [];
-        move-to-center = [ "<Super>c" ];
+        move-to-center = [];
         move-to-corner-ne = [ ];
         move-to-corner-nw = [ ];
         move-to-corner-se = [ ];
@@ -841,15 +841,14 @@
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
         name = "Open Color Picker";
         command = "eyedropper";
-        binding = "<Super>p";
+        binding = "<Super>c";
       };
 
-      # Currently broken as single instance, launches a new terminal even if already running
-      # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-      #   name = "Open Terminal";
-      #   command = "ghostty";
-      #   binding = "<Super>backslash";
-      # };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+        name = "Open Terminal";
+        command = "ghostty";
+        binding = "<Super>backslash";
+      };
     };
   };
 
