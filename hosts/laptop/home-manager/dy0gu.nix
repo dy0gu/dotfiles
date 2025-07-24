@@ -829,8 +829,8 @@
 
       "org/gnome/shell/keybindings" = {
         toggle-application-view = [ "<Super>a" ];
-        toggle-quick-settings = [ "<Super>s" ];
-        toggle-message-tray = [ "<Super>n" ];
+        toggle-quick-settings = [];
+        toggle-message-tray = [ ];
         toggle-overview = [];
         focus-active-notification = [];
         open-new-window-application-1 = [];
@@ -930,18 +930,24 @@
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        name = "Open Settings";
+        command = "gnome-control-center";
+        binding = "<Super>s";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
         name = "Open Special Characters";
         command = "gnome-characters";
         binding = "<Super>period";
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
         name = "Open System Monitor";
         command = "resources";
-        binding = "<Ctrl><Alt>Delete";
+        binding = "<Ctrl><Shift>Esc";
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
         name = "Open Color Picker";
         command = "eyedropper";
         binding = "<Super>c";
