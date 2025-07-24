@@ -532,7 +532,7 @@
         cache-size = 20;
         history-size = 80;
         preview-size = 30;
-        display-mode = 0;
+        display-mode = 3;
         clear-on-boot = false;
         confirm-clear = false;
         disable-down-arrow = true;
@@ -562,7 +562,7 @@
         enable-format = false;
         enable-notify = true;
         enable-shortcut = true;
-        enable-systray = true;
+        enable-systray = false;
         notify-style = 1;
         menu-size = 8;
         persistent-mode = true;
