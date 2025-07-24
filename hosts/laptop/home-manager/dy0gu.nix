@@ -39,8 +39,6 @@
     gnomeExtensions.lock-keys
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.just-perfection
-    gnomeExtensions.easy-docker-containers
-    gnomeExtensions.activate-window-by-title
 
     # Applications
     discord
@@ -292,9 +290,11 @@
       command = "zsh --login";
       theme = "dark:custom-adwaita-dark,light:custom-adwaita-light";
       font-family = "FiraCode Nerd Font";
+      title = "Ghostty";
       window-subtitle = false;
       confirm-close-surface = false;
       gtk-single-instance = true;
+      app-notifications = false;
       linux-cgroup = "single-instance";
       adw-toolbar-style = "flat";
       auto-update = "off";
@@ -522,8 +522,6 @@
           "lockkeys@vaina.lt"
           "AlphabeticalAppGrid@stuarthayhurst"
           "just-perfection-desktop@just-perfection"
-          "activate-window-by-title@lucaswerkmeister.de"
-          "easy_docker_containers@red.software.systems"
         ];
         favorite-apps = [
         ];
@@ -845,18 +843,19 @@
         binding = "<Ctrl><Alt>Delete";
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        name = "Open Terminal";
-        command = "if pgrep -x .ghostty-wrappe > /dev/null; then gdbus call --session --dest org.gnome.Shell --object-path /de/lucaswerkmeister/ActivateWindowByTitle --method de.lucaswerkmeister.ActivateWindowByTitle.activateBySubstring \"Ghostty\"; else ghostty; fi";
-        binding = "<Super>backslash";
-      };
+      # Currently broken as single instance, launches a new terminal even if already running
+      # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      #   name = "Open Terminal";
+      #   command = "ghostty";
+      #   binding = "<Super>backslash";
+      # };
     };
   };
 
   # Hide specific apps from GUI menus
   xdg = {
     enable = true;
-    # Keys used to reference .desktop files here must be an exact match to the nixpackg that provides them
+    # Keys used to reference .desktop files here must be an exact match to the nixpackage that provides them
     desktopEntries = {
       # Hide applications that don't belong in the GUI menu
       htop = {
