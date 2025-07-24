@@ -388,18 +388,6 @@
     ];
   };
 
-  programs.cava = {
-    enable = true;
-    settings = {
-      general.framerate = 60;
-      smoothing.noise_reduction = 88;
-      color = {
-        background = "'#222226'";
-        foreground = "'#FFFFFF'";
-      };
-    };
-  };
-
   # Gnome settings using dconf
   # Use "dconf watch /" to see the keys that are being changed while you play around with the Gnome settings to later write them here
   # You can also run "nix-shell -p dconf-editor" and then "dconf-editor" inside it to get a GUI that shows all
