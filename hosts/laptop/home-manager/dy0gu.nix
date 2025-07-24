@@ -53,7 +53,9 @@
   services.podman = {
     enable = true;
     enableTypeChecks = true;
-    autoUpdate = false;
+    autoUpdate = {
+      enable = false;
+    };
   };
 
   # More applications that have built-in home-manager enablement and configuration
