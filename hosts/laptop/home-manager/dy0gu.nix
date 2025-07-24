@@ -281,6 +281,7 @@
       l = "ls -l";
       rebuild = "sudo nixos-rebuild switch --flake";
       update = "nix flake update";
+      docker = "podman";
       pipes = "pipes.sh";
       matrix = "cmatrix";
     };
