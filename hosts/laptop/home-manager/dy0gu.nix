@@ -636,8 +636,8 @@
           "just-perfection-desktop@just-perfection"
         ];
         favorite-apps =  [
-          "firefox.desktop",
-          "com.mitchellh.ghostty.desktop",
+          "firefox.desktop"
+          "com.mitchellh.ghostty.desktop"
           "dev.zed.Zed.desktop"
         ];
       };
