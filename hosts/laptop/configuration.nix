@@ -38,11 +38,10 @@
     open = false;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker or Podman)
-  hardware.nvidia-container-toolkit.enable = true;
-
   # Manually set GPU driver preference (if not found, will automatically try the next one in the list)
   services.xserver.videoDrivers = [ "nvidia" "modesetting" "fbdev" ];
+  # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker or Podman)
+  hardware.nvidia-container-toolkit.enable = true;
 
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
