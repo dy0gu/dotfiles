@@ -637,8 +637,8 @@
         ];
         favorite-apps =  [
           "firefox.desktop"
-          "com.mitchellh.ghostty.desktop"
           "dev.zed.Zed.desktop"
+          "com.mitchellh.ghostty.desktop"
         ];
       };
 
@@ -785,30 +785,30 @@
         move-to-workspace-left = [ ];
         move-to-workspace-right = [ ];
         move-to-workspace-up = [ ];
-        move-to-workspace-1 = [ "<Super><Shift>1" ];
-        move-to-workspace-2 = [ "<Super><Shift>2" ];
-        move-to-workspace-3 = [ "<Super><Shift>3" ];
-        move-to-workspace-4 = [ "<Super><Shift>4" ];
-        move-to-workspace-5 = [ "<Super><Shift>5" ];
-        move-to-workspace-6 = [ "<Super><Shift>6" ];
-        move-to-workspace-7 = [ "<Super><Shift>7" ];
-        move-to-workspace-8 = [ "<Super><Shift>8" ];
-        move-to-workspace-9 = [ "<Super><Shift>9" ];
-        move-to-workspace-10 = [ "<Super><Shift>0" ];
+        move-to-workspace-1 = [ "<Super><Ctrl>1" ];
+        move-to-workspace-2 = [ "<Super><Ctrl>2" ];
+        move-to-workspace-3 = [ "<Super><Ctrl>3" ];
+        move-to-workspace-4 = [ "<Super><Ctrl>4" ];
+        move-to-workspace-5 = [ "<Super><Ctrl>5" ];
+        move-to-workspace-6 = [ "<Super><Ctrl>6" ];
+        move-to-workspace-7 = [ "<Super><Ctrl>7" ];
+        move-to-workspace-8 = [ "<Super><Ctrl>8" ];
+        move-to-workspace-9 = [ "<Super><Ctrl>9" ];
+        move-to-workspace-10 = [ "<Super><Ctrl>0" ];
         move-to-workspace-11 = [ ];
         move-to-workspace-12 = [ ];
         switch-to-workspace-left = [ ];
         switch-to-workspace-right = [ ];
-        switch-to-workspace-1 = [ "<Super><Ctrl>1" ];
-        switch-to-workspace-2 = [ "<Super><Ctrl>2" ];
-        switch-to-workspace-3 = [ "<Super><Ctrl>3" ];
-        switch-to-workspace-4 = [ "<Super><Ctrl>4" ];
-        switch-to-workspace-5 = [ "<Super><Ctrl>5" ];
-        switch-to-workspace-6 = [ "<Super><Ctrl>6" ];
-        switch-to-workspace-7 = [ "<Super><Ctrl>7" ];
-        switch-to-workspace-8 = [ "<Super><Ctrl>8" ];
-        switch-to-workspace-9 = [ "<Super><Ctrl>9" ];
-        switch-to-workspace-10 = [ "<Super><Ctrl>0" ];
+        switch-to-workspace-1 = [ "<Super><Shift>1" ];
+        switch-to-workspace-2 = [ "<Super><Shift>2" ];
+        switch-to-workspace-3 = [ "<Super><Shift>3" ];
+        switch-to-workspace-4 = [ "<Super><Shift>4" ];
+        switch-to-workspace-5 = [ "<Super><Shift>5" ];
+        switch-to-workspace-6 = [ "<Super><Shift>6" ];
+        switch-to-workspace-7 = [ "<Super><Shift>7" ];
+        switch-to-workspace-8 = [ "<Super><Shift>8" ];
+        switch-to-workspace-9 = [ "<Super><Shift>9" ];
+        switch-to-workspace-10 = [ "<Super><Shift>0" ];
         switch-to-workspace-11 = [ ];
         switch-to-workspace-12 = [ ];
         switch-to-workspace-down = [ ];

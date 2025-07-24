@@ -86,6 +86,6 @@ This setup is made to not keep any sort of credentials or personal data in the r
 
   - Then simply run `gh auth login` or `glab auth login` and follow the prompts to authenticate and let the CLIs setup your local git protocols/credentials automatically.
 
-- The **Firefox** profile configuration is very basic as it expects most of the settings to come from cloud syncing, which is not configured in this repository (again, keeping it clean of personal data). You can set up cloud sync from inside the browser itself after the initial setup. The sync server for Firefox is also self-hostable.
+- The **Firefox** profile configuration is very basic as it expects most of the settings to come from cloud syncing, which is not configured in this repository (again, keeping it clean of personal data). You can set up cloud sync from inside the browser itself after the initial setup. The sync server for Firefox is also self-hostable. It's also worth pointing out that some settings are not synced by default, but can be [added to the sync list](https://support.mozilla.org/en-US/kb/sync-custom-preferences), e.g. custom UI layouts.
 
 - If using the `virtual` host (assuming the system is a virtual machine) you may run into some issues in graphic card dependant applications, or using tools that interact with the display hardware such as night lights.
