@@ -270,6 +270,8 @@
       l = "ls -l";
       rebuild = "sudo nixos-rebuild switch --flake";
       update = "nix flake update";
+      pipes = "pipes.sh";
+      matrix = "cmatrix";
     };
 
     oh-my-zsh = {
