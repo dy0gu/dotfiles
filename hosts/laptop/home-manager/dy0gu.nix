@@ -403,6 +403,96 @@
     ];
   };
 
+  # Default applications for the desktop environment
+  # xdg.mime.enable = true;
+  # xdg.mimeApps.defaultApplications = {
+  #   x-scheme-handler/http=firefox.desktop
+  #   text/html=firefox.desktop
+  #   application/xhtml+xml=firefox.desktop
+  #   x-scheme-handler/https=firefox.desktop
+  #   audio/x-vorbis+ogg=org.gnome.Decibels.desktop
+  #   audio/mpeg=org.gnome.Decibels.desktop
+  #   audio/wav=org.gnome.Decibels.desktop
+  #   audio/x-aac=org.gnome.Decibels.desktop
+  #   audio/x-aiff=org.gnome.Decibels.desktop
+  #   audio/x-ape=org.gnome.Decibels.desktop
+  #   audio/x-flac=org.gnome.Decibels.desktop
+  #   audio/x-m4a=org.gnome.Decibels.desktop
+  #   audio/x-m4b=org.gnome.Decibels.desktop
+  #   audio/x-mp1=org.gnome.Decibels.desktop
+  #   audio/x-mp2=org.gnome.Decibels.desktop
+  #   audio/x-mp3=org.gnome.Decibels.desktop
+  #   audio/x-mpg=org.gnome.Decibels.desktop
+  #   audio/x-mpeg=org.gnome.Decibels.desktop
+  #   audio/x-mpegurl=org.gnome.Decibels.desktop
+  #   audio/x-opus+ogg=org.gnome.Decibels.desktop
+  #   audio/x-pn-aiff=org.gnome.Decibels.desktop
+  #   audio/x-pn-au=org.gnome.Decibels.desktop
+  #   audio/x-pn-wav=org.gnome.Decibels.desktop
+  #   audio/x-speex=org.gnome.Decibels.desktop
+  #   audio/x-vorbis=org.gnome.Decibels.desktop
+  #   audio/x-wavpack=org.gnome.Decibels.desktop
+  #   image/jpeg=org.gnome.Loupe.desktop
+  #   image/png=org.gnome.Loupe.desktop
+  #   image/gif=org.gnome.Loupe.desktop
+  #   image/webp=org.gnome.Loupe.desktop
+  #   image/tiff=org.gnome.Loupe.desktop
+  #   image/x-tga=org.gnome.Loupe.desktop
+  #   image/vnd-ms.dds=org.gnome.Loupe.desktop
+  #   image/x-dds=org.gnome.Loupe.desktop
+  #   image/bmp=org.gnome.Loupe.desktop
+  #   image/vnd.microsoft.icon=org.gnome.Loupe.desktop
+  #   image/vnd.radiance=org.gnome.Loupe.desktop
+  #   image/x-exr=org.gnome.Loupe.desktop
+  #   image/x-portable-bitmap=org.gnome.Loupe.desktop
+  #   image/x-portable-graymap=org.gnome.Loupe.desktop
+  #   image/x-portable-pixmap=org.gnome.Loupe.desktop
+  #   image/x-portable-anymap=org.gnome.Loupe.desktop
+  #   image/x-qoi=org.gnome.Loupe.desktop
+  #   image/qoi=org.gnome.Loupe.desktop
+  #   image/svg+xml=org.gnome.Loupe.desktop
+  #   image/svg+xml-compressed=org.gnome.Loupe.desktop
+  #   image/avif=org.gnome.Loupe.desktop
+  #   image/heic=org.gnome.Loupe.desktop
+  #   image/jxl=org.gnome.Loupe.desktop
+  #   video/x-ogm+ogg=io.github.celluloid_player.Celluloid.desktop
+  #   video/ogg=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-theora+ogg=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-theora=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-ms-asf=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-ms-wm=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-ms-wmv=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-ms-wmx=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-msvideo=io.github.celluloid_player.Celluloid.desktop
+  #   video/divx=io.github.celluloid_player.Celluloid.desktop
+  #   video/msvideo=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-avi=io.github.celluloid_player.Celluloid.desktop
+  #   video/vnd.rn-realvideo=io.github.celluloid_player.Celluloid.desktop
+  #   video/mp2t=io.github.celluloid_player.Celluloid.desktop
+  #   video/mpeg=io.github.celluloid_player.Celluloid.desktop
+  #   video/mpeg-system=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-mpeg=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-mpeg2=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-mpeg-system=io.github.celluloid_player.Celluloid.desktop
+  #   video/mp4=io.github.celluloid_player.Celluloid.desktop
+  #   video/mp4v-es=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-m4v=io.github.celluloid_player.Celluloid.desktop
+  #   video/quicktime=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-matroska=io.github.celluloid_player.Celluloid.desktop
+  #   video/webm=io.github.celluloid_player.Celluloid.desktop
+  #   video/3gp=io.github.celluloid_player.Celluloid.desktop
+  #   video/3gpp=io.github.celluloid_player.Celluloid.desktop
+  #   video/3gpp2=io.github.celluloid_player.Celluloid.desktop
+  #   video/vnd.mpegurl=io.github.celluloid_player.Celluloid.desktop
+  #   video/dv=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-nsv=io.github.celluloid_player.Celluloid.desktop
+  #   video/fli=io.github.celluloid_player.Celluloid.desktop
+  #   video/flv=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-flc=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-fli=io.github.celluloid_player.Celluloid.desktop
+  #   video/x-flv=io.github.celluloid_player.Celluloid.desktop
+  # };
+
   # Gnome settings using dconf
   # Use "dconf watch /" to see the keys that are being changed while you play around with the Gnome settings to later write them here
   # You can also run "nix-shell -p dconf-editor" and then "dconf-editor" inside it to get a GUI that shows all
@@ -456,10 +546,19 @@
         always-show-universal-access-status = true;
       };
 
+      "org/gnome/desktop/app-folders" = {
+        # Disable folders
+        folder-children = [""];
+      };
+
       "org/gnome/desktop/sound" = {
         allow-volume-above-100-percent = true;
         event-sounds = false;
         input-feedback-sounds = false;
+      };
+
+      "org/gnome/shell/app-switcher" = {
+        current-workspace-only = false;
       };
 
       "org/gnome/desktop/interface" = {
