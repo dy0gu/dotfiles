@@ -512,7 +512,7 @@
 
       "org/gnome/desktop/peripherals/mouse" = {
         # Disable mouse acceleration
-        acceleration-profile = "flat";
+        accel-profile = "flat";
       };
 
       "org/gnome/desktop/wm/preferences" = {
@@ -635,7 +635,10 @@
           "AlphabeticalAppGrid@stuarthayhurst"
           "just-perfection-desktop@just-perfection"
         ];
-        favorite-apps = [
+        favorite-apps =  [
+          "firefox.desktop",
+          "com.mitchellh.ghostty.desktop",
+          "dev.zed.Zed.desktop"
         ];
       };
 
@@ -796,16 +799,16 @@
         move-to-workspace-12 = [ ];
         switch-to-workspace-left = [ ];
         switch-to-workspace-right = [ ];
-        switch-to-workspace-1 = [ "<Super>1" ];
-        switch-to-workspace-2 = [ "<Super>2" ];
-        switch-to-workspace-3 = [ "<Super>3" ];
-        switch-to-workspace-4 = [ "<Super>4" ];
-        switch-to-workspace-5 = [ "<Super>5" ];
-        switch-to-workspace-6 = [ "<Super>6" ];
-        switch-to-workspace-7 = [ "<Super>7" ];
-        switch-to-workspace-8 = [ "<Super>8" ];
-        switch-to-workspace-9 = [ "<Super>9" ];
-        switch-to-workspace-10 = [ "<Super>0" ];
+        switch-to-workspace-1 = [ "<Super><Ctrl>1" ];
+        switch-to-workspace-2 = [ "<Super><Ctrl>2" ];
+        switch-to-workspace-3 = [ "<Super><Ctrl>3" ];
+        switch-to-workspace-4 = [ "<Super><Ctrl>4" ];
+        switch-to-workspace-5 = [ "<Super><Ctrl>5" ];
+        switch-to-workspace-6 = [ "<Super><Ctrl>6" ];
+        switch-to-workspace-7 = [ "<Super><Ctrl>7" ];
+        switch-to-workspace-8 = [ "<Super><Ctrl>8" ];
+        switch-to-workspace-9 = [ "<Super><Ctrl>9" ];
+        switch-to-workspace-10 = [ "<Super><Ctrl>0" ];
         switch-to-workspace-11 = [ ];
         switch-to-workspace-12 = [ ];
         switch-to-workspace-down = [ ];
@@ -841,15 +844,15 @@
         open-new-window-application-9 = [];
         shift-overview-down = [];
         shift-overview-up = [];
-        switch-to-application-1 = [ ];
-        switch-to-application-2 = [ ];
-        switch-to-application-3 = [ ];
-        switch-to-application-4 = [ ];
-        switch-to-application-5 = [ ];
-        switch-to-application-6 = [ ];
-        switch-to-application-7 = [ ];
-        switch-to-application-8 = [ ];
-        switch-to-application-9 = [ ];
+        switch-to-application-1 = [ "<Super>1" ];
+        switch-to-application-2 = [ "<Super>2" ];
+        switch-to-application-3 = [ "<Super>3" ];
+        switch-to-application-4 = [ "<Super>4" ];
+        switch-to-application-5 = [ "<Super>5" ];
+        switch-to-application-6 = [ "<Super>6" ];
+        switch-to-application-7 = [ "<Super>7" ];
+        switch-to-application-8 = [ "<Super>8" ];
+        switch-to-application-9 = [ "<Super>9" ];
         show-screenshot-ui = [ "Print" ];
         screenshot-window = [ "<Shift>Print" ];
         screenshot = [ ];
@@ -942,12 +945,6 @@
         name = "Open Color Picker";
         command = "eyedropper";
         binding = "<Super>c";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-        name = "Open Terminal";
-        command = "ghostty";
-        binding = "<Super>backslash";
       };
     };
   };
