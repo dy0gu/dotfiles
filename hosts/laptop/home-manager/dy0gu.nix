@@ -21,6 +21,7 @@
     # Development tools
     gh # GitHub CLI
     glab # GitLab CLI
+    kubectl # Kubernetes CLI
     # Programming language installations are managed with nix-shell(s) on a per-project basis as is the Nix way
     # See the ./shells folder in the repository root for examples
 
@@ -35,7 +36,6 @@
     # Gnome extensions
     gnomeExtensions.appindicator
     gnomeExtensions.clipboard-indicator
-    gnomeExtensions.color-picker
     gnomeExtensions.lock-keys
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.just-perfection
@@ -45,7 +45,16 @@
     gns3-gui
     gns3-server
     blender
+    podman-desktop
+    podman-compose
   ];
+
+  # User specific services
+  services.podman = {
+    enable = true;
+    enableTypeChecks = true;
+    autoUpdate = false;
+  };
 
   # More applications that have built-in home-manager enablement and configuration
   programs.obs-studio = {
@@ -518,9 +527,8 @@
         disable-user-extensions = false;
         # The UUIDs needed here can be found by looking at the metadata.json in the extension source code repository
         enabled-extensions = [
-          "clipboard-indicator@tudmotu.com"
-          "color-picker@tuberry"
           "appindicatorsupport@rgcjonas.gmail.com"
+          "clipboard-indicator@tudmotu.com"
           "lockkeys@vaina.lt"
           "AlphabeticalAppGrid@stuarthayhurst"
           "just-perfection-desktop@just-perfection"
@@ -553,24 +561,6 @@
         clear-history = [ ];
       };
 
-      "org/gnome/shell/extensions/color-picker" = {
-        color-picker-shortcut = [ "<Super>p" ];
-        custom-formats = [
-          "<{ 'enable' = <true>; 'name' = <'HSV'>; 'format' = <'hsv({Hu}, {Sv}, {Va})'>; }>"
-          "<{ 'enable' = <true>; 'name' = <'CMYK'>; 'format' = <'cmyk({Cy}, {Ma}, {Ye}, {Bk})'>; }>"
-        ];
-        auto-copy = true;
-        default-format = 0;
-        enable-format = false;
-        enable-notify = true;
-        enable-shortcut = true;
-        enable-systray = false;
-        notify-style = 1;
-        menu-size = 8;
-        persistent-mode = true;
-        preview-style = 0;
-      };
-
       "org/gnome/shell/extensions/appindicator" = {
         icon-brightness = 0;
         icon-contrast = 0.3;
@@ -589,7 +579,7 @@
         dash-app-running = true;
         dash-separator = true;
         double-super-to-appgrid = false;
-        quick-settings-dark-mode = false;
+        quick-settings-dark-mode = true;
         quick-settings-airplane-mode = true;
         max-displayed-search-results = 2;
         ripple-box = false;
@@ -770,6 +760,7 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
         ];
         volume-down-precise = [ "<Alt>F3" ];
         volume-up-precise = [ "<Alt>F4" ];
@@ -833,20 +824,26 @@
         binding = "<Super>e";
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         name = "Open Special Characters";
         command = "gnome-characters";
         binding = "<Super>period";
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
         name = "Open System Monitor";
         command = "resources";
         binding = "<Ctrl><Alt>Delete";
       };
 
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+        name = "Open Color Picker";
+        command = "eyedropper";
+        binding = "<Super>p";
+      };
+
       # Currently broken as single instance, launches a new terminal even if already running
-      # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
       #   name = "Open Terminal";
       #   command = "ghostty";
       #   binding = "<Super>backslash";

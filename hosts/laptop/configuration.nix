@@ -43,22 +43,6 @@
   # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker or Podman)
   hardware.nvidia-container-toolkit.enable = true;
 
-  # Enable common container config files in /etc/containers
-  virtualisation.containers.enable = true;
-  # Podman (not using docker here) configuration
-  virtualisation = {
-    podman = {
-      enable = true;
-      # Create a docker alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
-      extraPackages = with pkgs; [
-        podman-compose
-      ];
-    };
-  };
-
   # Enable touchpad support (currently disabled to see if GNOME does it automatically)
   # services.libinput.enable = true;
 
@@ -100,7 +84,7 @@
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
     resources # Modern resource monitor
-    podman-desktop # Podman GUI
+    eyedropper # Color picker
   ];
   programs.firefox = {
     enable = true;
