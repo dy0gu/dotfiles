@@ -32,18 +32,33 @@
     enable32Bit = true;
   };
 
-  # # Enable Nvidia support
-  # hardware.nvidia = {
-  #   # Old GPUs need proprietary drivers so this can only be true for newer GPUs
-  #   open = false;
-  #   package = config.boot.kernelPackages.nvidiaPackages.stable;
-  # };
-  # # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker)
-  # # hardware.nvidia-container-toolkit.enable = true;
+  # Enable Nvidia support
+  hardware.nvidia = {
+    # Old GPUs need proprietary drivers so this can only be true for newer GPUs
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+  # Enable the NVIDIA container toolkit for virtualization services (e.g. Docker or Podman)
+  hardware.nvidia-container-toolkit.enable = true;
 
-  # # Manually set GPU driver preference (if not found, will automatically try the next one in the list)
-  # services.xserver.videoDrivers = [ "nvidia" "modesetting" "fbdev" ];
-  services.xserver.videoDrivers = [ "modesetting" "fbdev" ];
+  # Manually set GPU driver preference (if not found, will automatically try the next one in the list)
+  services.xserver.videoDrivers = [ "nvidia" "modesetting" "fbdev" ];
+
+  # Enable common container config files in /etc/containers
+  virtualisation.containers.enable = true;
+  # Podman (not using docker here) configuration
+  virtualisation = {
+    podman = {
+      enable = true;
+      # Create a docker alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+      extraPackages = with pkgs; [
+        podman-compose
+      ];
+    };
+  };
 
   # Enable touchpad support (currently disabled to see if GNOME does it automatically)
   # services.libinput.enable = true;
@@ -86,6 +101,7 @@
     share-preview # Local previewer for open graph cards
     fragments # BitTorrent client
     resources # Modern resource monitor
+    podman-desktop # Podman GUI
   ];
   programs.firefox = {
     enable = true;
@@ -95,19 +111,6 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       gamescopeSession.enable = true;
-  };
-
-  # Docker configuration
-  virtualisation.docker = {
-    enable = true;
-    daemon.settings = {
-      storage-driver = "overlay2";
-      log-driver = "json-file";
-      log-opts = {
-        "max-size" = "10m";
-        "max-file" = "3";
-      };
-    };
   };
 
   # Additional font configurations (GNOME handles a lot of them already when enabled)
