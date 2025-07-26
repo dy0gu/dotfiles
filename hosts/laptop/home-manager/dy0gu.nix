@@ -42,9 +42,6 @@
 
     # Applications
     discord
-    gns3-gui
-    gns3-server
-    blender
   ];
 
   # User specific services
