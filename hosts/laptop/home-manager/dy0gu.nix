@@ -45,8 +45,6 @@
     gns3-gui
     gns3-server
     blender
-    podman-desktop
-    podman-compose
   ];
 
   # User specific services
@@ -502,8 +500,58 @@
     settings = {
       "org/gnome/desktop/background" = {
         color-shading-type = "solid";
-        picture-uri = "file:///home/dy0gu/.dotfiles/wallpapers/background.jpg";
-        picture-uri-dark = "file:///home/dy0gu/.dotfiles/wallpapers/background.jpg";
+        picture-opacity = 100;
+        picture-options = "zoom";
+        picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-l.svg";
+        picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.svg";
+        primary-color = "#241f31";
+        secondary-color = "#222226";
+        show-desktop-icons = false;
+      };
+
+      "org/gnome/desktop/screensaver" = {
+        color-shading-type = "solid";
+        picture-opacity = 100;
+        picture-options = "zoom";
+        primary-color = "#241f31";
+        secondary-color = "#222226";
+        picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-l.svg";
+        show-full-name-in-top-bar = true;
+        status-messages-enabled = true;
+        user-switch-enabled = true;
+      };
+
+      "org/gnome/desktop/privacy" = {
+      };
+
+      "org/gnome/desktop/break-reminders" = {
+      };
+
+
+      "org/gnome/desktop/calendar" = {
+        show-weekdate = false;
+      };
+
+      "org/gnome/desktop/notifications" = {
+        show-banners = true;
+        show-in-lock-screen = true;
+      };
+
+      "org/gnome/desktop/screen-time-limits" = {
+        daily-limit-enabled = false;
+        daily-limit-seconds = 0;
+        grayscale = true;
+        history-enabled = true;
+      };
+
+      "org/gnome/desktop/media-handling" = {
+        automount = true;
+        automount-open = true;
+        autorun-never = true;
+      };
+
+      "org/gnome/desktop/datetime" = {
+        automatic-timezone = true;
       };
 
       "org/gnome/login-screen" = {
@@ -513,6 +561,31 @@
       "org/gnome/desktop/peripherals/mouse" = {
         # Disable mouse acceleration
         accel-profile = "flat";
+        left-handed = false;
+      };
+
+      "org/gnome/system/location" = {
+        enabled = true;
+      };
+
+      "org/gnome/desktop/a11y" = {
+        always-show-universal-access-status = true;
+      };
+
+      "org/gnome/desktop/app-folders" = {
+        # Disable folders
+        folder-children = [""];
+      };
+
+      "org/gnome/desktop/sound" = {
+        allow-volume-above-100-percent = true;
+        event-sounds = false;
+        input-feedback-sounds = false;
+        theme-name = "freedesktop";
+      };
+
+      "org/gnome/shell/app-switcher" = {
+        current-workspace-only = false;
       };
 
       "org/gnome/desktop/wm/preferences" = {
@@ -538,36 +611,13 @@
         visual-bell-type = "frame-flash";
       };
 
-      "org/gnome/system/location" = {
-        enabled = true;
-      };
-
-      "org/gnome/desktop/a11y" = {
-        always-show-universal-access-status = true;
-      };
-
-      "org/gnome/desktop/app-folders" = {
-        # Disable folders
-        folder-children = [""];
-      };
-
-      "org/gnome/desktop/sound" = {
-        allow-volume-above-100-percent = true;
-        event-sounds = false;
-        input-feedback-sounds = false;
-      };
-
-      "org/gnome/shell/app-switcher" = {
-        current-workspace-only = false;
-      };
-
       "org/gnome/desktop/interface" = {
         accent-color = "blue";
         can-change-accels = false;
         clock-format = "24h";
         clock-show-date = true;
-        clock-show-seconds = false;
-        clock-show-weekday = false;
+        clock-show-seconds = true;
+        clock-show-weekday = true;
         color-scheme = "prefer-dark";
         cursor-blink = true;
         cursor-blink-time = 1200;
@@ -588,14 +638,13 @@
         gtk-timeout-initial = 200;
         gtk-timeout-repeat = 20;
         icon-theme = "Adwaita";
-        locate-pointer = false;
         menubar-accel = "F10";
         menubar-detachable = false;
         menus-have-tearoff = false;
         monospace-font-name = "Adwaita Mono 11";
         overlay-scrolling = true;
         scaling-factor = 0;
-        show-battery-percentage = false;
+        show-battery-percentage = true;
         text-scaling-factor = 1.0;
         toolbar-detachable = false;
         toolbar-icons-size = "large";
@@ -627,6 +676,8 @@
       "org/gnome/shell" = {
         allow-extension-installation = true;
         disable-user-extensions = false;
+        always-show-log-out = true;
+        development-tools = true;
         # The UUIDs needed here can be found by looking at the metadata.json in the extension source code repository
         enabled-extensions = [
           "appindicatorsupport@rgcjonas.gmail.com"
@@ -714,7 +765,7 @@
         workspace = false;
         workspace-peek = true;
         workspace-popup = true;
-        workspaces-in-app-grid = false;
+        workspaces-in-app-grid = true;
         workspace-switcher-should-show = true;
         workspace-wrap-around = false;
         world-clock = false;
@@ -944,7 +995,7 @@
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
         name = "Open System Monitor";
         command = "resources";
-        binding = "<Ctrl><Shift>Esc";
+        binding = "<Shift><Control>Escape";
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
