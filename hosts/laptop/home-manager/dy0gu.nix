@@ -499,8 +499,8 @@
         color-shading-type = "solid";
         picture-opacity = 100;
         picture-options = "zoom";
-        picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-l.svg";
-        picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.svg";
+        picture-uri = "file:///home/dy0gu/.dotfiles/wallpapers/adwaita-l.jxl";
+        picture-uri-dark = "file:///home/dy0gu/.dotfiles/wallpapers/adwaita-d.jxl";
         primary-color = "#241f31";
         secondary-color = "#222226";
         show-desktop-icons = false;
@@ -512,7 +512,7 @@
         picture-options = "zoom";
         primary-color = "#241f31";
         secondary-color = "#222226";
-        picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-l.svg";
+        picture-uri = "file:///home/dy0gu/.dotfiles/wallpapers/adwaita-l.jxl";
         show-full-name-in-top-bar = true;
         status-messages-enabled = true;
         user-switch-enabled = true;
