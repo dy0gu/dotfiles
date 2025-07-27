@@ -526,7 +526,7 @@
       };
 
       "org/gnome/desktop/break-reminders" = {
-        selected-breaks = ["movement", "eyesight"];
+        selected-breaks = ["movement" "eyesight"];
       };
       "org/gnome/desktop/break-reminders/eyesight" = {
         countdown = true;
