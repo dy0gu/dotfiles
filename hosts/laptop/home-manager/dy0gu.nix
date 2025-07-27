@@ -530,10 +530,10 @@
       };
       "org/gnome/desktop/break-reminders/eyesight" = {
         countdown = true;
-        delay-seconds = 180
+        delay-seconds = 300;
         duration-seconds = 20;
         fade-screen = true;
-        interval-seconds = 1200;
+        interval-seconds = 1800;
         lock-screen = false;
         notify = true;
         notify-overdue = true;
@@ -542,10 +542,10 @@
       };
       "org/gnome/desktop/break-reminders/movement" = {
         countdown = true;
-        delay-seconds = 180;
+        delay-seconds = 300;
         duration-seconds = 300;
         fade-screen = true;
-        interval-seconds = 1200;
+        interval-seconds = 3600;
         lock-screen = false;
         notify = true;
         notify-overdue = true;
@@ -751,7 +751,7 @@
       "org/gnome/shell/extensions/just-perfection" = {
         accent-color-icon = false;
         accessibility-menu = true;
-        activities-button = true;
+        activities-button = false;
         animation = 5;
         dash = true;
         dash-app-running = true;
@@ -770,7 +770,7 @@
         panel = false;
         panel-in-overview = true;
         panel-notification-icon = true;
-        show-apps-button = true;
+        show-apps-button = false;
         startup-status = 1;
         support-notifier-type = 0;
         switcher-popup-delay = true;
