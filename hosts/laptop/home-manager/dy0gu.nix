@@ -518,10 +518,39 @@
         user-switch-enabled = true;
       };
 
+      "org/gnome/desktop/default-applications/terminal" = {
+        exec = "ghostty";
+      };
+
       "org/gnome/desktop/privacy" = {
       };
 
       "org/gnome/desktop/break-reminders" = {
+        selected-breaks = ["movement", "eyesight"];
+      };
+      "org/gnome/desktop/break-reminders/eyesight" = {
+        countdown = true;
+        delay-seconds = 180
+        duration-seconds = 20;
+        fade-screen = true;
+        interval-seconds = 1200;
+        lock-screen = false;
+        notify = true;
+        notify-overdue = true;
+        notify-upcoming = true;
+        play-sound = false;
+      };
+      "org/gnome/desktop/break-reminders/movement" = {
+        countdown = true;
+        delay-seconds = 180;
+        duration-seconds = 300;
+        fade-screen = true;
+        interval-seconds = 1200;
+        lock-screen = false;
+        notify = true;
+        notify-overdue = true;
+        notify-upcoming = true;
+        play-sound = false;
       };
 
 
@@ -666,10 +695,6 @@
       };
 
 
-      "org/gnome/desktop/default-applications/terminal" = {
-        exec = "ghostty";
-      };
-
       "org/gnome/shell" = {
         allow-extension-installation = true;
         disable-user-extensions = false;
@@ -762,7 +787,7 @@
         workspace = false;
         workspace-peek = true;
         workspace-popup = true;
-        workspaces-in-app-grid = true;
+        workspaces-in-app-grid = false;
         workspace-switcher-should-show = true;
         workspace-wrap-around = false;
         world-clock = false;
