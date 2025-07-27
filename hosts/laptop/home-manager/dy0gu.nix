@@ -751,7 +751,7 @@
       "org/gnome/shell/extensions/just-perfection" = {
         accent-color-icon = false;
         accessibility-menu = true;
-        activities-button = false;
+        activities-button = true;
         animation = 5;
         dash = true;
         dash-app-running = true;
