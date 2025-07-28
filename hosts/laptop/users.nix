@@ -3,9 +3,9 @@
 {
   users.users.dy0gu = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "audio" "wheel" "docker" "podman" ];
+    extraGroups = [ "networkmanager" "audio" "wheel" "docker"];
 
-    # Should be changed after first user creation
+    # Should be changed after initial user creation
     initialPassword = "nixos";
   };
 }

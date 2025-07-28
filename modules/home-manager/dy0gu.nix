@@ -12,6 +12,9 @@
 
   home.stateVersion = "24.05";
 
+  # Home directory permanent files
+  home.file."Templates/blank.txt".text = "";
+
   home.packages = with pkgs; [
     # System utilities
     fastfetch
@@ -529,9 +532,9 @@
         selected-breaks = ["movement" "eyesight"];
       };
       "org/gnome/desktop/break-reminders/eyesight" = {
-        countdown = true;
+        countdown = false;
         delay-seconds = 300;
-        duration-seconds = 20;
+        duration-seconds = 30;
         fade-screen = true;
         interval-seconds = 1800;
         lock-screen = false;
@@ -541,7 +544,7 @@
         play-sound = false;
       };
       "org/gnome/desktop/break-reminders/movement" = {
-        countdown = true;
+        countdown = false;
         delay-seconds = 300;
         duration-seconds = 300;
         fade-screen = true;
