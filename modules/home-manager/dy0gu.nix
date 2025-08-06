@@ -302,7 +302,8 @@
       command = "zsh --login";
       theme = "dark:custom-adwaita-dark,light:custom-adwaita-light";
       font-family = "FiraCode Nerd Font";
-      title = "Ghostty";
+      # Let running program set title
+      title = "";
       window-subtitle = false;
       confirm-close-surface = false;
       gtk-single-instance = true;
